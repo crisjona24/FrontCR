@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const baseurl = axios.create({
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'https://django-server-production-3a07.up.railway.app/',
 })
 
 // LISTADO DE SALAS
