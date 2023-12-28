@@ -1,7 +1,7 @@
 // IMPORTACION DE LA LISTA DE CONTENIDO
 import axios from 'axios';
 
-// RUTA BASE DE REDIRECCIONAMIENTO
+// RUTA BASE DE REDIRECCIONAMIENTO cambio ala ruta nueva
 const baseurl = axios.create({
     baseURL: 'https://django-server-production-3a07.up.railway.app/',
 })
