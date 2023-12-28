@@ -1,0 +1,353 @@
+{
+    "figuras": [
+        {
+            "nombre_tipo": "figuras_geometricas",
+            "nombre": [
+                {
+                    "identificador": "Cuadrado"
+                },
+                {
+                    "identificador": "Rectangulo"
+                },
+                {
+                    "identificador": "Rombo"
+                },
+                {
+                    "identificador": "Trapecio"
+                },
+                {
+                    "identificador": "Pentágono"
+                },
+                {
+                    "identificador": "Hexágono"
+                },
+                {
+                    "identificador": "Romboide"
+                },
+                {
+                    "identificador": "Trapezoide"
+                },
+                {
+                    "identificador": "Heptágono"
+                },
+                {
+                    "identificador": "Octógono"
+                },
+                {
+                    "identificador": "Circunferencia"
+                },
+                {
+                    "identificador": "Círculo"
+                },
+                {
+                    "identificador": "Ángulo recto"
+                },
+                {
+                    "identificador": "Ángulo obtuso"
+                },
+                {
+                    "identificador": "Ángulo agudo"
+                },
+                {
+                    "identificador": "Ángulo llano"
+                },
+                {
+                    "identificador": "Ángulo oblicuo"
+                },
+                {
+                    "identificador": "Ángulo Perigonal"
+                },
+                {
+                    "identificador": "Ángulo complementario"
+                },
+                {
+                    "identificador": "Ángulo suplementario"
+                },
+                {
+                    "identificador": "Ángulo adyacente"
+                },
+                {
+                    "identificador": "Ángulo opuesto"
+                },
+                {
+                    "identificador": "Ángulo consecutivo"
+                },
+                {
+                    "identificador": "Elipse"
+                },
+                {
+                    "identificador": "Cono"
+                },
+                {
+                    "identificador": "Icosaedro"
+                },
+                {
+                    "identificador": "Cruz"
+                },
+                {
+                    "identificador": "Sapo"
+                },
+                {
+                    "identificador": "Vaca"
+                },
+                {
+                    "identificador": "Borrego"
+                },
+                {
+                    "identificador": "Conejo"
+                },
+                {
+                    "identificador": "Gato"
+                },
+                {
+                    "identificador": "Perro"
+                },
+                {
+                    "identificador": "Pato"
+                },
+                {
+                    "identificador": "Gallina"
+                },
+                {
+                    "identificador": "Pez"
+                },
+                {
+                    "identificador": "Rana"
+                },
+                {
+                    "identificador": "Ratón"
+                },
+                {
+                    "identificador": "Águila"
+                },
+                {
+                    "identificador": "Araña"
+                },
+                {
+                    "identificador": "Ardilla"
+                },
+                {
+                    "identificador": "Burro"
+                },
+                {
+                    "identificador": "Cabra"
+                },
+                {
+                    "identificador": "Cocodrilo"
+                },
+                {
+                    "identificador": "Hospedaje"
+                },
+                {
+                    "identificador": "Turbulencia"
+                },
+                {
+                    "identificador": "Limosna"
+                },
+                {
+                    "identificador": "Arruga"
+                },
+                {
+                    "identificador": "Cartucho"
+                },
+                {
+                    "identificador": "Almacén"
+                },
+                {
+                    "identificador": "Hormiguero"
+                },
+                {
+                    "identificador": "Cuchara"
+                },
+                {
+                    "identificador": "Castor"
+                },
+                {
+                    "identificador": "Petróleo"
+                },
+                {
+                    "identificador": "Ceremonia"
+                },
+                {
+                    "identificador": "Habichuelas"
+                },
+                {
+                    "identificador": "Cereales"
+                },
+                {
+                    "identificador": "Calabaza"
+                },
+                {
+                    "identificador": "Nueces"
+                },
+                {
+                    "identificador": "Sardinas"
+                },
+                {
+                    "identificador": "Huevos"
+                }
+            ]
+        }
+    ],
+    "angulos": [
+        {
+            "nombre_tipo": "angulos",
+            "nombre": [
+                {
+                    "identificador": "Ángulo recto"
+                },
+                {
+                    "identificador": "Ángulo obtuso"
+                },
+                {
+                    "identificador": "Ángulo agudo"
+                },
+                {
+                    "identificador": "Ángulo llano"
+                },
+                {
+                    "identificador": "Ángulo oblicuo"
+                },
+                {
+                    "identificador": "Ángulo Perigonal"
+                },
+                {
+                    "identificador": "Ángulo complementario"
+                },
+                {
+                    "identificador": "Ángulo suplementario"
+                },
+                {
+                    "identificador": "Ángulo adyacente"
+                },
+                {
+                    "identificador": "Ángulo opuesto"
+                },
+                {
+                    "identificador": "Ángulo consecutivo"
+                },
+                {
+                    "identificador": "Elipse"
+                },
+                {
+                    "identificador": "Cono"
+                },
+                {
+                    "identificador": "Icosaedro"
+                },
+                {
+                    "identificador": "Cruz"
+                }
+            ]
+        }
+    ],
+    "silabas": [
+        {
+            "nombre_tipo": "silabas",
+            "nombre": [
+                {
+                    "identificador": "Sapo"
+                },
+                {
+                    "identificador": "Vaca"
+                },
+                {
+                    "identificador": "Borrego"
+                },
+                {
+                    "identificador": "Conejo"
+                },
+                {
+                    "identificador": "Gato"
+                },
+                {
+                    "identificador": "Perro"
+                },
+                {
+                    "identificador": "Pato"
+                },
+                {
+                    "identificador": "Gallina"
+                },
+                {
+                    "identificador": "Pez"
+                },
+                {
+                    "identificador": "Rana"
+                },
+                {
+                    "identificador": "Ratón"
+                },
+                {
+                    "identificador": "Águila"
+                },
+                {
+                    "identificador": "Araña"
+                },
+                {
+                    "identificador": "Ardilla"
+                },
+                {
+                    "identificador": "Burro"
+                },
+                {
+                    "identificador": "Cabra"
+                },
+                {
+                    "identificador": "Cocodrilo"
+                },
+                {
+                    "identificador": "Hospedaje"
+                },
+                {
+                    "identificador": "Turbulencia"
+                },
+                {
+                    "identificador": "Limosna"
+                },
+                {
+                    "identificador": "Arruga"
+                },
+                {
+                    "identificador": "Cartucho"
+                },
+                {
+                    "identificador": "Almacén"
+                },
+                {
+                    "identificador": "Hormiguero"
+                },
+                {
+                    "identificador": "Cuchara"
+                },
+                {
+                    "identificador": "Castor"
+                },
+                {
+                    "identificador": "Petróleo"
+                },
+                {
+                    "identificador": "Ceremonia"
+                },
+                {
+                    "identificador": "Habichuelas"
+                },
+                {
+                    "identificador": "Cereales"
+                },
+                {
+                    "identificador": "Calabaza"
+                },
+                {
+                    "identificador": "Nueces"
+                },
+                {
+                    "identificador": "Sardinas"
+                },
+                {
+                    "identificador": "Huevos"
+                }
+            ]
+        }
+    ]
+}
