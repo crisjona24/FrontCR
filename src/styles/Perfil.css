@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.centrado {
+  /* Establece el margen externo en 0 */
+  margin: 0;
+  /* Establece el espaciado interno en 0 */
+  padding: 0;
+  /* Establece la altura en 100% */
+  height: 100%;
+}
+
+.contenedor-perfil {
+  border: 1px solid #333;
+  /* Establece el color de fondo del contenedor */
+  background-color: #fff;
+  /* Aplica bordes redondeados al contenedor */
+  border-radius: 10px;
+  /* Establece el ancho del contenedor */
+  width: 60%;
+  /* Establece el ancho máximo permitido del contenedor */
+  max-width: 80%;
+  /* Centra el contenedor horizontalmente en la página */
+  margin: 70px auto;
+  /* Establece el espaciado interno superior e inferior del contenedor */
+  padding: 40px 0;
+
+  /* Utiliza un sistema de cuadrícula para organizar el contenido */
+  display: grid;
+  /* Establece una columna en la cuadrícula con un tamaño flexible */
+  grid-template-columns: 4fr;
+}
+
+.contenedor-foto {
+  align-items: center;
+  /* Centra verticalmente los elementos en el contenedor */
+  width: 100%;
+  /* Asigna un ancho del 100% al contenedor */
+
+  display: flex;
+  /* Establece el contenedor como un contenedor flexible */
+  flex-direction: column;
+  /* Define la dirección de los elementos hijos en columnas */
+  justify-content: space-between;
+  /* Distribuye el espacio disponible verticalmente entre los elementos */
+}
+
+.contenedor-foto img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.contenedor-username {
+  text-align: center;
+  display: flex;
+  /* Establece el contenedor como un contenedor flexible */
+  flex-direction: column;
+  /* Define la dirección de los elementos hijos en columnas */
+  justify-content: space-between;
+  /* Distribuye el espacio disponible verticalmente entre los elementos */
+}
+
+.contenedor-username h6 {
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.texto__ {
+  font-family: "Pacifico", cursive;
+  font-weight: bold;
+}
+
+.contenedor-username li {
+  list-style: none;
+}
+
+.contenedor-opciones {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card__perfil {
+  min-height: 50px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card__perfil .opciones {
+  height: 100%;
+  align-items: center;
+
+  display: flex;
+  /* Establece el contenedor como un contenedor flexible */
+  flex-direction: column;
+  /* Define la dirección de los elementos hijos en columnas */
+  justify-content: space-between;
+  /* Distribuye el espacio disponible verticalmente entre los elementos */
+}
+
+.contenedor-datos {
+  display: grid;
+  grid-template-columns: 3fr;
+}
+
+.ordenar {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+
+.card_datos__p {
+  min-height: 50px;
+  padding-left: 10px;
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.card_datos__p .opciones_datos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.contenedor-datos li {
+  list-style: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.dato {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card_datos__p .opciones_datos ul li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.boton {
+  padding-top: 20px;
+  /* Espaciado interno superior */
+  padding-bottom: 0px;
+  /* Espaciado interno inferior */
+  padding-left: 20px;
+  /* Espaciado interno izquierdo */
+  padding-right: 20px;
+  /* Espaciado interno derecho */
+}
+
+.boton-opciones {
+  background-color: #d9d9d9;
+  /* Color de fondo */
+  color: #333;
+  /* Color del texto */
+  padding: 10px 20px;
+  /* Espaciado interno (arriba/abajo, izquierda/derecha) */
+  font-size: 12px;
+  /* Tamaño de la letra */
+  border: none;
+  /* Sin borde */
+  border-radius: 4px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambio de cursor al pasar el ratón */
+  text-decoration: none;
+  /* Elimina el estilo de subrayado*/
+}
+
+.boton-opciones:hover {
+  background-color: #45a049;
+  /* Color de fondo al pasar el ratón */
+}
+
+/* Tarjeta de peticion*/
+.img-tamaño {
+  border-radius: 10px;
+  height: 60%;
+  margin-top: 50%;
+}
+
+.titulo-peticion {
+  font-size: 1.1rem;
+  color: #fff;
+  background-color: #303440;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  height: 30px;
+}
+
+.fecha-reportes {
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  margin-top: 25px;
+  height: 115px;
+}
+
+.texto-peticion {
+  color: #333;
+  font-family: 'Roboto';
+  text-align: justify;
+  padding-right: 5px;
+}
+
+.texto-peticion-c {
+  color: #333;
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contenedor-perfil {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-opciones,
+  .contenedor-datos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-perfil {
+    padding: 10px;
+  }
+
+  .contenedor-username h6 {
+    font-size: 10px;
+  }
+
+  .contenedor-username p {
+    font-size: 12px;
+  }
+
+  .card__perfil,
+  .card_datos__p {
+    padding: 5px;
+  }
+
+  .boton-opciones {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
+.texto-reporte{
+  font-family: cursive;
+  text-align: justify;
+  font-size: 0.8rem;
+  color: #615f5f;
+}

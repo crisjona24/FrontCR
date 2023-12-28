@@ -1,0 +1,31 @@
+.section__carrusel {
+    display: flex;
+    width: 600px;
+    height: 250px;
+    max-height: 250px;
+    margin-top: 5%;
+    /* Borde sombreado*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* Borde redondeado */
+    border-radius: 10px;
+}
+
+.section__carrusel img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+    /* Borde sombreado bajo */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    /* Borde redondeado */
+    border-radius: 5px;
+}
+
+.section__carrusel img:hover {
+    cursor: zoom-out;
+    width: 300px;
+    height: fit-content;
+    opacity: 1;
+    filter: contrast(120%);
+}

@@ -1,0 +1,645 @@
+.panel {
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.cuerpo-tabla {
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+.cuerpo-tabla-2 {
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+.cuerpo-tabla-3 {
+    margin-left: 8%;
+    margin-top: 1%;
+}
+
+.cuerpo-tabla-4 {
+    margin-left: 8%;
+    margin-top: 2%;
+}
+
+.input-group-2 {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.panel .panel-heading {
+    background: #0c2342;
+    padding: 15px;
+    border-radius: 0;
+}
+
+.panel .panel-heading .btn {
+    color: #fff;
+    background-color: #8D8D8D;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 15px;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+    border-radius: 25px;
+}
+
+.panel .panel-heading .btn:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.panel .panel-heading .form-horizontal .form-group {
+    margin: 0;
+}
+
+.panel .panel-heading .form-horizontal label {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.panel .panel-heading .form-horizontal .form-control {
+    display: inline-block;
+    width: 80px;
+    border: none;
+    border-radius: 0;
+}
+
+.panel .panel-heading .form-horizontal .form-control:focus {
+    box-shadow: none;
+    border: none;
+}
+
+.panel .panel-body {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body .table thead tr th:nth-of-type(3) {
+    width: 40%;
+    text-align: justify;
+}
+
+.panel .panel-body .table thead tr th:nth-of-type(1) {
+    width: 25%;
+    text-align: justify;
+}
+
+.panel .panel-body .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.separacion--boton {
+    margin-right: 5px;
+}
+
+.separacion--boton--derecha {
+    margin-left: 5px;
+}
+
+.h {
+    height: 35px;
+    width: 40px;
+}
+
+.panel .panel-body .table tbody .action-list li a:hover {
+    box-shadow: 0 0 5px #ddd;
+}
+
+.panel .panel-footer {
+    color: #fff;
+    background: #0c2342;
+    font-size: 16px;
+    line-height: 33px;
+    padding: 25px 15px;
+    border-radius: 0;
+}
+
+.pagination {
+    margin: 0;
+}
+
+.pagination li a {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 2px;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+.pagination li a:hover,
+.pagination li a:focus,
+.pagination li.active a {
+    color: #fff;
+    background-color: #000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.pagination-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* OTRO TIPO DE TABLA : 2*/
+
+.panel .panel-body_2 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_2 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_2 .table thead tr th:nth-of-type(3) {
+    width: 35%;
+    text-align: justify;
+}
+
+.panel .panel-body_2 .table thead tr th:nth-of-type(1) {
+    width: 15%;
+    text-align: justify;
+}
+
+.panel .panel-body_2 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_2 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_2 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_2 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_2 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_2 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+/* OTRO TIPO DE TABLA CON FIJO: 2*/
+
+.panel .panel-body_2_2 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_2_2 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_2_2 .table thead tr th:nth-of-type(3) {
+    width: 35%;
+    text-align: justify;
+}
+
+.panel .panel-body_2_2 .table thead tr th:nth-of-type(2) {
+    width: 8%;
+    text-align: justify;
+}
+
+.panel .panel-body_2_2 .table thead tr th:nth-of-type(1) {
+    width: 15%;
+    text-align: justify;
+}
+
+.panel .panel-body_2_2 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_2_2 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_2_2 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_2_2 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_2_2 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_2_2 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+/* OTRO TIPO DE TABLA : 3*/
+
+.panel .panel-body_3 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_3 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_3 .table thead tr th:nth-of-type(3) {
+    width: 25%;
+    text-align: justify;
+}
+
+.panel .panel-body_3 .table thead tr th:nth-of-type(1) {
+    width: 18%;
+    text-align: justify;
+}
+
+.panel .panel-body_3 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_3 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_3 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_3 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_3 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_3 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+/* OTRO TIPO DE TABLA : 4*/
+
+.panel .panel-body_4 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_4 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_4 .table thead tr th:nth-of-type(3) {
+    width: 25%;
+    text-align: justify;
+}
+
+.panel .panel-body_4 .table thead tr th:nth-of-type(1) {
+    width: 20%;
+    text-align: justify;
+}
+
+.panel .panel-body_4 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_4 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_4 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_4 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_4 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_4 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+/* OTRO TIPO DE TABLA 5*/
+
+.panel .panel-body_5 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_5 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_5 .table thead tr th:nth-of-type(3) {
+    width: 33%;
+    text-align: justify;
+}
+
+.panel .panel-body_5 .table thead tr th:nth-of-type(2) {
+    width: 8%;
+    text-align: justify;
+}
+
+.panel .panel-body_5 .table thead tr th:nth-of-type(1) {
+    width: 18%;
+    text-align: justify;
+}
+
+
+
+.panel .panel-body_5 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_5 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_5 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_5 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_5 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_5 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}
+
+/* OTRO TIPO DE TABLA 6*/
+
+.panel .panel-body_6 {
+    padding: 0;
+    border-radius: 0;
+}
+
+.panel .panel-body_6 .table thead tr th {
+    color: #fff;
+    background: #8D8D8D;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 12px;
+    border-bottom: none;
+}
+
+.panel .panel-body_6 .table thead tr th:nth-of-type(3) {
+    width: 33%;
+    text-align: justify;
+}
+
+.panel .panel-body_6 .table thead tr th:nth-of-type(2) {
+    width: 8%;
+    text-align: justify;
+}
+
+.panel .panel-body_6 .table thead tr th:nth-of-type(1) {
+    width: 17%;
+    text-align: justify;
+}
+
+
+
+.panel .panel-body_6 .table tbody tr td {
+    color: #555;
+    background: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 13px;
+    vertical-align: middle;
+    border-color: #e7e7e7;
+}
+
+.panel .panel-body_6 .table tbody tr td p {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.panel .panel-body_6 .table tbody tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+.panel .panel-body_6 .table tbody .action-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.panel .panel-body_6 .table tbody .action-list li {
+    display: inline-block;
+}
+
+.panel .panel-body_6 .table tbody .action-list li a {
+    color: #fff;
+    font-size: 13px;
+    line-height: 28px;
+    height: 28px;
+    width: 33px;
+    padding: 0;
+    border-radius: 0;
+    transition: all 0.3s ease 0s;
+}

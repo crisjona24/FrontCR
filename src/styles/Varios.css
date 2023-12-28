@@ -1,0 +1,265 @@
+/* GENERAL */
+.border-general {
+    border: 1px solid #ccc;
+}
+
+/* ALINEACION DE LISTADO DE CONTENIDO */
+.orden_lista_contenido {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.orden_lista_contenido a:hover {
+    /*transicion de color*/
+    transition: 0.5s;
+    background-color: #303440;
+}
+
+/* ALINEACION DE LISTADO DE CONTENIDO */
+.alineacion-RS {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+/* EDICION */
+.contenedor__edicion {
+    width: 35%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.contenedor__edicion-2 {
+    width: 55%;
+    margin-top: 70px;
+    margin-bottom: 90px;
+}
+
+.contenedor__edicion-3 {
+    width: 100%;
+    margin-top: 120px;
+    margin-bottom: 90px;
+    margin-left: 25px;
+}
+
+.contenedor__ancho {
+    width: 40%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.titulo__CE {
+    padding: 10px;
+    font-size: 1.5rem;
+    padding-top: 15px;
+}
+
+.texto__descripcion {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+.borde__CE {
+    border: 1px solid #333;
+}
+
+.tamanio-text-area {
+    height: 100px;
+}
+
+/* TARJETA DE APLICACION */
+.tamnio_descripcion {
+    font-size: 0.9rem;
+}
+
+.img__descripcion {
+    border-radius: 10px;
+    height: 20%;
+    margin-top: 50%;
+    margin-left: 10%;
+}
+
+/* TARJETA DE REPORTE */
+.contenedor_reporte {
+    /*height: 900x;*/
+    height: 1125px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    /* Agregar scroll */
+    /*overflow-y: scroll;*/
+}
+
+.contenedor_resultado {
+    height: 900px;
+    margin-left: 8%;
+    margin-right: 8%;
+    margin-top: 2%;
+    /* Agregar scroll */
+    /*overflow-y: scroll;*/
+}
+
+.contenedor_perfil {
+    height: 500px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+
+.tarjeta_perfil {
+    border: 1.5px solid #868686;
+    margin-bottom: 2%;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.tarjeta__reporte {
+    border: 0.5px solid #868686;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+/* INFORMACION DATOS */
+.tamanio_almacenador_perfil {
+    max-height: 850px;
+}
+
+.section_almacenador_perfil {
+    max-height: 850px;
+    border: 1px solid #ccc;
+}
+
+.section_almacenador {
+    position: relative;
+    height: calc(1000px - 60px);
+    /* Ajusta según la altura de la Cabecera */
+    overflow-y: auto;
+}
+
+.tamanio_almacenador {
+    /* Puedes ajustar la altura máxima aquí si es necesario */
+    max-height: 1000px;
+}
+
+.section_almacenador_resul {
+    /* Ancho maximo permitido*/
+    height: 1000px;
+    border: 1px solid #ccc;
+    /* Agregar scroll */
+    overflow-y: auto;
+}
+
+.tamanio_almacenador_resul {
+    /* Ancho maximo permitido*/
+    max-height: 1000px;
+}
+
+.tamanio_almacenador_peti {
+    /* Ancho maximo permitido*/
+    height: 850px;
+}
+
+.contenedor_actividad {
+    max-height: 800px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+}
+
+.tamanio_almacenador_acti {
+    /* Puedes ajustar la altura máxima aquí si es necesario */
+    max-height: 900px;
+}
+
+.section_almacenador_acti {
+    /* Ancho maximo permitido*/
+    height: 900px;
+    border: 1px solid #ccc;
+    /* Agregar scroll */
+    overflow-y: auto;
+}
+
+/* LISTAS */
+.alienacion-externa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.alineacion-triple {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 5px;
+
+}
+
+.alineacion-3 {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-gap: 5px;
+
+}
+
+.alineacion-lista-busqueda {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+.separacion-busqueda {
+    margin-right: 15px;
+}
+
+/* TARJETAS */
+.img-tarjeta {
+    width: 275px;
+    height: 250px;
+    border-radius: 50px;
+    margin-left: 6%;
+    margin-top: 5%;
+}
+
+.img-ref-tarjeta {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 25%;
+}
+
+.img-tarjeta-2 {
+    width: 275px;
+    height: 175px;
+    border-radius: 50px;
+    margin-left: 8%;
+    margin-top: 5%;
+}
+
+/* FORMULARIOS */
+.opaco {
+    opacity: 0.5;
+}
+
+.no-opaco {
+    opacity: 1;
+}
+
+/* MEDIAS */
+@media (max-width: 975px) {
+    .orden_lista_contenido {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .orden_lista_contenido div {
+        margin-bottom: 5px;
+        margin-right: 50px;
+    }
+}
