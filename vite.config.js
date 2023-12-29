@@ -1,18 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import cors from "cors";
 
-export default {
-  ...,
-  plugins: [
-    cors({
-      origin: "*",
-    }),
-  ],
-};
 
-// https://vitejs.dev/config/
 export default defineConfig({
- // base: '/client/',
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8000',
+      // Add the following to enable CORS
+      cors: {
+        origin: '*',
+      },
+    },
+  },
   plugins: [react()],
-})
+});
+
