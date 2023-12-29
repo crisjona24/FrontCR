@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const baseurl = axios.create({
-    baseURL: 'https://serverapi-production-c8a1.up.railway.app/',
+    baseURL: 'https://serverapi-production-c8a1.up.railway.app/api/',
 })
 
 
