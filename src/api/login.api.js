@@ -3,8 +3,9 @@
 import axios from 'axios';
 
 const baseurl = axios.create({
-    baseURL: 'https://django-server-production-3a07.up.railway.app/api/',
-});
+    baseURL: 'https://serverapi-production-c8a1.up.railway.app/',
+})
+
 
 /*
 export const LoginUsuario = async (info__form) => {

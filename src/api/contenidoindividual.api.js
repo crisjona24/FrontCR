@@ -2,8 +2,9 @@ import axios from 'axios';
 
 // RUTA BASE DE REDIRECCIONAMIENTO
 const baseurl = axios.create({
-    baseURL: 'https://django-server-production-3a07.up.railway.app/',
+    baseURL: 'https://serverapi-production-c8a1.up.railway.app/',
 })
+
 
 // Listas de contenidos individuales mediante un método de la REST API
 export const ContenidoIndividualTodo = (slug) => {
