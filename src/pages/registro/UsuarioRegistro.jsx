@@ -132,11 +132,12 @@ export function ConfirmacionCuenta() {
                     <Modal.Title>Reenvío de código de verificación</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
+                    <p style={{ fontSize: '1rem' }}>Ingrese su correo electrónico para reenviar el código de verificación</p>
                     <form onSubmit={enviarFormulario}>
                         <div className="form-group">
                             <label className='label' htmlFor="correo">Correo electrónico:</label>
                             <input className='form-control w-100' type="text"
-                                placeholder="Ingrese el correo electrónico" id="correo"
+                                placeholder="Ingrese el correo electrónico*" id="correo"
                                 value={email_usuario} onChange={e => setEmail(e.target.value)} />
                         </div>
                         <Button type="submit" variant="success" disabled={habilitado}>
