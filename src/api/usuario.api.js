@@ -325,6 +325,10 @@ export const VerificarCuenta = async (datos__post) => {
     return await baseurl.post('wapiptdah/verificar/cuenta/', datos__post);
 };
 
+export const ReverificarCuenta = async (datos__post) => {
+    return await baseurl.post('wapiptdah/reenvio/codigo/cuenta/', datos__post);
+};
+
 // Cambiar clave de cuenta
 export const CambiarClaveCuenta = async (datos__post) => {
     return await baseurl.post('wapiptdah/cambiar/clave/', datos__post);
