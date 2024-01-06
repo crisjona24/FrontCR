@@ -12,7 +12,7 @@ import { Button } from "react-bootstrap";
 import {
     UsuarioCrearNuevo, VerificarUsuario, UsuarioIndividual, UsuarioEditar,
     CrearComunNew, ComunIndividual, ComunEditar, CrearPaciente, PacienteIndividual,
-    PacienteEditar
+    PacienteEditar, ReverificarCuenta
 } from "../../api/usuario.api";
 
 /* FORMULARIO TECNICO */
@@ -105,6 +105,40 @@ export function FormularioUsuario() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.correo_validado) {
+                // Panel de confirmacion de reenvio de correo de verificación
+                Swal.fire({
+                    title: '¿Usted tiene un registro de cuenta sin validar, desea reenviar el correo de verificación?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Reenviar',
+                    denyButtonText: 'No reenviar',
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            const datos__post = {
+                                email_usuario
+                            };
+                            const response_reenvio = await ReverificarCuenta(datos__post);
+                            if (response_reenvio.data.success) {
+                                Swal.fire("Visite su correo electrónco y use el código de verificación", "", "success");
+                                navigate('/login');
+                            } else {
+                                if (response_reenvio.data.error) {
+                                    Swal.fire(response_reenvio.data.error, '', 'error');
+                                } else if (response_reenvio.data.correo) {
+                                    Swal.fire(response_reenvio.data.correo, '', 'error');
+                                } else {
+                                    Swal.fire('Error al reenviar correo', '', 'error');
+                                }
+                            }
+                        } catch (error) {
+                            Swal.fire('Error al reenviar correo', '', 'error');
+                        }
+                    } else if (result.isDenied) {
+                        Swal.fire('El correo no se reenvió', '', 'info');
+                    }
+                });
             } else if (response.data.cedula) {
                 Swal.fire(response.data.cedula, '', 'error');
             } else {
@@ -479,6 +513,40 @@ export function FormularioComun() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.correo_validado) {
+                // Panel de confirmacion de reenvio de correo de verificación
+                Swal.fire({
+                    title: '¿Usted tiene un registro de cuenta sin validar, desea reenviar el correo de verificación?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Reenviar',
+                    denyButtonText: 'No reenviar',
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            const datos__post = {
+                                email_usuario
+                            };
+                            const response_reenvio = await ReverificarCuenta(datos__post);
+                            if (response_reenvio.data.success) {
+                                Swal.fire("Visite su correo electrónco y use el código de verificación", "", "success");
+                                navigate('/login');
+                            } else {
+                                if (response_reenvio.data.error) {
+                                    Swal.fire(response_reenvio.data.error, '', 'error');
+                                } else if (response_reenvio.data.correo) {
+                                    Swal.fire(response_reenvio.data.correo, '', 'error');
+                                } else {
+                                    Swal.fire('Error al reenviar correo', '', 'error');
+                                }
+                            }
+                        } catch (error) {
+                            Swal.fire('Error al reenviar correo', '', 'error');
+                        }
+                    } else if (result.isDenied) {
+                        Swal.fire('El correo no se reenvió', '', 'info');
+                    }
+                });
             } else if (response.data.cedula) {
                 Swal.fire(response.data.cedula, '', 'error');
             }
@@ -671,7 +739,7 @@ export function FormularioComun() {
                     <input className='form-control w-100' type="text" placeholder="Ingrese el nombre**" name='nombre' id="nombre"
                         value={nombre_usuario}
                         onChange={Entrada_Nombre}
-                        autoFocus/>
+                        autoFocus />
                 </div>
                 <div className='form-group col-md-6'>
                     <label className='label' htmlFor="apellido">Apellidos:</label>
@@ -880,6 +948,40 @@ export function FormularioPaciente() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.correo_validado) {
+                // Panel de confirmacion de reenvio de correo de verificación
+                Swal.fire({
+                    title: '¿Usted tiene un registro de cuenta sin validar, desea reenviar el correo de verificación?',
+                    showDenyButton: true,
+                    showCancelButton: true,
+                    confirmButtonText: 'Reenviar',
+                    denyButtonText: 'No reenviar',
+                }).then(async (result) => {
+                    if (result.isConfirmed) {
+                        try {
+                            const datos__post = {
+                                email_usuario
+                            };
+                            const response_reenvio = await ReverificarCuenta(datos__post);
+                            if (response_reenvio.data.success) {
+                                Swal.fire("Visite su correo electrónco y use el código de verificación", "", "success");
+                                navigate('/login');
+                            } else {
+                                if (response_reenvio.data.error) {
+                                    Swal.fire(response_reenvio.data.error, '', 'error');
+                                } else if (response_reenvio.data.correo) {
+                                    Swal.fire(response_reenvio.data.correo, '', 'error');
+                                } else {
+                                    Swal.fire('Error al reenviar correo', '', 'error');
+                                }
+                            }
+                        } catch (error) {
+                            Swal.fire('Error al reenviar correo', '', 'error');
+                        }
+                    } else if (result.isDenied) {
+                        Swal.fire('El correo no se reenvió', '', 'info');
+                    }
+                });
             } else if (response.data.cedula) {
                 Swal.fire(response.data.cedula, '', 'error');
             } else {
