@@ -1358,13 +1358,13 @@ export function FormularioRecuperacion() {
                     <>
                         <div className="form-group">
                             <label className='label' htmlFor="correo">Ingrese su dirección de correo electrónico :</label>
-                            <input className='form-control w-100' type="email"
+                            <textarea class="form-control w-100 tamanio-text-area"
                                 placeholder="Ingrese su correo electrónico**"
                                 id="correo" required autoFocus
                                 name="correo"
                                 value={correo}
-                                onChange={e => setCorreo(e.target.value)}
-                            />
+                                onChange={e => setCorreo(e.target.value)}>
+                            </textarea>
                         </div>
                         <Button type="submit" variant="success" disabled={habilitado}>
                             {habilitado ? 'Enviando...' : 'Enviar'}
