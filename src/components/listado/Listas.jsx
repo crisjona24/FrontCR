@@ -178,7 +178,14 @@ export function NivelLista({ usuario }) {
                         <p className="mb-0">{error}</p>
                     </div>
                 }
-
+                {
+                    niveles.length === 0 &&
+                    <div className="d-flex justify-content-center mt-5">
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                }
                 {
                     niveles.map((nivel) => (
                         <div className="contenedor-listado__nivel" key={nivel.id}>
@@ -242,21 +249,6 @@ export function NivelLista({ usuario }) {
                     ))
                 }
                 <hr style={{ color: '#0C2342' }} />
-                {
-                    usuario.tipo === "tecnico" &&
-
-                    <div className="cabeza__Nivel">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-12">
-                                    <h4 className="display-7 mt-2">
-                                        Reportes
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
             </>
 
         </div>
