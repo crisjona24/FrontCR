@@ -17,7 +17,7 @@ export function Tecnico({ datos }) {
     const navigate = useNavigate();
     return (
         <div className="align-items-center contenedor_perfil">
-            <Card className="mb-3" style={{ maxWidth: '75%' }}>
+            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
                 <Row>
                     <Col md={4}>
                         <Image
@@ -38,13 +38,13 @@ export function Tecnico({ datos }) {
                         <Card.Body>
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
-                                <Col md={6} >
+                                <Col md={8} >
                                     <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido</Card.Title>
                                     <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
-                                <Col md={6} >
+                                <Col md={4} >
                                     <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
                                     <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.edad} años
@@ -125,7 +125,7 @@ export function Comun({ datos }) {
     const navigate = useNavigate();
     return (
         <div className="align-items-center contenedor_perfil">
-            <Card className="tarjeta_perfil" style={{ maxWidth: '75%' }}>
+            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
                 <Row >
                     <Col md={4}>
                         <Image
@@ -146,13 +146,13 @@ export function Comun({ datos }) {
                         <Card.Body>
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
-                                <Col md={7} >
+                                <Col md={8} >
                                     <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido </Card.Title>
                                     <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
-                                <Col md={5} >
+                                <Col md={4} >
                                     <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
                                     <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.edad}
@@ -243,8 +243,8 @@ export function Comun({ datos }) {
 export function Paciente({ datos }) {
     const navigate = useNavigate();
     return (
-        <div className="align-items-center" style={{ height: '100vh', marginLeft: '20%', marginTop: '10%' }}>
-            <Card className="mb-1" style={{ maxWidth: '75%' }}>
+        <div className="align-items-center contenedor_perfil_p">
+            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
                 <Row >
                     <Col md={4}>
                         <Image
@@ -265,13 +265,13 @@ export function Paciente({ datos }) {
                         <Card.Body>
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
-                                <Col md={6} >
+                                <Col md={8} >
                                     <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido</Card.Title>
                                     <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
-                                <Col md={6} >
+                                <Col md={4} >
                                     <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
                                     <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
                                         {datos.edad}
