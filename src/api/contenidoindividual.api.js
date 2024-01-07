@@ -249,3 +249,20 @@ export const ObtenerSlugContenido = (slug) => {
         throw new Error("No se puede acceder a contenidos: " + error.message);
     }
 };
+
+// Edición de contenido individual manual
+export const EditarActividadManual = async (datos__post) => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+        throw new Error("NOT_AUTHENTICATED");
+    }
+    try {
+        return await baseurl.post('wapiptdah/estudio/editar/actividad/', datos__post, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+    } catch (error) {
+        throw new Error("No se puede editar el contenido: " + error.message);
+    }
+}
