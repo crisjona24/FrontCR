@@ -10,7 +10,10 @@ import { VerificarNivel, NivelIndividual, NivelEditar, NivelListado } from '../.
 import { VerificarDominio, DominioIndividual, DominioEditar } from '../../api/dominio.api';
 import { VerificarContenido, ContenidoIndividual, ContenidoEditar } from '../../api/contenido.api';
 import { VerificarCurso, CursoIndividual, CursoEditar } from '../../api/curso.api';
-import { VerificarContenidoIndividual, ContenidoDatosIndividual, ContenidoIndividualEditar } from '../../api/contenidoindividual.api';
+import {
+    VerificarContenidoIndividual, ContenidoDatosIndividual, ContenidoIndividualEditar,
+    EditarActividadManual
+} from '../../api/contenidoindividual.api';
 import { info__nivel, info__dominio, info__contenido, info__contenido__respuesta } from '../../controles/controlador_registro';
 import { validarTamanoImagen } from '../../controles/alert_user';
 import { ResultadoIndividual, ResultadoEditar } from '../../api/resultado.api';
@@ -635,8 +638,7 @@ export function FormularioEdicionIndividual({ slugContenido }) {
     const [descripcion_individual, setDescripcion] = useState("");
     const [preguntas, setPreguntas] = useState("");
     const [tipo_contenido, setTipo] = useState("");
-    const [contenido_individual, setContenido] = useState("");
-    const [portada_individual, setPortada] = useState("");
+    //const [portada_individual, setPortada] = useState("");
     const [respuesta, setRespuesta] = useState("");
     const [color, setColor] = useState("");
     const [error, setError] = useState("");
@@ -644,6 +646,14 @@ export function FormularioEdicionIndividual({ slugContenido }) {
     const [activo, setActivo] = useState(false);
     const [actColor, setActColor] = useState(false);
     const navigate = useNavigate();
+    // Imágenes
+    const [contenido_individual, setContenido] = useState("");
+    const [img1, setImg1] = useState("");
+    const [img2, setImg2] = useState("");
+    const [img3, setImg3] = useState("");
+    const [img4, setImg4] = useState("");
+    const [img5, setImg5] = useState("");
+    const [contador, setContador] = useState(0);
 
     const [nuevaDescripcion, setNuevaDescripcion] = useState("");
     const [nuevoRespuesta, setNuevaRespuesta] = useState("");
@@ -658,13 +668,11 @@ export function FormularioEdicionIndividual({ slugContenido }) {
             const contI = await VerificarContenidoIndividual(slug);
             if (contI.data.success && contI.data.identificador) {
                 const datos__user = await ContenidoDatosIndividual(contI.data.identificador);
-                console.log(datos__user.data)
                 setDatos(datos__user.data);
                 setTipo(datos__user.data.tipo_contenido);
                 //setRespuesta(datos__user.data.respuesta);
                 setNombreNivel(datos__user.data.nivel);
                 //setDescripcion(datos__user.data.descripcion_individual);
-
                 // Verificacion de descripcion de actividad
                 const descrip_completa = datos__user.data.descripcion_individual;
                 // Corroborar la existencia de coma como divisor
@@ -694,7 +702,15 @@ export function FormularioEdicionIndividual({ slugContenido }) {
                     // Si no hay comas, todo es parte de la descripción
                     setRespuesta(respuesta_completa);
                 }
-
+                // Conteo de imagenes
+                if (datos__user.data.tipo_contenido === "seleccionar_imagen") {
+                    if (datos__user.data.imagen3 !== "" && datos__user.data.imagen3 !== null) {
+                        setContador(4);
+                    }
+                    if (datos__user.data.imagen5 !== "" && datos__user.data.imagen5 !== null) {
+                        setContador(6);
+                    }
+                }
             } else {
                 if (contI.data.error) {
                     Swal.fire(contI.data.error, "", "warning");
@@ -720,19 +736,6 @@ export function FormularioEdicionIndividual({ slugContenido }) {
             obtenerDatosInd();
         }
     }, []);
-
-    // Campos vacios
-    const isValidForm = () => {
-        if (
-            descripcion_individual.trim() === "" ||
-            tipo_contenido.trim() === "" || tipo_contenido === "none" ||
-            nombre_nivel.trim() === "" ||
-            respuesta.trim() === ""
-        ) {
-            return false;
-        }
-        return true;
-    }
 
     // Funcion para mostrar errores
     const mostrarError = (message) => {
@@ -788,38 +791,51 @@ export function FormularioEdicionIndividual({ slugContenido }) {
         try {
             if (token) {
                 const formData = new FormData(); // Crear un objeto FormData
-                // Cambio de descripcion
+                // Cambio y envío de descripcion
                 if (activo) {
                     formData.append('descripcion_individual', nuevaDescripcion);
                 } else {
                     formData.append('descripcion_individual', descripcion_individual);
                 }
-                // Cambio de respuesta
+                // Cambio y envío de respuesta
                 if (actColor) {
                     formData.append('respuesta', nuevoRespuesta);
                 } else {
                     formData.append('respuesta', respuesta);
                 }
-                // Controlar que contenido_individual no sea vacio para enviar
-                if (contenido_individual !== "" && portada_individual === "") {
-                    formData.append('tipo_contenido', tipo_contenido);
-                    formData.append('nivel', nombre_nivel);
-                    formData.append('contenido_individual', contenido_individual);
-                } else if (contenido_individual === "" && portada_individual !== "") {
-                    formData.append('tipo_contenido', tipo_contenido);
-                    formData.append('nivel', nombre_nivel);
-                    formData.append('portada_individual', portada_individual);
-                } else if (contenido_individual !== "" && portada_individual !== "") {
-                    formData.append('tipo_contenido', tipo_contenido);
-                    formData.append('nivel', nombre_nivel);
-                    formData.append('portada_individual', portada_individual);
-                    formData.append('contenido_individual', contenido_individual);
+                // Mas datos
+                formData.append('tipo_contenido', tipo_contenido);
+                formData.append('nivel', nombre_nivel);
+                // Controlar el envio sin imágenes
+                if (contenido_individual !== "" || img1 !== "" || img2 !== "" || img3 !== "" || img4 !== "" || img5 !== "") {
+                    // Enviar id de la actividad
+                    formData.append('identificador', datos.id);
+                    // Controlar las imágenes por el tipo de contenido
+                    if (tipo_contenido === "pintar_imagen") {
+                        formData.append('contenido_individual', contenido_individual);
+                        formData.append('img1', img1);
+                    } else if (tipo_contenido === "selecion_multiple_img" || tipo_contenido === "pictograma") {
+                        formData.append('contenido_individual', contenido_individual);
+                        formData.append('img1', img1);
+                        formData.append('img2', img2);
+                        formData.append('img3', img3);
+                    } else if (tipo_contenido === "seleccionar_imagen") {
+                        // Controlar cuatro imagenes 
+                        formData.append('contenido_individual', contenido_individual);
+                        formData.append('img1', img1);
+                        formData.append('img2', img2);
+                        formData.append('img3', img3);
+                        formData.append('img4', img4);
+                        formData.append('img5', img5);
+                    } else {
+                        formData.append('contenido_individual', contenido_individual);
+                    }
+                    // Realizar la petición de edicion
+                    await confirmarEdicionManual(formData);
                 } else {
-                    formData.append('tipo_contenido', tipo_contenido);
-                    formData.append('nivel', nombre_nivel);
+                    // Realizar la petición de edicion
+                    await confirmEdicion(formData);
                 }
-                // Realizar la petición de edicion
-                await confirmEdicion(formData);
             }
         } catch (error) {
             if (error.message === "NOT_AUTHENTICATED") {
@@ -855,6 +871,52 @@ export function FormularioEdicionIndividual({ slugContenido }) {
             }
         });
     };
+
+    // Edición manual de actividad
+    const confirmarEdicionManual = async (formData) => {
+        return Swal.fire({
+            title: '¿Desea guardar los cambios en el contenido?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Actualizar',
+            denyButtonText: 'No guardar',
+        }).then(async (result) => {
+            if (result.isConfirmed) {
+                try {
+                    const edic_manual = await EditarActividadManual(formData);
+                    if (edic_manual.data.success) {
+                        Swal.fire("Datos actualizados", "", "success");
+                        navigate(`/contenido/individual/all/${slugContenido}/`)
+                    } else {
+                        if (edic_manual.data.error) {
+                            Swal.fire(edic_manual.data.error, '', 'error');
+                        } else {
+                            Swal.fire('Error al actualizar', '', 'error');
+                        }
+                    }
+                } catch (error) {
+                    Swal.fire('Error al actualizar', '', 'error');
+                }
+            } else if (result.isDenied) {
+                Swal.fire('Los cambios no se guardaron', '', 'info');
+                navigate(`/contenido/individual/all/${slugContenido}/`)
+            }
+        });
+    };
+
+    // Control de campos de entrada y salida
+    // Campos vacios
+    const isValidForm = () => {
+        if (
+            descripcion_individual.trim() === "" ||
+            tipo_contenido.trim() === "" || tipo_contenido === "none" ||
+            nombre_nivel.trim() === "" || nombre_nivel === "none" ||
+            respuesta.trim() === ""
+        ) {
+            return false;
+        }
+        return true;
+    }
 
     return (
         <form onSubmit={enviarFCont} encType='multipart/form-data'>
@@ -906,14 +968,6 @@ export function FormularioEdicionIndividual({ slugContenido }) {
                 {
                     !datos?.id &&
                     <div className="form-group">
-                        <label className='label' htmlFor="portada_individual">Portada:</label>
-                        <input className='form-control w-100' type="file" id="portada_individual"
-                            onChange={(e) => { setPortada(e.target.files[0]); validarTamanoImagen(e.target) }} name='portada_individual' accept="image/*" />
-                    </div>
-                }
-                {
-                    !datos?.id &&
-                    <div className="form-group">
                         <label className='label' htmlFor="contenido_individual">Contenido:</label>
                         <input className='form-control w-100' type="file" id="contenido_individual"
                             onChange={(e) => { setContenido(e.target.files[0]); validarTamanoImagen(e.target) }} name='contenido_individual' accept="image/*" />
@@ -921,30 +975,92 @@ export function FormularioEdicionIndividual({ slugContenido }) {
                 }
             </>
             <div className="form-group">
-                <label className='label' htmlFor="portada_individual">Portada:</label>
-                <input className='form-control w-100' type="file" id="portada_individual"
-                    onChange={(e) => { setPortada(e.target.files[0]); validarTamanoImagen(e.target) }} name='portada_individual' accept="image/*" />
-            </div>
-            <div className="form-group">
                 <label className='label' htmlFor="contenido_individual">Contenido:</label>
                 <input className='form-control w-100' type="file" id="contenido_individual"
                     onChange={(e) => { setContenido(e.target.files[0]); validarTamanoImagen(e.target) }} name='contenido_individual' accept="image/*" />
             </div>
-            <div className="form-group">
-                <label className='label' htmlFor="tipo">Tipo de contenido:</label>
-                <select className="form-control w-100" id="tipo" name="tipo"
-                    value={tipo_contenido} onChange={e => setTipo(e.target.value)}>
-                    <option value="none">None</option>
-                    <option value="selecion_individual">Tipo 1 - Selección Individual</option>
-                    <option value="verdadero_falso">Tipo 2 - Verdadero o Falso</option>
-                    <option value="selecion_multiple">Tipo 3 - Selección Múltiple</option>
-                    <option value="responder_preguntas">Tipo 4 - Responder Preguntas</option>
-                    <option value="pintar_imagen">Tipo 5 - Colorear</option>
-                    <option value="seleccionar_imagen">Tipo 6 - Selección de Imágenes</option>
-                    <option value="cuento">Tipo 7 - Lectura Comprensiva</option>
-                    <option value="juego_simple">Tipo 8 - Juegos Simples</option>
-                </select>
-            </div>
+            <>
+                {
+                    tipo_contenido === "selecion_multiple_img" || tipo_contenido === "pictograma" &&
+                    <>
+                        <div className='form-row row'>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img1">Contenido de opción 2:</label>
+                                <input className='form-control w-100' type="file" id="img1"
+                                    onChange={(e) => { setImg1(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img1' accept="image/*" />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img2">Contenido de opción 3:</label>
+                                <input className='form-control w-100' type="file" id="img2"
+                                    onChange={(e) => { setImg2(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img2' accept="image/*" />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className='label' htmlFor="img3">Contenido de opción 4:</label>
+                            <input className='form-control w-100' type="file" id="img3"
+                                onChange={(e) => { setImg3(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                name='img3' accept="image/*" />
+                        </div>
+                    </>
+
+                }
+                {
+                    tipo_contenido === "seleccionar_imagen" &&
+                    <>
+                        <div className='form-row row'>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img1">Contenido de opción 2:</label>
+                                <input className='form-control w-100' type="file" id="img1"
+                                    onChange={(e) => { setImg1(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img1' accept="image/*" />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img2">Contenido de opción 3:</label>
+                                <input className='form-control w-100' type="file" id="img2"
+                                    onChange={(e) => { setImg2(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img2' accept="image/*" />
+                            </div>
+                        </div>
+                        <div className='form-row row'>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img3">Contenido de opción 4:</label>
+                                <input className='form-control w-100' type="file" id="img3"
+                                    onChange={(e) => { setImg3(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img3' accept="image/*" />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img4">Contenido de opción 5:</label>
+                                <input className='form-control w-100' type="file" id="img4"
+                                    onChange={(e) => { setImg4(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img4' accept="image/*"
+                                    disabled={contador === 4 ? true : false}
+                                />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className='label' htmlFor="img5">Contenido de opción 6:</label>
+                            <input className='form-control w-100' type="file" id="img5"
+                                onChange={(e) => { setImg5(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                name='img5' accept="image/*"
+                                disabled={contador === 4 ? true : false}
+                            />
+                        </div>
+                    </>
+                }
+                {
+                    tipo_contenido === "pintar_imagen" &&
+                    <>
+                        <div className="form-group">
+                            <label className='label' htmlFor="img1">Contenido de opción 2:</label>
+                            <input className='form-control w-100' type="file" id="img1"
+                                onChange={(e) => { setImg1(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                name='img1' accept="image/*" />
+                        </div>
+                    </>
+                }
+            </>
             <div className="form-group">
                 <label className='label' htmlFor="grado">Grado:</label>
                 <select className="form-control w-100" id="grado"
