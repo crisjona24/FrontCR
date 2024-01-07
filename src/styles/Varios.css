@@ -105,9 +105,17 @@
 
 .contenedor_perfil {
     height: 500px;
-    margin-left: 15%;
+    margin-left: 8%;
+    margin-right: 15%;
+    margin-top: 10%;
+}
+
+.contenedor_perfil_p{
+    height: 500px;
+    margin-left: 8%;
     margin-right: 15%;
     margin-top: 5%;
+    margin-bottom: 5%;
 }
 
 .tarjeta_perfil {
@@ -126,11 +134,11 @@
 
 /* INFORMACION DATOS */
 .tamanio_almacenador_perfil {
-    max-height: 850px;
+    max-height: 950px;
 }
 
 .section_almacenador_perfil {
-    max-height: 850px;
+    max-height: 950px;
     border: 1px solid #ccc;
 }
 
