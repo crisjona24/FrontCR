@@ -171,9 +171,6 @@ export function Navbar_T() {
                     ><FontAwesomeIcon icon={faPen} style={{ marginRight: '4%' }} />Dominio</a>
                     <ul className={`collapse list-unstyled ${expandedMenu === 'dominios' ? 'show' : ''}`} id="pageSubmenu">
                         <li>
-                            <Link to={'/dominio/registro'} className='text__'>Agregar</Link>
-                        </li>
-                        <li>
                             <Link to={'/dominio/all'} className='text__'>Listado</Link>
                         </li>
                     </ul>
