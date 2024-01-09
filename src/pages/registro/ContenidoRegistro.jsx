@@ -41,7 +41,7 @@ export function ContenidoRegistro() {
             </>
             {/* FIN MODAL */}
             <CabeceraRegister />
-            <Container className='mb-5' style={{ width: '35%' }}>
+            <Container className='mb-5' style={{ width: '40%' }}>
                 <Container className='barraSup mt-5' >
                     <Row className='col-md-12'>
                         <div className="card-body col-md-7">
