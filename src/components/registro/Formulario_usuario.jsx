@@ -310,7 +310,8 @@ export function FormularioUsuario() {
 
     const validarEntrada = (value) => {
         // Evaluar dos valoes letras y que permita la ñ
-        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        //const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)?$/;
         return generar.test(value);
     };
 
@@ -726,7 +727,8 @@ export function FormularioComun() {
 
     const validarEntrada = (value) => {
         // Evaluar dos valoes letras y que permita la ñ
-        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        //const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)?$/;
         return generar.test(value);
     };
 
@@ -1160,7 +1162,8 @@ export function FormularioPaciente() {
 
     const validarEntrada = (value) => {
         // Evaluar dos valoes letras y que permita la ñ
-        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        //const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+ [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$/;
+        const generar = /^[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)(?: [A-Za-zÁáÉéÍíÓóÚúÑñ\s]+)?$/;
         return generar.test(value);
     };
 
