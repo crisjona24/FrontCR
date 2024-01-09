@@ -105,6 +105,8 @@ export function FormularioUsuario() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.celular) {
+                Swal.fire(response.data.celular, '', 'error');
             } else if (response.data.correo_validado) {
                 // Panel de confirmacion de reenvio de correo de verificación
                 Swal.fire({
@@ -513,6 +515,8 @@ export function FormularioComun() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.celular) {
+                Swal.fire(response.data.celular, '', 'error');
             } else if (response.data.correo_validado) {
                 // Panel de confirmacion de reenvio de correo de verificación
                 Swal.fire({
@@ -948,6 +952,8 @@ export function FormularioPaciente() {
                 mostrarError('La clave debe tener mínimo 8 caracteres que incluye una letra mayúscula, un número y un símbolo');
             } else if (response.data.correo) {
                 Swal.fire(response.data.correo, '', 'error');
+            } else if (response.data.celular) {
+                Swal.fire(response.data.celular, '', 'error');
             } else if (response.data.correo_validado) {
                 // Panel de confirmacion de reenvio de correo de verificación
                 Swal.fire({
