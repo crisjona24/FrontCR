@@ -170,6 +170,22 @@ export function FormularioContenidoIndividual({ slug }) {
         <form onSubmit={enviarFContenido} encType='multipart/form-data'>
             {error && <p>{error}</p>}
             <div className="form-group">
+                <label className='label' htmlFor="tipo">Tipo de contenido:</label>
+                <select className="form-select w-100" id="tipo" name="tipo"
+                    value={tipo_contenido} onChange={e => setTipo(e.target.value)}>
+                    <option value="none">None</option>
+                    <option value="selecion_individual">Tipo 1 - Selección Individual</option>
+                    <option value="verdadero_falso">Tipo 2 - Verdadero o Falso</option>
+                    <option value="selecion_multiple">Tipo 3 - Selección Múltiple</option>
+                    <option value="responder_preguntas">Tipo 4 - Responder Preguntas</option>
+                    <option value="pintar_imagen">Tipo 5 - Colorear</option>
+                    <option value="seleccionar_imagen">Tipo 6 - Selección de Imágenes</option>
+                    <option value="cuento">Tipo 7 - Lectura Comprensiva</option>
+                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con imagen</option>
+                    <option value="pictograma">Tipo 9 - Pictograma</option>
+                </select>
+            </div>
+            <div className="form-group">
                 <label className='label' htmlFor="descripcion">Indicación:</label>
                 <textarea className='form-control w-100 h-100' type="text" id="descripcion"
                     value={descripcion_individual} onChange={e => setDescripcion(e.target.value)}
@@ -207,22 +223,6 @@ export function FormularioContenidoIndividual({ slug }) {
                 <label className='label' htmlFor="portada_individual">Portada:</label>
                 <input className='form-control w-100' type="file" id="portada_individual"
                     onChange={(e) => { setPortada(e.target.files[0]); validarTamanoImagen(e.target) }} name='portada_individual' accept="image/*" />
-            </div>
-            <div className="form-group">
-                <label className='label' htmlFor="tipo">Tipo de contenido:</label>
-                <select className="form-control w-100" id="tipo" name="tipo"
-                    value={tipo_contenido} onChange={e => setTipo(e.target.value)}>
-                    <option value="none">None</option>
-                    <option value="selecion_individual">Tipo 1 - Selección Individual</option>
-                    <option value="verdadero_falso">Tipo 2 - Verdadero o Falso</option>
-                    <option value="selecion_multiple">Tipo 3 - Selección Múltiple</option>
-                    <option value="responder_preguntas">Tipo 4 - Responder Preguntas</option>
-                    <option value="pintar_imagen">Tipo 5 - Colorear</option>
-                    <option value="seleccionar_imagen">Tipo 6 - Selección de Imágenes</option>
-                    <option value="cuento">Tipo 7 - Lectura Comprensiva</option>
-                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con imagen</option>
-                    <option value="pictograma">Tipo 9 - Pictograma</option>
-                </select>
             </div>
             <div className="form-group">
                 <label className='label' htmlFor="contenido_individual">Contenido:</label>
