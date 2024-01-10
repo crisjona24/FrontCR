@@ -81,7 +81,7 @@ export function IniciarSesion() {
                 <main>
                     <div className="login-block">
                         <Image className='imagen-login' src='/img/Fondo1.jpg' fluid />
-                        <h1>Iniciar sesión</h1>
+                        <h1>Iniciarrrrr sesión</h1>
                         {error &&
                             <div id="alert" className="alert alert-success" role="alert">
                                 <h5 className="alert-heading">!Atención!</h5>
