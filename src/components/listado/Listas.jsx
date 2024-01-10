@@ -841,7 +841,7 @@ export function ResultadoLista({ usuario }) {
         // Validar tamaño de cédula
         if (cedula.length < 10) {
             Swal.fire("La cédula debe tener al menos 10 dígitos", "", "warning");
-            resetearBusquedaCedula();
+            resetearBusqueda();
             return;
         }
         // Verificar cédula ingresada
@@ -850,7 +850,7 @@ export function ResultadoLista({ usuario }) {
                 const resultadoCedula = await ResultadoporCedula(cedula, page);
                 if (resultadoCedula.data.results.length === 0) {
                     Swal.fire("No existen resultados de estudiante con esa cédula. Ingrese una válida.", "", "warning");
-                    resetearBusquedaCedula();
+                    resetearBusqueda();
                     return;
                 } else {
                     setResultadosBusqueda(resultadoCedula.data.results);
@@ -1095,6 +1095,7 @@ export function ResultadoLista({ usuario }) {
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
                                         value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
                                         <option value="7">Últimos 7 días</option>
@@ -2639,6 +2640,7 @@ export function ReporteLista({ usuario }) {
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
                                         value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
                                         <option value="7">Últimos 7 días</option>

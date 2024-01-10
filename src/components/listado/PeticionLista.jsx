@@ -319,6 +319,7 @@ export function PeticionLista() {
                                         <div className="col-10 d-flex flex-row">
                                             <select name="tipo" id="tipo"
                                                 value={tipo} onChange={(e) => setTipo(e.target.value)} className="form-select w-100"
+                                                disabled={isTamanio}
                                             >
                                                 <option value="0">Ninguno</option>
                                                 <option value="Editar">Edición</option>
@@ -352,6 +353,7 @@ export function PeticionLista() {
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
                                         value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
                                         <option value="7">Últimos 7 días</option>
@@ -688,6 +690,7 @@ export function PeticionListaAtendi() {
                                         <div className="col-10 d-flex flex-row">
                                             <select name="tipo" id="tipo"
                                                 value={tipo} onChange={(e) => setTipo(e.target.value)} className="form-select w-100"
+                                                disabled={isTamanio}
                                             >
                                                 <option value="0">Ninguno</option>
                                                 <option value="Editar">Edición</option>
@@ -721,6 +724,7 @@ export function PeticionListaAtendi() {
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
                                         value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
                                         <option value="7">Últimos 7 días</option>
@@ -1081,6 +1085,7 @@ export function PeticionListaUsuario() {
                                         <div className="col-10 d-flex flex-row">
                                             <select name="tipo" id="tipo"
                                                 value={tipo} onChange={(e) => setTipo(e.target.value)} className="form-select w-100"
+                                                disabled={isTamanio}
                                             >
                                                 <option value="0">Ninguno</option>
                                                 <option value="Editar">Edición</option>
@@ -1114,6 +1119,7 @@ export function PeticionListaUsuario() {
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
                                         value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
                                         <option value="7">Últimos 7 días</option>
