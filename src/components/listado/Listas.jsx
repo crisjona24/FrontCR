@@ -196,36 +196,41 @@ export function NivelLista({ usuario }) {
                             </div>
                             <div className="contenedor__nivel">
                                 <div className="contenedor-datos__nivel">
-                                    <div className="card__nivel">
-                                        <div className="textos__nivel d-flex flex-column justify-content-between">
-                                            <Image src="/img/abeja_ivbapx.jpg"
-                                                className="imagen__nivel" />
+                                    <div className="orden_879">
+                                        
+                                            <div className="alin-nivel">
+                                                <Image src="/img/abeja_ivbapx.jpg"
+                                                    className="imagen__nivel" />
+                                            </div>
+                                    
+                                    </div>
+                                    <div className="orden_880">
+                                        <div className="card__nivel">
+                                            <div className="textos__nivel alin-nivel">
+                                                <li>
+                                                    <h3 className="titulo__dato"> Nombre </h3>
+                                                </li>
+                                                <li className="valor__dato"> {nivel.nombre_nivel} </li>
+                                            </div>
+                                        </div>
+                                        <div className="card__nivel">
+                                            <div className="textos__nivel alin-nivel">
+                                                <li>
+                                                    <h3 className="titulo__dato"> Categorías </h3>
+                                                </li>
+                                                <li className="valor__dato"> {nivel.numero_categorias} </li>
+                                            </div>
+                                        </div>
+                                        <div className="card__nivel">
+                                            <div className="textos__nivel alin-nivel">
+                                                <li>
+                                                    <h3 className="titulo__dato"> Dificultad </h3>
+                                                </li>
+                                                <li className="valor__dato font-weight-normal"> {nivel.grado_dificultad} </li>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="card__nivel">
-                                        <div className="textos__nivel d-flex flex-column justify-content-between">
-                                            <li>
-                                                <h3 className="titulo__dato"> Nombre </h3>
-                                            </li>
-                                            <li className="valor__dato"> {nivel.nombre_nivel} </li>
-                                        </div>
-                                    </div>
-                                    <div className="card__nivel">
-                                        <div className="textos__nivel d-flex flex-column justify-content-between">
-                                            <li>
-                                                <h3 className="titulo__dato"> Categorías </h3>
-                                            </li>
-                                            <li className="valor__dato"> {nivel.numero_categorias} </li>
-                                        </div>
-                                    </div>
-                                    <div className="card__nivel">
-                                        <div className="textos__nivel d-flex flex-column justify-content-between">
-                                            <li>
-                                                <h3 className="titulo__dato"> Dificultad </h3>
-                                            </li>
-                                            <li className="valor__dato font-weight-normal"> {nivel.grado_dificultad} </li>
-                                        </div>
-                                    </div>
+
                                 </div>
 
                                 <>
