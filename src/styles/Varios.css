@@ -103,12 +103,6 @@
     /*overflow-y: scroll;*/
 }
 
-.contenedor_perfil {
-    height: 500px;
-    margin-left: 8%;
-    margin-right: 15%;
-    margin-top: 10%;
-}
 
 .contenedor_perfil_p{
     height: 500px;
@@ -116,14 +110,6 @@
     margin-right: 15%;
     margin-top: 5%;
     margin-bottom: 5%;
-}
-
-.tarjeta_perfil {
-    border: 1.5px solid #868686;
-    margin-bottom: 2%;
-    width: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .tarjeta__reporte {

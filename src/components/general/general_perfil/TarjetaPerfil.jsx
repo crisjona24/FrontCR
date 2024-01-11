@@ -1,6 +1,6 @@
 // Estilos
-//import "../../../styles/Perfil.css"
-import "bootstrap/dist/css/bootstrap.min.css"
+import "../../../styles/Perfil.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, Col, Row, Image, Button } from 'react-bootstrap';
 // Componentes
 import { useNavigate } from 'react-router-dom';
@@ -17,19 +17,18 @@ export function Tecnico({ datos }) {
     const navigate = useNavigate();
     return (
         <div className="align-items-center contenedor_perfil">
-            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
+            <Card className="tarjeta_perfil">
                 <Row>
                     <Col md={4}>
                         <Image
-                            className="img-fluid"
-                            style={{ borderRadius: '10px', height: '60%', marginTop: '50%' }}
-                            src="/img/tarjeta-perfil.png" alt="Sample"
+                            className="img-fluid img_perfil"
+                            src="/img/tarjeta-perfil.png" alt="Imagen de tarjeta de perfil"
                             fluid
                         />
                         <hr />
                         <Row className="mb-3">
-                            <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de unión</Card.Title>
-                            <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                            <Card.Title className="titulo_union">Fecha de unión</Card.Title>
+                            <Card.Text className="descrip_union">
                                 {datos.fecha_union}
                             </Card.Text>
                         </Row>
@@ -39,55 +38,57 @@ export function Tecnico({ datos }) {
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
                                 <Col md={8} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Nombre y Apellido</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
                                 <Col md={4} >
-                                    <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
-                                    <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta text-center">Edad</Card.Title>
+                                    <Card.Text className="descrip_tarjeta text-center">
                                         {datos.edad} años
                                     </Card.Text>
                                 </Col>
                             </Row>
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '1rem' }}>Correo electrónico</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                <Card.Title className="titulo_tarjeta">Correo electrónico</Card.Title>
+                                <Card.Text className="descrip_tarjeta">
                                     {datos.email}
                                 </Card.Text>
                             </Row>
                             <hr />
                             <Row className="mb-3">
                                 <Col md={5} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Username</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Username</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.username}
                                     </Card.Text>
                                 </Col>
                                 <Col md={7} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Fecha de nacimiento</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta text-center">Fecha de nacimiento</Card.Title>
+                                    <Card.Text className="descrip_tarjeta text-center">
                                         {datos.fecha_nacimiento}
                                     </Card.Text>
                                 </Col>
                             </Row>
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '1rem' }}>Número de contacto</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                <Card.Title className="titulo_tarjeta">Número de contacto</Card.Title>
+                                <Card.Text className="descrip_tarjeta">
                                     {datos.celular}
                                 </Card.Text>
                             </Row>
                             <Card.Text>
                                 <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                 <div className='d-flex justify-content-between align-items-center'>
-                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary"><FontAwesomeIcon icon={faBackward} /></Link>
-                                    <Link to={'/usuario/registro'} className="btn btn-primary" title="Editar perfil">
+                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary tam_icon">
+                                        <FontAwesomeIcon icon={faBackward} />
+                                    </Link>
+                                    <Link to={'/usuario/registro'} className="btn btn-primary tam_icon" title="Editar perfil">
                                         <FontAwesomeIcon icon={faPencil} />
                                     </Link>
-                                    <Button title="Eliminar perfil" className="btn btn-danger"
+                                    <Button title="Eliminar perfil" className="btn btn-danger tam_icon"
                                         onClick={() => {
                                             Swal.fire({
                                                 title: '¿Está seguro que desea eliminar su perfil?',
@@ -125,19 +126,18 @@ export function Comun({ datos }) {
     const navigate = useNavigate();
     return (
         <div className="align-items-center contenedor_perfil">
-            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
+            <Card className="tarjeta_perfil">
                 <Row >
                     <Col md={4}>
                         <Image
-                            className="img-fluid"
-                            style={{ borderRadius: '10px', height: '60%', marginTop: '50%' }}
-                            src="/img/tarjeta-perfil.png" alt="Sample"
+                            className="img-fluid img_perfil"
+                            src="/img/tarjeta-perfil.png" alt="Imagen de tarjeta de perfil"
                             fluid
                         />
                         <hr />
                         <Row className="mb-3">
-                            <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de unión</Card.Title>
-                            <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                            <Card.Title className="titulo_union">Fecha de unión</Card.Title>
+                            <Card.Text className="descrip_union">
                                 {datos.fecha_union}
                             </Card.Text>
                         </Row>
@@ -147,36 +147,36 @@ export function Comun({ datos }) {
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
                                 <Col md={8} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido </Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Nombre y Apellido</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
                                 <Col md={4} >
-                                    <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
-                                    <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
-                                        {datos.edad}
+                                    <Card.Title className="titulo_tarjeta text-center">Edad</Card.Title>
+                                    <Card.Text className="descrip_tarjeta text-center">
+                                        {datos.edad} años
                                     </Card.Text>
                                 </Col>
                             </Row>
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '1rem' }}>Correo electrónico</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                <Card.Title className="titulo_tarjeta">Correo electrónico</Card.Title>
+                                <Card.Text className="descrip_tarjeta">
                                     {datos.email}
                                 </Card.Text>
                             </Row>
                             <hr />
                             <Row className="mb-3">
                                 <Col md={7} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Área de ocupación</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Área de ocupación</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.area_estudio}
                                     </Card.Text>
                                 </Col>
                                 <Col md={5} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Género</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Género</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.genero}
                                     </Card.Text>
                                 </Col>
@@ -184,14 +184,14 @@ export function Comun({ datos }) {
                             <hr />
                             <Row className="mb-3">
                                 <Col md={5} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Celular</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Celular</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.celular}
                                     </Card.Text>
                                 </Col>
                                 <Col md={7} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Fecha de nacimiento</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Fecha de nacimiento</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.fecha_nacimiento}
                                     </Card.Text>
                                 </Col>
@@ -200,13 +200,13 @@ export function Comun({ datos }) {
                             <Card.Text>
                                 <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                 <div className='d-flex justify-content-between align-items-center'>
-                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary">
+                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary tam_icon">
                                         <FontAwesomeIcon icon={faBackward} />
                                     </Link>
-                                    <Link to={'/usuario/comun/registro'} className="btn btn-primary" title="Editar perfil">
+                                    <Link to={'/usuario/comun/registro'} className="btn btn-primary tam_icon" title="Editar perfil">
                                         <FontAwesomeIcon icon={faPencil} />
                                     </Link>
-                                    <Button title="Eliminar perfil" className="btn btn-danger"
+                                    <Button title="Eliminar perfil" className="btn btn-danger tam_icon"
                                         onClick={() => {
                                             Swal.fire({
                                                 title: '¿Está seguro que desea eliminar su perfil?',
@@ -244,19 +244,18 @@ export function Paciente({ datos }) {
     const navigate = useNavigate();
     return (
         <div className="align-items-center contenedor_perfil_p">
-            <Card className="tarjeta_perfil" style={{ maxWidth: '90%' }}>
+            <Card className="tarjeta_perfil">
                 <Row >
                     <Col md={4}>
                         <Image
-                            className="img-fluid"
-                            style={{ borderRadius: '10px', height: '50%', marginTop: '60%' }}
-                            src="/img/tarjeta-perfil.png" alt="Sample"
+                            className="img-fluid img_perfil"
+                            src="/img/tarjeta-perfil.png" alt="Imagen de tarjeta de perfil"
                             fluid
                         />
                         <hr />
                         <Row className="mb-3">
-                            <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de unión</Card.Title>
-                            <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                            <Card.Title className="titulo_union">Fecha de unión</Card.Title>
+                            <Card.Text className="descrip_union">
                                 {datos.fecha_union}
                             </Card.Text>
                         </Row>
@@ -266,57 +265,57 @@ export function Paciente({ datos }) {
                             <Card.Title className="titulo-peticion mb-3">Datos de usuario </Card.Title>
                             <Row className="mb-3">
                                 <Col md={8} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Nombre y Apellido</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.nombre} {datos.apellido}
                                     </Card.Text>
                                 </Col>
                                 <Col md={4} >
-                                    <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
-                                    <Card.Text className="text-center" style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta text-center">Edad</Card.Title>
+                                    <Card.Text className="descrip_tarjeta text-center">
                                         {datos.edad}
                                     </Card.Text>
                                 </Col>
                             </Row>
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '1rem' }}>Correo electrónico</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                <Card.Title className="titulo_tarjeta">Correo electrónico</Card.Title>
+                                <Card.Text className="descrip_tarjeta">
                                     {datos.email}
                                 </Card.Text>
                             </Row>
                             <hr />
                             <Row className="mb-3">
                                 <Col md={5} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Celular</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Celular</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.celular}
                                     </Card.Text>
                                 </Col>
                                 <Col md={7} >
-                                    <Card.Title style={{ fontSize: '1rem' }}>Número de Emergencia</Card.Title>
-                                    <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                    <Card.Title className="titulo_tarjeta">Número de Emergencia</Card.Title>
+                                    <Card.Text className="descrip_tarjeta">
                                         {datos.contacto_emergencia}
                                     </Card.Text>
                                 </Col>
                             </Row>
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '1rem' }}>Fecha de nacimiento</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto' }}>
+                                <Card.Title className="titulo_tarjeta">Fecha de nacimiento</Card.Title>
+                                <Card.Text className="descrip_tarjeta">
                                     {datos.fecha_nacimiento}
                                 </Card.Text>
                             </Row>
                             <Card.Text>
                                 <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                 <div className='d-flex justify-content-between align-items-center'>
-                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary">
+                                    <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary tam_icon">
                                         <FontAwesomeIcon icon={faBackward} />
                                     </Link>
-                                    <Link to={'/usuario/paciente/registro'} className="btn btn-primary" title="Editar perfil">
+                                    <Link to={'/usuario/paciente/registro'} className="btn btn-primary tam_icon" title="Editar perfil">
                                         <FontAwesomeIcon icon={faPencil} />
                                     </Link>
-                                    <Button title="Eliminar perfil" className="btn btn-danger"
+                                    <Button title="Eliminar perfil" className="btn btn-danger tam_icon"
                                         onClick={() => {
                                             Swal.fire({
                                                 title: '¿Está seguro que desea eliminar su perfil?',

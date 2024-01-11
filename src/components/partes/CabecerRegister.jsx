@@ -20,8 +20,8 @@ export function CabeceraRegister() {
                     {
                         token &&
                         <>
-                            <li><Link to="/ver/datos">Conocenos</Link></li>
-                            <li><Link to="/registro/contacto">Contactanos</Link></li>
+                            <li><Link to="/ver/datos" className="tam_cabecera">Conocenos</Link></li>
+                            <li><Link to="/registro/contacto" className="tam_cabecera">Contactanos</Link></li>
                         </>
                     }
 
