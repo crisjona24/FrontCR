@@ -112,12 +112,6 @@
     margin-bottom: 5%;
 }
 
-.tarjeta__reporte {
-    border: 0.5px solid #868686;
-    margin-bottom: 2%;
-    width: 100%;
-}
-
 /* INFORMACION DATOS */
 .tamanio_almacenador_perfil {
     max-height: 950px;

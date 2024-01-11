@@ -29,3 +29,15 @@
     opacity: 1;
     filter: contrast(120%);
 }
+
+/* AJUSTE SEGUN RESOLUCIÓN */
+@media (max-width: 767px) {
+
+    /* TARJETAS GENERALES */
+    .section__carrusel {
+        width: 600px;
+        height: 180px;
+        max-height: 180px;
+        margin-top: 5%;
+    }
+}

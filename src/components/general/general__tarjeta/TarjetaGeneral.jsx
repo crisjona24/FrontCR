@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPencil, faBackward, faCheckCircle, faCheckDouble, faExchange } from '@fortawesome/free-solid-svg-icons';
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
-// Metodos
+// Metodoss
 import { DominioEliminar } from '../../../api/dominio.api';
 import { ContenidoEliminar } from '../../../api/contenido.api';
 import { IndividualEliminar, ObtenerSlugDominio, ObtenerSlugContenido } from '../../../api/contenidoindividual.api';
@@ -108,7 +108,7 @@ export function Dominio({ datos }) {
                                     />
                                 </Row>
                                 <Card.Text>
-                                    <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
+                                    <small className="text-muted opc_tarjeta">Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
                                         <Link to={'/dominio/all'} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
@@ -233,8 +233,8 @@ export function Contenido({ datos, slug }) {
                 </div>
             </div>
             {error && <span>{error}</span>}
-            <div className="mt-5 align-items-center" style={{ height: '100vh', marginLeft: '20%' }}>
-                <Card className="mb-3" style={{ maxWidth: '75%' }}>
+            <div className="mt-5 align-items-center alm_tarjeta_general">
+                <Card className="mb-3 card_tarjeta_general">
                     <Row >
                         <Col md={4}>
                             <Image
@@ -245,8 +245,8 @@ export function Contenido({ datos, slug }) {
                             />
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de registro</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                                <Card.Title className="titulo_union">Fecha de registro</Card.Title>
+                                <Card.Text className="descrip_union">
                                     {datos.fecha_registro_contenido}
                                 </Card.Text>
                             </Row>
@@ -256,53 +256,53 @@ export function Contenido({ datos, slug }) {
                                 <Card.Title className="titulo-peticion mb-4">Contenido</Card.Title>
                                 <Row className="mb-3">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nombre</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Nombre</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.nombre}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Tipo de contenido</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className="text-center titulo_tarjeta">Tipo de contenido</Card.Title>
+                                        <Card.Text className="text-center texto-peticion">
                                             {datos.dominio_tipo}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Identificador</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datos.identificador_contenido}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Imagen de portada</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Imagen de portada</Card.Title>
                                     <Image
                                         className="img-fluid img-tarjeta"
                                         src={datos.portada}
-                                        alt="Sample"
+                                        alt="Imagen referencial de tarjeta"
                                         fluid
                                     />
                                 </Row>
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={`/contenido/all/${slugDominio}/`} title="Regresar" className="btn btn-primary">
+                                        <Link to={`/contenido/all/${slugDominio}/`} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                         <>
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
                                                     <Link to={`/contenido/editar/${datos.slug_contenido}/`} title="Editar contenido"
-                                                        className="btn btn-primary"><FontAwesomeIcon icon={faPencil} /></Link>
+                                                        className="btn btn-primary tam_icon"><FontAwesomeIcon icon={faPencil} /></Link>
                                                 ) : (
                                                     <></>
                                                 )
                                             }
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
-                                                    <Button title="Eliminar dominio" className="btn btn-danger"
+                                                    <Button title="Eliminar dominio" className="btn btn-danger tam_icon"
                                                         onClick={() => {
                                                             Swal.fire({
                                                                 title: '¿Está seguro que desea eliminar el contenido?',
@@ -466,8 +466,8 @@ export function Individual({ datos, slug }) {
                             />
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de registro</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                                <Card.Title className="titulo_union">Fecha de registro</Card.Title>
+                                <Card.Text className="descrip_union">
                                     {datos.fecha_registro_individual}
                                 </Card.Text>
                             </Row>
@@ -476,7 +476,7 @@ export function Individual({ datos, slug }) {
                             <Card.Body>
                                 <Card.Title className="titulo-peticion mb-3">Actividad</Card.Title>
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Descripción</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datos.descripcion_individual}
                                     </Card.Text>
@@ -484,13 +484,13 @@ export function Individual({ datos, slug }) {
                                 <hr />
                                 <Row className="mb-3">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Respuesta</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Respuesta</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.respuesta}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nivel</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Nivel</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.nivel}
                                         </Card.Text>
@@ -499,13 +499,13 @@ export function Individual({ datos, slug }) {
                                 <hr />
                                 <Row className="mb-3">
                                     <Col md={7}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Tipo contenido</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Tipo contenido</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {tipoContenido}
                                         </Card.Text>
                                     </Col>
                                     <Col md={5}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Identificador</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.identificador_individual}
                                         </Card.Text>
@@ -513,27 +513,28 @@ export function Individual({ datos, slug }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Imagen de portada / actividad</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Imagen de portada / actividad</Card.Title>
                                     <CarruselIndividual imagenes={images} />
                                 </Row>
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={`/contenido/individual/all/${slugContenido}/`} title="Regresar" className="btn btn-primary">
+                                        <Link to={`/contenido/individual/all/${slugContenido}/`} title="Regresar"
+                                            className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                         <>
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
                                                     <Link to={`/individual/editar/${datos.slug_contenido_individual}/${slugContenido}/`} title="Editar contenido"
-                                                        className="btn btn-primary"><FontAwesomeIcon icon={faPencil} /></Link>
+                                                        className="btn btn-primary tam_icon"><FontAwesomeIcon icon={faPencil} /></Link>
                                                 ) : (
                                                     <></>
                                                 )
                                             }
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
-                                                    <Button title="Eliminar actividad" className="btn btn-danger"
+                                                    <Button title="Eliminar actividad" className="btn btn-danger tam_icon"
                                                         onClick={() => {
                                                             Swal.fire({
                                                                 title: '¿Está seguro que desea eliminar la actividad?',
@@ -559,7 +560,7 @@ export function Individual({ datos, slug }) {
                                                 )
                                             }
                                         </>
-                                        <Link to={`/individual/${datos.slug_contenido_individual}/${slug2}/`} className="btn btn-success"
+                                        <Link to={`/individual/${datos.slug_contenido_individual}/${slug2}/`} className="btn btn-success tam_icon"
                                             title="Ver actividad">
                                             <FontAwesomeIcon icon={faCheckCircle} />
                                         </Link>
@@ -603,7 +604,7 @@ export function Peticion({ datos }) {
             if (datosRevisor.data.success) {
                 setRevisorN(datosRevisor.data.nombre_u);
                 setRevisorA(datosRevisor.data.apellido_u);
-            } 
+            }
         } catch (error) {
             if (error.message === "NOT_AUTHENTICATED") {
                 navigate('/login');
@@ -635,8 +636,8 @@ export function Peticion({ datos }) {
                 </div>
             </div>
 
-            <div className="mt-5 align-items-center" style={{ height: '100vh', marginLeft: '20%' }}>
-                <Card className="mb-3" style={{ maxWidth: '75%', border: '1px solid #ccc' }}>
+            <div className="mt-5 align-items-center alm_tarjeta_general">
+                <Card className="mb-3 card_tarjeta_general" style={{ border: '1px solid #ccc' }}>
                     <Row >
                         <Col md={4}>
                             <Image
@@ -651,13 +652,13 @@ export function Peticion({ datos }) {
                                 <Card.Title className="titulo-peticion mb-3">Petición</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Motivo de petición</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Motivo de petición</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.motivo_peticion}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title style={{ fontSize: '1rem' }} className="text-center">Tipo</Card.Title>
+                                        <Card.Title className="titulo_tarjeta text-center">Tipo</Card.Title>
                                         <Card.Text className="texto-peticion-c">
                                             {datos.tipo_peticion}
                                         </Card.Text>
@@ -665,7 +666,7 @@ export function Peticion({ datos }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Descripción</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
                                     <Card.Text className="texto-peticion" >
                                         {datos.peticion_cuerpo}
                                     </Card.Text>
@@ -673,13 +674,13 @@ export function Peticion({ datos }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Fecha de registro</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Fecha de registro</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.fecha_registro_peticion}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Estado</Card.Title>
+                                        <Card.Title className="titulo_tarjeta text-center" >Estado</Card.Title>
                                         <Card.Text className="texto-peticion text-center">
                                             {
                                                 datos.estado_revision === false ? (
@@ -696,14 +697,14 @@ export function Peticion({ datos }) {
                                     {
                                         tipoUsuario.tipo === "tecnico" ? (
                                             <>
-                                                <Card.Title style={{ fontSize: '1rem' }}>Registrado por</Card.Title>
+                                                <Card.Title className="titulo_tarjeta">Registrado por</Card.Title>
                                                 <Card.Text className="texto-peticion" >
                                                     {datos.nombre_usuario} {datos.apellido_usuario}
                                                 </Card.Text>
                                             </>
                                         ) : (
                                             <>
-                                                <Card.Title style={{ fontSize: '1rem' }}>Revisador por</Card.Title>
+                                                <Card.Title className="titulo_tarjeta">Revisador por</Card.Title>
                                                 <Card.Text className="texto-peticion" >
                                                     {
                                                         revisorN === "" && revisorA === "" ? (
@@ -712,7 +713,7 @@ export function Peticion({ datos }) {
                                                             <span>{revisorN} {revisorA}</span>
                                                         )
                                                     }
-                                                    
+
                                                 </Card.Text>
                                             </>
                                         )
@@ -724,16 +725,16 @@ export function Peticion({ datos }) {
                                         <>
                                             {
                                                 tipoUsuario.tipo === "tecnico" && datos.estado_revision === false ? (
-                                                    <Link to={'/peticion/all'} title="Regresar" className="btn btn-primary">
+                                                    <Link to={'/peticion/all'} title="Regresar" className="btn btn-primary tam_icon">
                                                         <FontAwesomeIcon icon={faBackward} />
                                                     </Link>
                                                 ) : (
                                                     tipoUsuario.tipo === "comun" ? (
-                                                        <Link to={'/peticion/all/usuario'} title="Regresar" className="btn btn-primary">
+                                                        <Link to={'/peticion/all/usuario'} title="Regresar" className="btn btn-primary tam_icon">
                                                             <FontAwesomeIcon icon={faBackward} />
                                                         </Link>
                                                     ) : (
-                                                        <Link to={'/peticion/all/atendida'} title="Regresar" className="btn btn-primary">
+                                                        <Link to={'/peticion/all/atendida'} title="Regresar" className="btn btn-primary tam_icon">
                                                             <FontAwesomeIcon icon={faBackward} />
                                                         </Link>
                                                     )
@@ -744,7 +745,7 @@ export function Peticion({ datos }) {
                                                 tipoUsuario.tipo === "tecnico"
                                                     && datos.estado_revision === false ?
                                                     (
-                                                        <Button title="Marcar revisión" className="btn btn-success"
+                                                        <Button title="Marcar revisión" className="btn btn-success tam_icon"
                                                             onClick={() => {
                                                                 Swal.fire({
                                                                     title: '¿Estás seguro de marcar revisión?',
@@ -828,21 +829,20 @@ export function Paciente({ datosPaciente, fecha }) {
                 </div>
             </div>
 
-            <div className="mt-5 align-items-center" style={{ height: '100vh', marginLeft: '20%' }}>
-                <Card className="mb-3" style={{ maxWidth: '75%' }}>
+            <div className="mt-5 align-items-center alm_tarjeta_general">
+                <Card className="mb-3 card_tarjeta_general">
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid"
-                                style={{ borderRadius: '10px', height: '60%', marginTop: '50%' }}
+                                className="img-fluid img_perfil"
                                 src="/img/tarjeta-paciente.png"
-                                alt="Sample"
+                                alt="Imagen referencial de tarjeta"
                                 fluid
                             />
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de inscripción</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                                <Card.Title className="titulo_union">Fecha de inscripción</Card.Title>
+                                <Card.Text className="descrip_union">
                                     {fecha}
                                 </Card.Text>
                             </Row>
@@ -851,14 +851,14 @@ export function Paciente({ datosPaciente, fecha }) {
                             <Card.Body>
                                 <Card.Title className="titulo-peticion">Datos del estudiante</Card.Title>
                                 <Row className="mb-2">
-                                    <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nombre y Apellido</Card.Title>
+                                    <Col md={8}>
+                                        <Card.Title className="titulo_tarjeta">Nombre y Apellido</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosPaciente.nombre_usuario} {datosPaciente.apellido_usuario}
                                         </Card.Text>
                                     </Col>
-                                    <Col md={6}>
-                                        <Card.Title className="text-center" style={{ fontSize: '1rem' }}>Edad</Card.Title>
+                                    <Col md={4}>
+                                        <Card.Title className="titulo_tarjeta text-center" >Edad</Card.Title>
                                         <Card.Text className="texto-peticion text-center">
                                             {datosPaciente.edad} años
                                         </Card.Text>
@@ -866,7 +866,7 @@ export function Paciente({ datosPaciente, fecha }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-2">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Correo Electrónico</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Correo Electrónico</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datosPaciente.email_usuario}
                                     </Card.Text>
@@ -874,13 +874,13 @@ export function Paciente({ datosPaciente, fecha }) {
                                 <hr />
                                 <Row className="mb-2" >
                                     <Col md={5}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Celular</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Celular</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosPaciente.celular}
                                         </Card.Text>
                                     </Col>
                                     <Col md={7}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Número de Emergencia</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Número de Emergencia</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosPaciente.contacto_emergencia}
                                         </Card.Text>
@@ -888,7 +888,7 @@ export function Paciente({ datosPaciente, fecha }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-2">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Dirección</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Dirección</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datosPaciente.direccion}
                                     </Card.Text>
@@ -897,7 +897,7 @@ export function Paciente({ datosPaciente, fecha }) {
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={`/pacientes/all/${slugCurso}/`} title="Regresar" className="btn btn-primary">
+                                        <Link to={`/pacientes/all/${slugCurso}/`} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                     </div>
@@ -927,23 +927,22 @@ export function Aplicacion() {
                 </div>
             </div>
 
-            <div className="mt-5 align-items-center" style={{ height: '100vh', marginLeft: '20%' }}>
-                <Card className="mb-3" style={{ maxWidth: '75%' }}>
+            <div className="mt-5 align-items-center alm_tarjeta_general">
+                <Card className="mb-3 card_tarjeta_general">
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid"
-                                style={{ borderRadius: '10px', height: '60%', marginTop: '50%' }}
+                                className="img-fluid img_perfil"
                                 src="/img/tarjeta-paciente.png"
-                                alt="Sample"
+                                alt="Imagen referencial de tarjeta"
                                 fluid
                             />
                         </Col>
                         <Col md={8}>
                             <Card.Body>
-                                <Card.Title className="titulo-peticion">Conoce acerca de WAPIPTDAH</Card.Title>
+                                <Card.Title className="titulo-conocenos">Conoce acerca de WAPIPTDAH</Card.Title>
                                 <Row className="mb-2">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Nombres :</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Nombres :</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         <p>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, soluta expedita inventore aut aperiam tenetur odit nam exercitationem esse saepe optio, ut consequuntur eaque sunt culpa sit dolor? Voluptatem, eius.
@@ -955,7 +954,7 @@ export function Aplicacion() {
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary">
+                                        <Link to={'/nivel/all'} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                     </div>
@@ -1137,19 +1136,19 @@ export function Reporte({ datosReporte }) {
                                 <Card.Title className="titulo-peticion">Informe de estado</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={5}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nombres:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Nombres:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.nombre_paciente} {datosReporte.apellido_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={3}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Edad:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Edad:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.edad_paciente} años
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Contacto:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Contacto:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.celular_paciente}
                                         </Card.Text>
@@ -1158,13 +1157,13 @@ export function Reporte({ datosReporte }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Correo electrónico:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Correo electrónico:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.correo_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Dirección:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Dirección:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.direccion_paciente}
                                         </Card.Text>
@@ -1173,13 +1172,13 @@ export function Reporte({ datosReporte }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={7}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Descripción de actividad:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Descripción de actividad:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.descripcion_individual}
                                         </Card.Text>
                                     </Col>
                                     <Col md={5}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Tipo de contenido:</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Tipo de contenido:</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {contenido_tipo}
                                         </Card.Text>
@@ -1187,7 +1186,7 @@ export function Reporte({ datosReporte }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Observación de actividad realizada:</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Observación de actividad realizada:</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datosReporte.observacion_}
                                     </Card.Text>
@@ -1195,13 +1194,13 @@ export function Reporte({ datosReporte }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Respuesta esperada :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Respuesta esperada :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.respuesta_r}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Respuesta proporcionada :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Respuesta proporcionada :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosReporte.respuesta}
                                         </Card.Text>
@@ -1209,7 +1208,7 @@ export function Reporte({ datosReporte }) {
                                 </Row>
                                 <hr />
                                 <Row>
-                                    <Card.Title style={{ fontSize: '1rem' }}>Tiempo de actividad realizada:</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Tiempo de actividad realizada:</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datosReporte.tiempo_m_} minutos con {datosReporte.tiempo_s_} segundos
                                     </Card.Text>
@@ -1218,7 +1217,7 @@ export function Reporte({ datosReporte }) {
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={'/reporte/all'} title="Regresar" className="btn btn-primary">
+                                        <Link to={'/reporte/all'} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                         <Button title="Eliminar reporte" variant="danger" className="separacion--boton h"
@@ -1334,8 +1333,7 @@ export function Resultado({ datosResultado }) {
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid"
-                                style={{ borderRadius: '10px', height: '40%', marginTop: '90%' }}
+                                className="img-fluid img_result"
                                 src="/img/tarjeta-resultado.png"
                                 alt="Sample"
                                 fluid
@@ -1346,13 +1344,13 @@ export function Resultado({ datosResultado }) {
                                 <Card.Title className="titulo-peticion">Información del estudiante</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nombres :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Nombres :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.nombre_paciente} {datosResultado.apellido_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Edad :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Edad :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.edad_paciente} años
                                         </Card.Text>
@@ -1361,13 +1359,13 @@ export function Resultado({ datosResultado }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Correo Electrónico :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Correo Electrónico :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.correo_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Celular :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Celular :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.celular_paciente}
                                         </Card.Text>
@@ -1377,13 +1375,13 @@ export function Resultado({ datosResultado }) {
                                 <Card.Title className="titulo-peticion">Información de la actividad</Card.Title>
                                 <Row className="mb-1" >
                                     <Col md={4}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Contenido :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Contenido :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {tipoContenido}
                                         </Card.Text>
                                     </Col>
                                     <Col md={8}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Descripción :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Descripción :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.descripcion_individual}
                                         </Card.Text>
@@ -1392,13 +1390,13 @@ export function Resultado({ datosResultado }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Respuesta esperada :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Respuesta esperada :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.respuesta}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Respuesta proporcionada :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Respuesta proporcionada :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.respuesta_contenido}
                                         </Card.Text>
@@ -1408,13 +1406,13 @@ export function Resultado({ datosResultado }) {
                                 <Card.Title className="titulo-peticion">Información de resultado</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Tiempo :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Tiempo :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.tiempo_m} minutos con {datosResultado.tiempo_s} segundos
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Fecha :</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Fecha :</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datosResultado.fecha_registro_resultado}
                                         </Card.Text>
@@ -1422,7 +1420,7 @@ export function Resultado({ datosResultado }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Observación :</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Observación :</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         <>
                                             {
@@ -1441,7 +1439,7 @@ export function Resultado({ datosResultado }) {
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={'/resultado/all'} title="Regresar" className="btn btn-primary">
+                                        <Link to={'/resultado/all'} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                         <>
