@@ -224,7 +224,7 @@
   text-align: center;
 }
 
-/* TARJETA DE PERFIL DE USUARIO  */
+/* TARJETAS DE INFORMACION  */
 .contenedor_perfil {
   height: 500px;
   margin-left: 8%;
@@ -269,6 +269,31 @@
 .tam_icon {
   height: fit-content;
   width: fit-content;
+}
+
+.img-tarjeta {
+  width: 275px;
+  height: 250px;
+  border-radius: 50px;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+/* TARJETA DE DOMINIO */
+.alm_tarjeta_general {
+  height: 100vh;
+  margin-left: 20%;
+}
+
+.card_tarjeta_general {
+  max-width: 75%;
+}
+
+.img-ref-tarjeta {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  margin-top: 25%;
 }
 
 /* Modificación por resolución */

@@ -211,21 +211,6 @@
 }
 
 /* TARJETAS */
-.img-tarjeta {
-    width: 275px;
-    height: 250px;
-    border-radius: 50px;
-    margin-left: 6%;
-    margin-top: 5%;
-}
-
-.img-ref-tarjeta {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    margin-top: 25%;
-}
-
 .img-tarjeta-2 {
     width: 275px;
     height: 175px;

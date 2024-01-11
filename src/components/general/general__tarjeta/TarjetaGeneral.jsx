@@ -55,20 +55,20 @@ export function Dominio({ datos }) {
                     </div>
                 </div>
             </div>
-            <div className="mt-5 align-items-center" style={{ height: '100vh', marginLeft: '22%' }}>
-                <Card className="mb-3" style={{ maxWidth: '75%' }}>
+            <div className="mt-5 align-items-center alm_tarjeta_general">
+                <Card className="mb-3 card_tarjeta_general">
                     <Row>
                         <Col md={4}>
                             <Image
                                 className="img-fluid img-ref-tarjeta"
                                 src="/img/tarjeta-datos.png"
-                                alt="Sample"
+                                alt="Imagen de referencia de tarjeta"
                                 fluid
                             />
                             <hr />
                             <Row className="mb-3">
-                                <Card.Title style={{ fontSize: '0.8rem' }}>Fecha de registro</Card.Title>
-                                <Card.Text style={{ color: '#333', fontFamily: 'Roboto', fontSize: '0.8rem' }}>
+                                <Card.Title className="titulo_union">Fecha de registro</Card.Title>
+                                <Card.Text className="descrip_union">
                                     {datos.fecha_registro_dominio}
                                 </Card.Text>
                             </Row>
@@ -78,13 +78,13 @@ export function Dominio({ datos }) {
                                 <Card.Title className="titulo-peticion mb-3">Dominio</Card.Title>
                                 <Row className="mb-3" >
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Nombre</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Nombre</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.nombre}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title style={{ fontSize: '1rem' }}>Identificador</Card.Title>
+                                        <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
                                         <Card.Text className="texto-peticion">
                                             {datos.identificador_dominio}
                                         </Card.Text>
@@ -92,14 +92,14 @@ export function Dominio({ datos }) {
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Descripción</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
                                     <Card.Text className="texto-peticion">
                                         {datos.descripcion}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title style={{ fontSize: '1rem' }}>Imagen de portada</Card.Title>
+                                    <Card.Title className="titulo_tarjeta">Imagen de portada</Card.Title>
                                     <Image
                                         className="img-fluid img-tarjeta"
                                         src={datos.portada_dominio}
@@ -110,14 +110,14 @@ export function Dominio({ datos }) {
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
                                     <div className='d-flex justify-content-between align-items-center'>
-                                        <Link to={'/dominio/all'} title="Regresar" className="btn btn-primary">
+                                        <Link to={'/dominio/all'} title="Regresar" className="btn btn-primary tam_icon">
                                             <FontAwesomeIcon icon={faBackward} />
                                         </Link>
                                         <>
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
                                                     <Link to={`/dominio/editar/${datos.slug_dominio}/`} title="Editar dominio"
-                                                        className="btn btn-primary"><FontAwesomeIcon icon={faPencil} /></Link>
+                                                        className="btn btn-primary tam_icon"><FontAwesomeIcon icon={faPencil} /></Link>
                                                 ) : (
                                                     <></>
                                                 )
@@ -125,7 +125,7 @@ export function Dominio({ datos }) {
                                             }
                                             {
                                                 tipoUsuario.tipo === "tecnico" ? (
-                                                    <Button title="Eliminar dominio" className="btn btn-danger"
+                                                    <Button title="Eliminar dominio" className="btn btn-danger tam_icon"
                                                         onClick={() => {
                                                             Swal.fire({
                                                                 title: '¿Está seguro que desea eliminar el dominio?',
