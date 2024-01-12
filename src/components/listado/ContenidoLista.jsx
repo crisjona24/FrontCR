@@ -128,7 +128,7 @@ export function ContenidoLista({ usuario }) {
                 <div className="container">
                     <div className="row col-md-12">
                         <div className="col-md-2">
-                            <Link to={'/dominio/all'} title="Regresar" className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}>
+                            <Link to={'/dominio/all'} title="Regresar" className="btn_operacion btn mt-1">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Link>
                         </div>
@@ -141,12 +141,12 @@ export function ContenidoLista({ usuario }) {
                             <>
                                 {
                                     usuario.tipo === 'tecnico' &&
-                                    <Link to={`/contenido/registro/${slug}/`} title="Registrar Contenido" className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}>
+                                    <Link to={`/contenido/registro/${slug}/`} title="Registrar Contenido" className="btn_operacion btn mt-1" >
                                         <FontAwesomeIcon icon={faPlus} />
                                     </Link>
                                 }
                                 {usuario.tipo === 'comun' &&
-                                    <Button title="Enviar una petición" className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}
+                                    <Button title="Enviar una petición" className="btn_operacion btn mt-1"
                                         onClick={() => {
                                             Swal.fire({
                                                 title: '¿Estás seguro?',
@@ -215,12 +215,12 @@ export function ContenidoLista({ usuario }) {
                                             <h3></h3>
                                             <div className="orden_lista_contenido">
                                                 <div className="col-md-6 align-self-end">
-                                                    <Link to={`/contenido/detalle/${contenido.slug_contenido}/`} className="btn btn-success">
+                                                    <Link to={`/contenido/detalle/${contenido.slug_contenido}/`} className="btn btn-success titulo_cuerpo_lista">
                                                         Detalle
                                                     </Link>
                                                 </div>
                                                 <div className="col-md-6 align-self-center">
-                                                    <Link to={`/contenido/individual/all/${contenido.slug_contenido}/`} className="btn btn-success">
+                                                    <Link to={`/contenido/individual/all/${contenido.slug_contenido}/`} className="btn btn-success titulo_cuerpo_lista">
                                                         Aprendamos
                                                     </Link>
                                                 </div>
@@ -236,15 +236,15 @@ export function ContenidoLista({ usuario }) {
                 </div>
                 <div className="panel-footer-dominios">
                     <div className="row">
-                        <div className="col-sm-9 col-xs-9">Información - Contenidos</div>
+                        <div className="col-sm-9 col-xs-9 titulo_pie_lista">Información - Contenidos</div>
                         <div className="pagination-controls col-sm-3 col-xs-3">
                             <Button onClick={anterior} disabled={page === 1}
-                                className="separacion--boton" title="Atrás">
+                                className="tam_lista separacion--boton" title="Atrás">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Button>
-                            <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                            <span className="titulo_pie_pagina">Página {page} de {numeroPag}</span>
                             <Button onClick={siguiente} disabled={page === numeroPag}
-                                className="separacion--boton--derecha" title="Adelante">
+                                className="tam_lista separacion--boton--derecha" title="Adelante">
                                 <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
                             </Button>
                         </div>

@@ -223,7 +223,7 @@
 }
 
 /* MEDIAS */
-@media (max-width: 975px) {
+@media (max-width: 990px) {
     .orden_lista_contenido {
         display: flex;
         flex-direction: column;

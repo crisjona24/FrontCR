@@ -169,7 +169,7 @@ export function IndividualLista({ usuario }) {
                 <div className="container">
                     <div className="row col-md-12">
                         <div className="col-md-2">
-                            <Link to={`/contenido/all/${slugDominio}/`} className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}>
+                            <Link to={`/contenido/all/${slugDominio}/`} className="btn_operacion btn mt-1">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Link>
                         </div>
@@ -182,12 +182,12 @@ export function IndividualLista({ usuario }) {
                             <>
                                 {
                                     usuario.tipo === 'tecnico' &&
-                                    <Link to={`/contenido/individual/registro/${slug}/`} className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}>
+                                    <Link to={`/contenido/individual/registro/${slug}/`} className="btn_operacion btn mt-1">
                                         <FontAwesomeIcon icon={faPlus} />
                                     </Link>
                                 }
                                 {usuario.tipo === 'comun' &&
-                                    <Button title="Enviar una petición" className="btn mt-1" style={{ backgroundColor: '#0C2342', color: '#fff', borderRadius: '50%' }}
+                                    <Button title="Enviar una petición" className="btn_operacion btn mt-1"
                                         onClick={() => {
                                             Swal.fire({
                                                 title: '¿Estás seguro?',
@@ -258,7 +258,7 @@ export function IndividualLista({ usuario }) {
                                                     usuario.tipo !== 'paciente' &&
                                                     <div className="col-md-6 align-self-end">
                                                         <Link to={`/individual/detalle/${contenido.slug_contenido_individual}/${slug}/`}
-                                                            className="btn btn-success" title="Detalle de actividad">
+                                                            className="btn btn-success titulo_cuerpo_lista" title="Detalle de actividad">
                                                             Detalle
                                                         </Link>
                                                     </div>
@@ -270,7 +270,7 @@ export function IndividualLista({ usuario }) {
                                                             "col-md-6 align-self-end"
                                                     }>
                                                     <Link to={`/individual/${contenido.slug_contenido_individual}/${slug}/`}
-                                                        className="btn btn-success" title="Resolver actividad">
+                                                        className="btn btn-success titulo_cuerpo_lista" title="Resolver actividad">
                                                         Aprendamos
                                                     </Link>
                                                 </div>
@@ -284,15 +284,15 @@ export function IndividualLista({ usuario }) {
                 </div>
                 <div className="panel-footer-dominios">
                     <div className="row">
-                        <div className="col-sm-9 col-xs-9">Información - Actividades</div>
+                        <div className="col-sm-9 col-xs-9 titulo_pie_lista">Información - Actividades</div>
                         <div className="pagination-controls col-sm-3 col-xs-3">
                             <Button onClick={anterior} disabled={page === 1}
-                                className="separacion--boton" title="Atrás">
+                                className="tam_lista separacion--boton" title="Atrás">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Button>
-                            <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                            <span className="titulo_pie_pagina">Página {page} de {numeroPag}</span>
                             <Button onClick={siguiente} disabled={page === numeroPag}
-                                className="separacion--boton--derecha" title="Adelante">
+                                className="tam_lista separacion--boton--derecha" title="Adelante">
                                 <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
                             </Button>
                         </div>
