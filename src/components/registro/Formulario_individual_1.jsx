@@ -243,7 +243,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
             <div className="form-check pt-1 pb-1" key={index}>
                 <div className="container">
                     <input
-                        className="form-check-input mt-3 border border-dark"
+                        className="form-check-input border border-dark in_out"
                         type="radio"
                         name="gridRadios"
                         id={`gridRadios${index + 1}`}
@@ -253,7 +253,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                 </div>
                 <div className="estilo__ container">
                     <label
-                        className="form-check-label pt-2"
+                        className="form-check-label tam_label_acti1"
                         htmlFor={`gridRadios${index + 1}`}
                     >
                         {valor}
@@ -280,14 +280,15 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                         <>
                             {
                                 tipo === "paciente" &&
-                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button" className="btn btn-success"
-                                    style={{ width: '100%', height: '40px', marginRight: '2%' }}>
+                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button"
+                                    className="btn_resolver_act btn btn-success"
+                                >
                                     Resolver
                                 </button>
                             }
                         </>
                         <span>
-                            <Link className="btn btn-success" style={{ backgroundColor: '#0C2342' }}>
+                            <Link className="tam_actividad btn btn-success" style={{ backgroundColor: '#0C2342' }}>
                                 <FontAwesomeIcon icon={faStar} />
                             </Link>
                         </span>
@@ -312,7 +313,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                             <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
-                        <form onSubmit={enviarForm} style={{ marginLeft: '5%', marginTop: '1%' }}>
+                        <form onSubmit={enviarForm} className="formulario_acti">
                             <div className="ml-3 pl-3">
                                 <fieldset className="form-group">
                                     <div className="row col-sm-11 d-flex flex-column justify-content-between">
@@ -324,7 +325,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                             <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
                             <div className="d-flex flex-column justify-content-between align-items-center mt-3">
-                                <button type="submit" className="btn btn-success w-25"
+                                <button type="submit" className="btn btn-success tam_listo"
                                     id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                     !Listo!
                                 </button>

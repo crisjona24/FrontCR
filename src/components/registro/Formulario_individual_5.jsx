@@ -259,14 +259,15 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                         <>
                             {
                                 tipo === "paciente" &&
-                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button" className="btn btn-success"
-                                    style={{ width: '100%', height: '40px', marginRight: '2%' }}>
+                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button"
+                                    className="btn_resolver_act btn btn-success"
+                                >
                                     Resolver
                                 </button>
                             }
                         </>
                         <span>
-                            <Link className="btn btn-success" style={{ backgroundColor: '#0C2342' }}>
+                            <Link className="tam_actividad btn btn-success" style={{ backgroundColor: '#0C2342' }}>
                                 <FontAwesomeIcon icon={faStar} />
                             </Link>
                         </span>
@@ -297,9 +298,8 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                         {/* <!-- Contenido de url--> */}
                         <div className="contenedor__imagen_tipo4 espacio-tipo4">
                             <div className="conten__tipo4 mt-4">
-
                                 <div className="contenedor__colorear">
-                                    <div className="imagen_tipo4 mt-1 ml-5 mb-1 d-flex justify-content-center">
+                                    <div className="imagen_tipo5 mt-1 ml-5 mb-1 d-flex justify-content-center">
                                         <img src={url__contenido} alt=""
                                             ref={imagenRef}
                                             onDrop={pintar}
@@ -342,7 +342,7 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="card__cuerpo mt-2 pl-2 d-flex justify-content-left">
+                            <div className="card__cuerpo mt-2 d-flex justify-content-left ubi_refe_5">
                                 <span className="referencia-2">
                                     Actividad: Desarrollo de habilidades en niños
                                 </span>
@@ -350,8 +350,8 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                         </div>
                         <br />
                         {/* <!-- Contenido de url--> */}
-                        <div style={{ width: '800px' }}>
-                            <form onSubmit={enviarForm} style={{ marginLeft: '5%', marginTop: '1%' }}>
+                        <div >
+                            <form onSubmit={enviarForm} className="formulario_acti_4">
                                 <div className="ml-3 pl-3">
                                     <fieldset>
                                         <>
@@ -369,7 +369,8 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                                                                         {item}
                                                                     </label>
                                                                     <div className="col-sm-7 mt-3">
-                                                                        <input autoComplete="off" type="text" className="form-control w-100 h-75" id={`respuesta-${index}`}
+                                                                        <input autoComplete="off" type="text" className="form-control inp_acti_5"
+                                                                            id={`respuesta-${index}`}
                                                                             name="respuesta" style={{ border: '1px solid #0C2342' }}
                                                                             onChange={(e) => handleInputChange(index - 1, e)} />
                                                                     </div>
@@ -385,8 +386,8 @@ export function FormularioCinco({ context, usuario, slugContenido }) {
                                 {/* Eñ input que se envia */}
                                 <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
-                                <div className="d-flex flex-column align-items-center mt-3" >
-                                    <button type="submit" className="btn btn-success w-25"
+                                <div className="d-flex flex-column justify-content-center align-items-center" >
+                                    <button type="submit" className="btn btn-success tam_listo_5"
                                         id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                         !Listo!
                                     </button>

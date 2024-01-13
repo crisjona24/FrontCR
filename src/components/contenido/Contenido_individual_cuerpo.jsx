@@ -182,7 +182,7 @@ export function ContenidoCuerpo({ context, slugContenido, tipoUsuarioP }) {
             <div className="container pt-2">
                 <div className="row col-md-12">
                     <div className="titulo__cabecera p-1">
-                        <Link to={`/contenido/individual/all/${slugContenido}/`} className="boton__regreso btn btn-success">
+                        <Link to={`/contenido/individual/all/${slugContenido}/`} className="btn_operacion btn btn-success">
                             <FontAwesomeIcon icon={faBackward} />
                         </Link>
                         <h2 className="display-6">
@@ -640,26 +640,3 @@ export function ModalContenidoTipo8() {
         </>
     )
 }
-
-
-{/*
-                        <>
-                            {
-                                tipoUsuario.tipo === "paciente" &&
-                                <div className="contenido__niveles">
-                                    <div className="level textos">
-                                        <Link> <FontAwesomeIcon title="Nivel de dificultad 1" icon={fa1} /> </Link>
-                                    </div>
-                                    <div className="level textos">
-                                        <Link> <FontAwesomeIcon title="Nivel de dificultad 2" icon={fa2} /> </Link>
-                                    </div>
-                                    <div className="level textos">
-                                        <Link> <FontAwesomeIcon title="Nivel de dificultad 3" icon={fa3} /> </Link>
-                                    </div>
-                                    <div className="level textos">
-                                        <Link> <FontAwesomeIcon title="Nivel de dificultad 4" icon={fa4} /> </Link>
-                                    </div>
-                                </div>
-                            }
-                        </>
-    */}

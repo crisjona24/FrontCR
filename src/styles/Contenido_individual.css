@@ -219,18 +219,6 @@
     justify-content: space-between;
 }
 
-.contenedor__imagen_tipo4 {
-    width: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.espacio-tipo4 {
-    margin-left: 10%;
-}
-
 .conten__ {
     align-items: center;
     border: 1px solid #333;
@@ -238,16 +226,28 @@
     padding: 0;
 }
 
+.contenedor__imagen_tipo4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .conten__tipo4 {
     width: 100%;
     height: 100%;
-    align-items: center;
+    margin-left: 40%;
+    margin-top: 5%;
 }
 
 .imagen {
     width: 80%;
     height: 100%;
 }
+
+/* Tipo de imagen para actividades */
 
 .imagen_tipo1 {
     width: 80%;
@@ -276,12 +276,33 @@
 .imagen_tipo4 {
     width: 100%;
     height: 100%;
+    margin: auto;
 }
 
 .imagen_tipo4 img {
     width: 500px;
     height: 400px;
     border: 0.5 px gray;
+}
+
+.imagen_tipo5 {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.imagen_tipo5 img {
+    width: 500px;
+    height: 400px;
+    border: 0.5 px gray;
+}
+
+/* FIN */
+
+/* Ajuste de texto */
+
+.ubi_refe_5 {
+    margin-left: 25%;
 }
 
 .card__cuerpo {
@@ -315,7 +336,10 @@
     width: 40px;
 }
 
+/* FIN */
+
 /* Estilos para el círculo */
+
 .form-check-label {
     position: relative;
     cursor: pointer;
@@ -331,10 +355,12 @@
     border: 2px solid #ccc;
 }
 
+/* FIN */
+
 /* Estilo del círculo seleccionado */
+
 .form-check-input:checked~.circle {
     border-color: #007bff;
-    /* Color de borde del círculo seleccionado (puedes ajustar el color según tus necesidades) */
 }
 
 /* Estilos para el botón deshabilitado */
@@ -343,7 +369,8 @@
     opacity: 0.65;
 }
 
-/* NUEVO CONTENIDO INDIVIDUAL */
+/* Estilos de contenido individual */
+
 .contenedor-division_CI {
     width: 100%;
 
@@ -444,7 +471,7 @@
 
 .contenedor__colorear {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1px;
 }
 
@@ -469,7 +496,10 @@
     border-radius: 25px;
 }
 
-/* PALETA */
+/* FIN */
+
+/* Estilo de paleta de colores  */
+
 .color-box {
     width: 45px;
     height: 45px;
@@ -482,7 +512,6 @@
     flex-direction: column;
     justify-content: space-between;
     justify-content: center;
-
     width: 100%;
 }
 
@@ -492,9 +521,326 @@
     margin-left: 25%;
 }
 
+/* FIN */
+
+.estilo__ label {
+    padding-top: 2%;
+}
+
+.in_out {
+    margin-top: 3%;
+}
+
+/* Estilos de boton en actividades */
+
+.tam_actividad {
+    width: fit-content;
+    height: fit-content;
+}
+
+.btn_resolver_act {
+    width: 100%;
+    height: 40px;
+    margin-right: 2%;
+}
+
+.tam_listo {
+    width: 25%;
+}
+
+.tam_listo_4 {
+    width: 30%;
+    margin-left: 40%;
+}
+
+.tam_listo_5 {
+    margin-top: 1%;
+    width: 40%;
+    margin-left: 20%;
+}
+
+/* FIN */
+
+/* Estilos de input en actividades */
+
+.inp_acti_4 {
+    width: 130%;
+    height: 50px;
+    margin-right: 2%;
+}
+
+.inp_acti_5 {
+    width: 125%;
+    height: 60px;
+    margin-right: 2%;
+    margin-top: auto;
+}
+
+.tt_a {
+    width: 100%;
+    margin-left: 40%;
+}
+
+/* FIN */
+
+/* Estilos de formularios */
+
+.formulario_acti_4 {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.formulario_acti {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+.formulario_acti_6 {
+    margin-left: 5%;
+    margin-top: 1%;
+
+}
+
+/* FIN */
 
 /* MEDIAS */
-@media (max-width: 940px) {
+
+@media screen and (max-width: 1200px) {
+    .contenedor__cuerpo {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contenedor__cuerpo_tipo4 {
+        grid-template-columns: 3fr;
+    }
+
+    .contenedor__cuerpo__division {
+        grid-template-columns: 2fr;
+    }
+
+    .contenedor__cuerpo__division_tipo4 {
+        grid-template-columns: 3fr;
+    }
+
+    .contenedor__cuerpo__division_t9 {
+        grid-template-columns: 3fr;
+    }
+
+    .contenedor__imagen {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .contenedor__imagen_tipo4 {
+        width: auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .espacio-tipo4 {
+        margin-left: 0%;
+    }
+
+    .conten__ {
+        align-items: center;
+        border: 1px solid #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    .conten__tipo4 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
+    .imagen {
+        width: 80%;
+        height: 100%;
+    }
+
+    .imagen_tipo1 {
+        width: 80%;
+        height: 100%;
+    }
+
+    .imagen_tipo1 img {
+        width: 300px;
+        height: 300px;
+        border: 0.5 px gray;
+        margin-bottom: 15px;
+    }
+
+    .imagen_tipo3 {
+        width: 80%;
+        height: 100%;
+    }
+
+    .imagen_tipo3 img {
+        width: 300px;
+        height: 300px;
+        border: 0.5 px gray;
+        margin-bottom: 5px;
+    }
+
+    .imagen_tipo4 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .imagen_tipo4 img {
+        width: 500px;
+        height: 400px;
+        border: 0.5 px gray;
+    }
+
+    .card__cuerpo {
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .titulo__cabecera h2 {
+        font-size: 1.3rem;
+    }
+
+    .titulo__ayuda {
+        font-size: 0.9rem;
+    }
+
+    .subtitulo h4 {
+        font-size: 1.1rem;
+    }
+
+    .alineacion__etiquetas h5 {
+        font-size: 1.1rem;
+    }
+
+    .alineacion__etiquetas h6 {
+        font-size: 1rem;
+    }
+
+    .formulario_acti {
+        margin-left: 10%;
+        margin-top: 1%;
+    }
+
+    .formulario_acti_4 {
+        margin-left: 1%;
+        margin-top: 1%;
+    }
+
+    .formulario_acti_6 {
+        margin-left: -15%;
+        margin-top: 1%;
+    }
+
+    .span-2 {
+        font-size: 1.1rem;
+        text-align: justify;
+    }
+
+    .tt_a {
+        margin-left: 25%;
+    }
+
+    .tam_listo {
+        width: 40%;
+    }
+
+    .tam_listo_4 {
+        margin-left: 25%;
+    }
+
+    .tam_listo_5 {
+        width: 40%;
+        margin-left: 35%;
+    }
+
+    .etiqueta {
+        padding-left: 10%;
+        font-size: 1rem;
+    }
+
+    .inp_acti_4 {
+        width: 100%;
+        height: 50px;
+        margin-right: 2%;
+    }
+
+    .inp_acti_5 {
+        width: 135%;
+    }
+
+    .imagen_tipo4 {
+        width: 75%;
+        height: 100%;
+        margin-left: initial;
+    }
+
+    .imagen_tipo5 img {
+        width: 375px;
+        height: 400px;
+    }
+
+    .estilo__ {
+        height: 40px;
+        margin-left: 8%;
+    }
+
+    .estilo__ label {
+        padding-top: 5%;
+    }
+
+    .in_out {
+        margin-top: 8%;
+    }
+
+    .textos__6 img {
+        width: 230px;
+        height: 210px;
+        border: 0.8px solid #333;
+    }
+
+    .textos__6_3 img {
+        width: 170px;
+        height: 160px;
+        border: 0.8px solid#333;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .titulo__ayuda {
+        font-size: 0.6rem;
+    }
+
+    .subtitulo h4 {
+        font-size: 1rem;
+    }
+
+    .alineacion__etiquetas h5 {
+        font-size: 1rem;
+    }
+
+    .alineacion__etiquetas h6 {
+        font-size: 0.9rem;
+    }
+
+    .formulario_acti {
+        margin-left: 15%;
+        margin-top: 1%;
+    }
+
+    .tam_label_acti1 {
+        margin-top: 2%;
+        font-size: small;
+    }
+
     .contenido-imagen {
         margin-left: 10%;
         margin-top: 5%;
@@ -504,13 +850,12 @@
         gap: 5px;
     }
 
-    .contenedor-division_CI_6,
     .contenedor-division_CI_6_3 {
         gap: 2px;
     }
 
     .textos__10 img {
-        width: 200px;
+        width: 250px;
         height: 200px;
         border: 2.5px solid #333;
         border-radius: 25px;
@@ -527,9 +872,127 @@
         height: 130px;
         border: 0.8px solid#333;
     }
+
+    .imagen_tipo4 {
+        width: 100%;
+        height: 100%;
+    }
+
+    .imagen_tipo4 img {
+        width: 400px;
+        height: 350px;
+    }
+
+    .imagen_tipo5 img {
+        width: 350px;
+        height: 375px;
+        border: 0.5 px gray;
+    }
+
+    .tam_listo_4 {
+        margin-left: 50%;
+    }
+
+    .tt_a {
+        margin-left: 40%;
+    }
+
+    .inp_acti_4 {
+        width: 150%;
+        height: 50px;
+        margin-right: 2%;
+    }
+
+    .inp_acti_5 {
+        width: 130%;
+    }
+
+    .tam_listo_5 {
+        width: 40%;
+        margin-left: 30%;
+    }
+
+    .formulario_acti_6 {
+        margin-left: 8%;
+        margin-top: 1%;
+    }
 }
 
-@media (max-width: 860px) {
+@media screen and (max-width: 900px) {
+    .tam_listo {
+        font-size: medium;
+    }
+
+    .etiqueta {
+        padding-left: 50px;
+        font-size: 0.8rem;
+    }
+
+    .in_out {
+        margin-top: 10%;
+    }
+
+    .card__cuerpo .referencia {
+        font-size: 0.6rem;
+    }
+
+    .tam_listo_4 {
+        margin-left: 40%;
+    }
+
+    .tam_listo_5 {
+        margin-top: 0;
+        margin-left: 40%;
+    }
+
+    .inp_acti_4 {
+        width: 125%;
+        height: 50px;
+        margin-right: 2%;
+    }
+
+    .imagen_tipo1 img {
+        width: 250px;
+        height: 300px;
+        padding-top: 15%;
+    }
+
+    .imagen_tipo3 img {
+        width: 250px;
+        height: 300px;
+        margin-bottom: 5px;
+    }
+
+    .imagen_tipo4 img {
+        width: 400px;
+        height: 300px;
+    }
+
+    .imagen_tipo5 img {
+        width: 325px;
+        height: 375px;
+        border: 0.5 px gray;
+    }
+
+    .formulario_acti_6 {
+        margin-left: 5%;
+        margin-top: 1%;
+    }
+
+    .textos__6 img {
+        width: 200px;
+        height: 200px;
+        border: 0.8px solid #333;
+    }
+
+    .textos__6_3 img {
+        width: 130px;
+        height: 130px;
+        border: 0.8px solid#333;
+    }
+}
+
+@media screen and (max-width: 860px) {
     .contenido-imagen {
         margin-left: 10%;
         margin-top: 5%;
@@ -562,9 +1025,93 @@
         height: 110px;
         border: 0.8px solid#333;
     }
+
+    .in_out {
+        margin-top: 12%;
+    }
+
+    .largo_labl {
+        width: 200px;
+    }
+
+    .imagen_tipo4 img {
+        width: 375px;
+        height: 300px;
+    }
+
+    .tt_a {
+        margin-left: 35%;
+    }
+
+    .etiqueta {
+        padding-left: 10%;
+        font-size: 0.9rem;
+    }
+
+    .inp_acti_5 {
+        width: 125%;
+    }
 }
 
-@media (max-width: 770px) {
+@media screen and (max-width: 830px) {
+    .estilo__ {
+        height: 30px;
+        margin-left: 8%;
+    }
+
+    .estilo__ label {
+        padding-top: 2%;
+    }
+
+    .tam_listo {
+        font-size: medium;
+    }
+
+    .in_out {
+        margin-top: 6%;
+    }
+
+    .imagen_tipo1 {
+        width: 80%;
+        height: 100%;
+    }
+
+    .imagen_tipo1 img {
+        width: 225px;
+        height: 275px;
+        padding-top: 15%;
+    }
+
+    .imagen_tipo3 img {
+        width: 225px;
+        height: 275px;
+        margin-bottom: 5px;
+    }
+
+    .imagen_tipo5 img {
+        width: 300px;
+        height: 325px;
+        border: 0.5 px gray;
+    }
+
+    .inp_acti_5 {
+        width: 130%;
+    }
+
+    .textos__6 img {
+        width: 175px;
+        height: 175px;
+        border: 0.8px solid #333;
+    }
+
+    .textos__6_3 img {
+        width: 110px;
+        height: 110px;
+        border: 0.8px solid#333;
+    }
+}
+
+@media screen and (max-width: 780px) {
     .contenido-imagen {
         margin-left: 5%;
         margin-top: 5%;
@@ -597,9 +1144,59 @@
         height: 100px;
         border: 0.8px solid#333;
     }
+
+    .formulario_acti {
+        margin-top: 5%;
+    }
+
+    .tam_listo {
+        width: 50%;
+        font-size: small;
+    }
+
+    .estilo__ label {
+        padding-top: 1%;
+    }
+
+    .card__cuerpo .referencia {
+        font-size: 0.5rem;
+    }
+
+    .imagen_tipo1 {
+        width: 80%;
+        height: 95%;
+    }
+
+    .imagen_tipo1 img {
+        width: 200px;
+        height: 250px;
+        padding-top: 15%;
+    }
+
+    .imagen_tipo3 {
+        width: 80%;
+        height: 95%;
+    }
+
+    .imagen_tipo3 img {
+        width: 200px;
+        height: 250px;
+        padding-top: 15%;
+    }
+
+    .imagen_tipo4 img {
+        width: 325px;
+        height: 300px;
+    }
+
+    .imagen_tipo5 img {
+        width: 275px;
+        height: 325px;
+        border: 0.5 px gray;
+    }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .contenido-imagen {
         margin-left: 5%;
         margin-top: 5%;
@@ -611,18 +1208,18 @@
 
     .contenedor-division_CI_6,
     .contenedor-division_CI_6_3 {
-        gap: 2px;
+        gap: 3px;
     }
 
     .textos__10 img {
-        width: 200px;
+        width: 190px;
         height: 200px;
         border: 2.5px solid #333;
         border-radius: 25px;
     }
 
     .textos__6 img {
-        width: 180px;
+        width: 200px;
         height: 200px;
         border: 0.8px solid #333;
     }
@@ -631,6 +1228,52 @@
         width: 120px;
         height: 110px;
         border: 0.8px solid#333;
+    }
+
+    .titulo__ayuda {
+        font-size: 0.7rem;
+    }
+
+    .subtitulo h4 {
+        font-size: 0.9rem;
+    }
+
+    .alineacion__etiquetas h5 {
+        font-size: 0.9rem;
+    }
+
+    .alineacion__etiquetas h6 {
+        font-size: 0.8rem;
+    }
+
+    .estilo__ label {
+        padding-top: 5%;
+        font-size: small;
+    }
+
+    .estilo__ {
+        height: 40px;
+        margin-left: 8%;
+    }
+
+    .in_out {
+        margin-top: 5%;
+    }
+
+    .formulario_acti {
+        margin-left: 10%;
+        margin-top: 1%;
+    }
+
+    .tam_label_acti1 {
+        margin-top: auto;
+        font-size: small;
+    }
+
+    .imagen_tipo1,
+    .imagen_tipo3 {
+        width: 80%;
+        height: 100%;
     }
 }
 

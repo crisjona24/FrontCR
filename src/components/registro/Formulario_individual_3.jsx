@@ -259,7 +259,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
             <div className="form-check pt-1 pb-1" key={index}>
                 <div className="container">
                     <input
-                        className="form-check-input mt-3 border border-dark"
+                        className="form-check-input border border-dark in_out"
                         type="checkbox"
                         name="gridCheck"
                         id={`gridCheck${index + 1}`}
@@ -269,7 +269,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                     />
                 </div>
                 <div className="estilo__ container">
-                    <label className="form-check-label pt-2" htmlFor={`gridCheck${index + 1}`}>
+                    <label className="form-check-label largo_labl" htmlFor={`gridCheck${index + 1}`}>
                         {valor}
                     </label>
                 </div>
@@ -310,14 +310,15 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                         <>
                             {
                                 tipo === 'paciente' &&
-                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button" className="btn btn-success"
-                                    style={{ width: '100%', height: '40px', marginRight: '2%' }}>
+                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button"
+                                    className="btn_resolver_act btn btn-success"
+                                >
                                     Resolver
                                 </button>
                             }
                         </>
                         <span>
-                            <Link className="btn btn-success" style={{ backgroundColor: '#0C2342' }}>
+                            <Link className="btn btn-success tam_actividad" style={{ backgroundColor: '#0C2342' }}>
                                 <FontAwesomeIcon icon={faStar} />
                             </Link>
                         </span>
@@ -342,7 +343,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                                 Indicación: {descripcion__contenido}</span>
                         </div>
                         <br />
-                        <form onSubmit={enviarForm} style={{ marginLeft: '5%', marginTop: '1%' }}>
+                        <form onSubmit={enviarForm} className="formulario_acti">
                             <div className="ml-3 pl-3">
                                 <fieldset>
                                     {/*<!-- Se visualiza las opciones de la evaluación-->*/}
@@ -355,7 +356,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                             <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
                             <div className="d-flex flex-column justify-content-between align-items-center mt-3">
-                                <button type="submit" className="btn btn-success w-25"
+                                <button type="submit" className="btn btn-success tam_listo"
                                     id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                     !Listo!
                                 </button>

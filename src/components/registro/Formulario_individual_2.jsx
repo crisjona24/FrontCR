@@ -28,7 +28,7 @@ export function FormularioDos({ context, usuario, slugContenido }) {
         identificador, tipo__contenido, slug
     } = context;
     const tipo = usuario.tipo;
-    
+
     // Control de minutos
     const [startTime, setStartTime] = useState(null);
     const [tiempoDuracion, setTiempoDuracion] = useState(0);
@@ -211,14 +211,15 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                         <>
                             {
                                 tipo === "paciente" &&
-                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button" className="btn btn-success"
-                                    style={{ width: '100%', height: '40px', marginRight: '2%' }}>
+                                <button ref={empezarBtnRef} disabled={btnDisabled} id="empezarBtn" type="button"
+                                    className="btn_resolver_act btn btn-success"
+                                >
                                     Resolver
                                 </button>
                             }
                         </>
                         <span>
-                            <Link className="btn btn-success" style={{ backgroundColor: '#0C2342' }}>
+                            <Link className="btn btn-success tam_actividad" style={{ backgroundColor: '#0C2342' }}>
                                 <FontAwesomeIcon icon={faStar} />
                             </Link>
                         </span>
@@ -242,7 +243,7 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                             <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
-                        <form onSubmit={enviarForm} style={{ marginLeft: '5%', marginTop: '1%' }}>
+                        <form onSubmit={enviarForm} className="formulario_acti">
                             <div className="ml-3 pl-3">
                                 <fieldset className="form-group">
                                     <div className="row col-sm-11 d-flex flex-column justify-content-between">
@@ -250,11 +251,11 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {(contenedor.toLowerCase() === "verdadero" || contenedor.toLowerCase() === "falso") && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input mt-3 border border-dark" type="radio" name="gridRadios"
+                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
                                                         id="gridRadios1" value={contenedor} onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
-                                                    <label className="form-check-label pt-2" htmlFor="gridRadios1">
+                                                    <label className="form-check-label" htmlFor="gridRadios1">
                                                         {contenedor}
                                                     </label>
                                                 </div>
@@ -263,11 +264,11 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {contenedor.toLowerCase() === "verdadero" && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input mt-3 border border-dark" type="radio" name="gridRadios"
+                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
                                                         id="gridRadios2" value="falso" onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
-                                                    <label className="form-check-label pt-2" htmlFor="gridRadios2">
+                                                    <label className="form-check-label" htmlFor="gridRadios2">
                                                         Falso
                                                     </label>
                                                 </div>
@@ -276,11 +277,11 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {contenedor.toLowerCase() === "falso" && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input mt-3 border border-dark" type="radio" name="gridRadios"
+                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
                                                         id="gridRadios2" value="verdadero" onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
-                                                    <label className="form-check-label pt-2" htmlFor="gridRadios2">
+                                                    <label className="form-check-label" htmlFor="gridRadios2">
                                                         Verdadero
                                                     </label>
                                                 </div>
@@ -293,7 +294,7 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                             <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
                             <div className="d-flex flex-column justify-content-between align-items-center mt-3">
-                                <button type="submit" className="btn btn-success w-25"
+                                <button type="submit" className="btn btn-success tam_listo"
                                     id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                     !Listo!
                                 </button>
