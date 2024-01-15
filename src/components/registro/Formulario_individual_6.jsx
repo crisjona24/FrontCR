@@ -50,7 +50,7 @@ const MovimientoImagen = ({ url, index, moveImage }) => {
 };
 
 
-export function FormularioSeis({ context, usuario, slugContenido }) {
+export function FormularioSeis({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados */
     const {
         url__contenido, descripcion__contenido,
@@ -269,23 +269,33 @@ export function FormularioSeis({ context, usuario, slugContenido }) {
                 </div>
             }
             <div className="container row col-md-12 mt-4">
-                <div className="contenedor__cuerpo" id="miContainer" ref={miContainerRef} style={{
-                    pointerEvents: contenidoHabilitado ? 'auto' : 'none',
-                    opacity: contenidoHabilitado ? 1 : 0.5
-                }}>
+                <div className="contenedor__cuerpo_tipo6" id="miContainer" ref={miContainerRef}
+                    style={{
+                        pointerEvents: contenidoHabilitado ? 'auto' : 'none',
+                        opacity: contenidoHabilitado ? 1 : 0.5
+                    }}>
                     <div className="contenedor__cuerpo__division_t9">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
-                        <div className="contenido-imagen">
+                        <div className="contenido-imagen_6">
                             <form onSubmit={enviarForm} className="formulario_acti_6">
                                 <div className="ml-3 pl-3">
                                     <fieldset className="form-group">
                                         <DndProvider backend={HTML5Backend}>
                                             <div className={imagenesRandom.length > 4 && imagenesRandom.length <= 6 ? "contenedor-division_CI_6_3" : "contenedor-division_CI_6"}>
                                                 {imagenesRandom.map((url, index) => (
-                                                    <div className={imagenesRandom.length > 4 && imagenesRandom.length <= 6 ? "textos__6_3" : "textos__6"}
+                                                    <div
+                                                        className={
+                                                            imagenesRandom.length > 4 && imagenesRandom.length <= 6
+                                                                ? isActive
+                                                                    ? "textos__6_3_"
+                                                                    : "textos__6_3"
+                                                                : isActive
+                                                                    ? "textos__6_"
+                                                                    : "textos__6"
+                                                        }
                                                         key={index}>
                                                         <MovimientoImagen url={url} index={index} moveImage={moveImage} />
                                                     </div>
@@ -296,7 +306,7 @@ export function FormularioSeis({ context, usuario, slugContenido }) {
                                 </div>
                                 {/* Eñ input que se envia */}
                                 <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
-                                <div className="d-flex flex-column justify-content-between align-items-center mt-3">
+                                <div className="d-flex flex-column justify-content-between align-items-center mt-1">
                                     <button type="submit" className="tam_listo btn btn-success"
                                         id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                         !Listo!
@@ -304,7 +314,6 @@ export function FormularioSeis({ context, usuario, slugContenido }) {
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -151,7 +151,7 @@ export function ContenidoIndividual() {
                         }
                         {/* Renderiza el componente almacenado en la variable contenidoComponente */}
                     </>
-                    <SeccionContenido activarSidebar={activarSidebar} tipoUsuario={tipoUsuario} contenidosI={contenidosI} slugContenido={slugContenido} />
+                    <SeccionContenido activarSidebar={activarSidebar} isActive={isActive} tipoUsuario={tipoUsuario} contenidosI={contenidosI} slugContenido={slugContenido} />
                 </div>
             </div>
             <PieRegister />
@@ -160,7 +160,7 @@ export function ContenidoIndividual() {
     )
 }
 
-function SeccionContenido({ activarSidebar, tipoUsuario, contenidosI, slugContenido }) {
+function SeccionContenido({ activarSidebar, isActive, tipoUsuario, contenidosI, slugContenido }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -172,7 +172,7 @@ function SeccionContenido({ activarSidebar, tipoUsuario, contenidosI, slugConten
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <ContenidoCuerpo context={contenidosI} slugContenido={slugContenido} tipoUsuarioP={tipoUsuario} />
+                <ContenidoCuerpo context={contenidosI} isActive={isActive} slugContenido={slugContenido} tipoUsuarioP={tipoUsuario} />
             </div>
         </section>
     )

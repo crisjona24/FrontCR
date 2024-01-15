@@ -25,7 +25,7 @@ import { FormularioDefault } from '../registro/Formulario_default';
 import { VerificarUsuario } from "../../api/usuario.api";
 import { ContenidoIndividualTodo } from "../../api/contenidoindividual.api";
 
-export function ContenidoCuerpo({ context, slugContenido, tipoUsuarioP }) {
+export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP }) {
     // Valores recuperados de context
     const {
         nombre__contenido,
@@ -88,23 +88,23 @@ export function ContenidoCuerpo({ context, slugContenido, tipoUsuarioP }) {
                 mensajeAyuda = <ModalContenidoTipo4 />;
                 break;
             case "pintar_imagen":
-                tipoFormulario = <FormularioCinco context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioCinco context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo5 />;
                 break;
             case "seleccionar_imagen":
-                tipoFormulario = <FormularioSeis context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioSeis context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo6 />;
                 break;
             case "cuento":
-                tipoFormulario = <FormularioSiete context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioSiete context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo7 />;
                 break;
             case 'selecion_multiple_img':
-                tipoFormulario = <FormularioNueve context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioNueve context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo8 />;
                 break;
             case 'pictograma':
-                tipoFormulario = <FormularioDiez context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioDiez context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo6 />;
                 break;
             default:

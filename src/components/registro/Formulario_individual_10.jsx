@@ -25,7 +25,7 @@ const randomImgs = (array) => {
 }
 
 
-export function FormularioDiez({ context, usuario, slugContenido }) {
+export function FormularioDiez({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados */
     const {
         url__contenido, descripcion__contenido,
@@ -257,7 +257,7 @@ export function FormularioDiez({ context, usuario, slugContenido }) {
                 }}>
                     <div className="contenedor__cuerpo__division_t9">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
                         <div className="contenido-imagen_9">
@@ -270,11 +270,11 @@ export function FormularioDiez({ context, usuario, slugContenido }) {
                                     <fieldset className="form-group">
                                         <div className="contenedor-division_CI_10" >
                                             {imagenesRandom.map((url, index) => (
-                                                <div className="textos__10"
+                                                <div className={isActive ? 'textos__10_' : 'textos__10'}
                                                     key={index}>
                                                     <img
                                                         src={url}
-                                                        alt=""
+                                                        alt="Imagen de pictograma"
                                                         onClick={() => controlSeleccion(url)} // Añadir evento onClick
                                                         style={{ cursor: 'pointer' }} // Cambiar el cursor al pasar sobre la imagen
                                                     />

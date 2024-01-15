@@ -22,7 +22,7 @@ const convertirMilisegundosAMinutosYSegundos = (milisegundos) => {
     return { minutos, segundos: segundosRestantes };
 };
 
-export function FormularioNueve({ context, usuario, slugContenido }) {
+export function FormularioNueve({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados */
     const {
         url__contenido, descripcion__contenido,
@@ -242,7 +242,7 @@ export function FormularioNueve({ context, usuario, slugContenido }) {
                 }}>
                     <div className="contenedor__cuerpo__division_t9">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
                         <div className="contenido-imagen_9">
@@ -257,7 +257,8 @@ export function FormularioNueve({ context, usuario, slugContenido }) {
                                                             id="gridRadios1" value="Correcto" onChange={e => setRespuesta(e.target.value)} />
                                                     </div>
                                                     <div>
-                                                        <img src={url__contenido} alt="Imagen de selección" className="imagen_selcmulti" />
+                                                        <img src={url__contenido} alt="Imagen de selección"
+                                                            className={isActive ? 'imagen_selcmulti_' : 'imagen_selcmulti'} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -268,7 +269,7 @@ export function FormularioNueve({ context, usuario, slugContenido }) {
                                                             id="gridRadios2" value="Incorrecto" onChange={e => setRespuesta(e.target.value)} />
                                                     </div>
                                                     <div>
-                                                        <img src={url_c1} alt="Imagen de selección" className="imagen_selcmulti" />
+                                                        <img src={url_c1} alt="Imagen de selección" className={isActive ? 'imagen_selcmulti_' : 'imagen_selcmulti'} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -279,7 +280,7 @@ export function FormularioNueve({ context, usuario, slugContenido }) {
                                                             id="gridRadios3" value="Incorrecto" onChange={e => setRespuesta(e.target.value)} />
                                                     </div>
                                                     <div>
-                                                        <img src={url_c2} alt="Imagen de selección" className="imagen_selcmulti" />
+                                                        <img src={url_c2} alt="Imagen de selección" className={isActive ? 'imagen_selcmulti_' : 'imagen_selcmulti'} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -290,7 +291,7 @@ export function FormularioNueve({ context, usuario, slugContenido }) {
                                                             id="gridRadios4" value="Incorrecto" onChange={e => setRespuesta(e.target.value)} />
                                                     </div>
                                                     <div>
-                                                        <img src={url_c3} alt="Imagen de selección" className="imagen_selcmulti" />
+                                                        <img src={url_c3} alt="Imagen de selección" className={isActive ? 'imagen_selcmulti_' : 'imagen_selcmulti'} />
                                                     </div>
                                                 </div>
                                             </div>
