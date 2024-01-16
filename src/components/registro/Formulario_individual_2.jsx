@@ -21,7 +21,7 @@ const convertirMilisegundosAMinutosYSegundos = (milisegundos) => {
     return { minutos, segundos: segundosRestantes };
 };
 
-export function FormularioDos({ context, usuario, slugContenido }) {
+export function FormularioDos({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados *** */
     const {
         url__contenido, contenedor, descripcion__contenido,
@@ -232,7 +232,7 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                     <p className="mb-0">{error}</p>
                 </div>
             }
-            <div className="container row col-md-12 mt-4">
+            <div className="container row col-md-12 mt-2">
                 <div className="contenedor__cuerpo" id="miContainer" ref={miContainerRef}
                     style={{
                         pointerEvents: contenidoHabilitado ? 'auto' : 'none',
@@ -240,7 +240,8 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                     }}>
                     <div className="contenedor__cuerpo__division">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`}
+                                style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
                         <form onSubmit={enviarForm} className="formulario_acti">
@@ -251,7 +252,8 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {(contenedor.toLowerCase() === "verdadero" || contenedor.toLowerCase() === "falso") && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
+                                                    <input className={`form-check-input border border-dark ${isActive ? 'in_out_2_' : 'in_out_2'}`}
+                                                        type="radio" name="gridRadios"
                                                         id="gridRadios1" value={contenedor} onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
@@ -264,7 +266,8 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {contenedor.toLowerCase() === "verdadero" && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
+                                                    <input className={`form-check-input border border-dark ${isActive ? 'in_out_2_' : 'in_out_2'}`}
+                                                        type="radio" name="gridRadios"
                                                         id="gridRadios2" value="falso" onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
@@ -277,7 +280,8 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                                         {contenedor.toLowerCase() === "falso" && (
                                             <div className="form-check pt-3 pb-3">
                                                 <div className="container">
-                                                    <input className="form-check-input border border-dark in_out" type="radio" name="gridRadios"
+                                                    <input className={`form-check-input border border-dark ${isActive ? 'in_out_2_' : 'in_out_2'}`}
+                                                        type="radio" name="gridRadios"
                                                         id="gridRadios2" value="verdadero" onChange={e => setRespuesta(e.target.value)} />
                                                 </div>
                                                 <div className="estilo__ container">
@@ -293,7 +297,7 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                             {/* Eñ input que se envia */}
                             <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
-                            <div className="d-flex flex-column justify-content-between align-items-center mt-3">
+                            <div className="d-flex flex-column justify-content-between align-items-center mt-1">
                                 <button type="submit" className="btn btn-success tam_listo"
                                     id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                     !Listo!
@@ -303,15 +307,15 @@ export function FormularioDos({ context, usuario, slugContenido }) {
                     </div>
                     <div className="contenedor__imagen">
                         <div className="conten__">
-                            <div className="imagen_tipo1 mt-2">
+                            <div className={isActive ? 'imagen_tipo1_' : 'imagen_tipo1'}>
                                 <img src={url__contenido}
-                                    alt="" />
+                                    alt="Imagen de actividad" />
                             </div>
-                            <div className="card__cuerpo mt-2 pl-2">
-                                <span className="referencia">
-                                    Actividad: Desarrollo de habilidades en niños, Ecuador
-                                </span>
-                            </div>
+                        </div>
+                        <div className="card__cuerpo mt-2 pl-2">
+                            <span className="referencia">
+                                Actividad: Desarrollo de habilidades en niños, Ecuador
+                            </span>
                         </div>
                     </div>
                 </div>

@@ -72,19 +72,19 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
         // Usamos case para los casos de contenido
         switch (context.tipo) {
             case 'selecion_individual':
-                tipoFormulario = <FormularioUno context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioUno context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo1 />;
                 break;
             case "verdadero_falso":
-                tipoFormulario = <FormularioDos context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioDos context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo2 />;
                 break;
             case "selecion_multiple":
-                tipoFormulario = <FormularioTres context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <FormularioTres context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo3 />;
                 break;
             case "responder_preguntas":
-                tipoFormulario = <Formulariocuatro context={context} usuario={tipoUsuario} slugContenido={slugContenido} />;
+                tipoFormulario = <Formulariocuatro context={context} usuario={tipoUsuario} slugContenido={slugContenido} isActive={isActive} />;
                 mensajeAyuda = <ModalContenidoTipo4 />;
                 break;
             case "pintar_imagen":
@@ -222,7 +222,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
                         {
                             tipoUsuario.tipo === "paciente" &&
                             <div className="bajo__cuerpo">
-                                <div className="mt-2 mb-2">
+                                <div className="mt-1 mb-2">
                                     {
                                         slugAnterior !== "" &&
                                         <Link to={`/individual/${slugAnterior}/${slug2}/`} className="boton__regreso btn btn-success">
@@ -231,7 +231,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
                                         </Link>
                                     }
                                 </div>
-                                <div className="mt-2 mb-2">
+                                <div className="mt-1 mb-2">
                                     {
                                         slugSiguiente !== "" &&
                                         <Link to={`/individual/${slugSiguiente}/${slug2}/`} className="boton__regreso btn btn-success">

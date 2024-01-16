@@ -22,7 +22,7 @@ const convertirMilisegundosAMinutosYSegundos = (milisegundos) => {
     return { minutos, segundos: segundosRestantes };
 };
 
-export function FormularioUno({ context, usuario, slugContenido }) {
+export function FormularioUno({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados */
     const {
         url__contenido, contenedor, descripcion__contenido,
@@ -243,7 +243,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
             <div className="form-check pt-1 pb-1" key={index}>
                 <div className="container">
                     <input
-                        className="form-check-input border border-dark in_out"
+                        className={`form-check-input border border-dark ${isActive ? 'in_out_2_' : 'in_out_2'}`}
                         type="radio"
                         name="gridRadios"
                         id={`gridRadios${index + 1}`}
@@ -301,7 +301,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                     <p className="mb-0">{error}</p>
                 </div>
             }
-            <div className="container row col-md-12 mt-4">
+            <div className="container row col-md-12 mt-2">
                 <div className="contenedor__cuerpo" id="miContainer" ref={miContainerRef}
 
                     style={{
@@ -310,7 +310,7 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                     }}>
                     <div className="contenedor__cuerpo__division">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido} </span>
                         </div>
                         <form onSubmit={enviarForm} className="formulario_acti">
@@ -334,14 +334,14 @@ export function FormularioUno({ context, usuario, slugContenido }) {
                     </div>
                     <div className="contenedor__imagen">
                         <div className="conten__">
-                            <div className="imagen_tipo1 mt-2">
-                                <img src={url__contenido} alt="" />
+                            <div className={isActive ? 'imagen_tipo1_' : 'imagen_tipo1'}>
+                                <img src={url__contenido} alt="Imagen de actividad" />
                             </div>
-                            <div className="card__cuerpo mt-2 pl-2">
-                                <span className="referencia">
-                                    Actividad: Desarrollo de habilidades en niños, Ecuador
-                                </span>
-                            </div>
+                        </div>
+                        <div className="card__cuerpo mt-2 pl-2">
+                            <span className="referencia">
+                                Actividad: Desarrollo de habilidades en niños, Ecuador
+                            </span>
                         </div>
                     </div>
                 </div>

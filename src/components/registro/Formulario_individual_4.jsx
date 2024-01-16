@@ -21,7 +21,7 @@ const convertirMilisegundosAMinutosYSegundos = (milisegundos) => {
     return { minutos, segundos: segundosRestantes };
 };
 
-export function Formulariocuatro({ context, usuario, slugContenido }) {
+export function Formulariocuatro({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados *** */
     const {
         url__contenido, descripcion__contenido, identificador,
@@ -229,17 +229,17 @@ export function Formulariocuatro({ context, usuario, slugContenido }) {
                     <p className="mb-0">{error}</p>
                 </div>
             }
-            <div className="container row col-md-12 mt-4">
-                <div className="contenedor__cuerpo" id="miContainer" ref={miContainerRef}
+            <div className="container row col-md-12 mt-2">
+                <div className="contenedor__cuerpo_tipo4" id="miContainer" ref={miContainerRef}
                     style={{
                         pointerEvents: contenidoHabilitado ? 'auto' : 'none',
                         opacity: contenidoHabilitado ? 1 : 0.5
                     }}>
-                    <div className="contenedor__cuerpo__division">
+                    <div className="contenedor__cuerpo__division_t4">
                         <div className="alineacion__etiquetas d-flex">
                             <>
                                 {descripcion__contenido && descripcion__contenido.length > 1 && descripcion__contenido[0] &&
-                                    <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                                    <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                         Indicación: {descripcion__contenido[0]}</span>
                                 }
                             </>
@@ -247,13 +247,14 @@ export function Formulariocuatro({ context, usuario, slugContenido }) {
                         {/* <!-- Contenido de url--> */}
                         <div className="contenedor__imagen_tipo4">
                             <div className="conten__tipo4">
-                                <div className="imagen_tipo4 d-flex justify-content-center">
+                                <div className={`d-flex justify-content-center ${isActive ? 'imagen_tipo4_' : 'imagen_tipo4'}`}
+                                >
                                     <img src={url__contenido} alt="" />
                                 </div>
                             </div>
-                            <div className="card__cuerpo mt-2 pl-2 d-flex justify-content-center tt_a">
+                            <div className="card__cuerpo mt-2 d-flex justify-content-center">
                                 <span className="referencia-2">
-                                    Actividad: Desarrollo de habilidades en niños
+                                    Actividad: Desarrollo de habilidades en niños..
                                 </span>
                             </div>
                         </div>
@@ -261,7 +262,7 @@ export function Formulariocuatro({ context, usuario, slugContenido }) {
                         {/* <!-- Contenido de url--> */}
                         <div>
                             <form onSubmit={enviarForm} className="formulario_acti_4">
-                                <div className="ml-3 pl-3">
+                                <div>
                                     <fieldset>
                                         <>
                                             {
@@ -274,10 +275,10 @@ export function Formulariocuatro({ context, usuario, slugContenido }) {
                                                                 <div className="form-group row ml-2">
                                                                     <label htmlFor={`respuesta-${index}`}
                                                                         className="d-flex justify-content-center etiqueta col-sm-5 col-form-label"
-                                                                        style={{ fontFamily: 'Pacifico cursive' }}>
+                                                                    >
                                                                         {item}
                                                                     </label>
-                                                                    <div className="col-sm-7 mt-3">
+                                                                    <div className="col-sm-7 mt-2">
                                                                         <input autoComplete="off" type="text" className="form-control inp_acti_4"
                                                                             id={`respuesta-${index}`}
                                                                             name="respuesta" style={{ border: '1px solid #0C2342' }}
@@ -295,7 +296,7 @@ export function Formulariocuatro({ context, usuario, slugContenido }) {
                                 {/* Eñ input que se envia */}
                                 <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
-                                <div className="d-flex flex-column align-items-center mt-3" >
+                                <div className="d-flex flex-column align-items-center mt-2" >
                                     <button type="submit" className="btn btn-success tam_listo_4"
                                         id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                         !Listo!

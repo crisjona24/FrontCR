@@ -21,7 +21,7 @@ const convertirMilisegundosAMinutosYSegundos = (milisegundos) => {
     return { minutos, segundos: segundosRestantes };
 }
 
-export function FormularioTres({ context, usuario, slugContenido }) {
+export function FormularioTres({ context, isActive, usuario, slugContenido }) {
     /* *** Valores recuperados *** */
     const {
         url__contenido, contenedor, descripcion__contenido,
@@ -331,7 +331,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                     <p className="mb-0">{error}</p>
                 </div>
             }
-            <div className="container row col-md-12 mt-4">
+            <div className="container row col-md-12 mt-2">
                 <div className="contenedor__cuerpo" id="miContainer" ref={miContainerRef}
                     style={{
                         pointerEvents: contenidoHabilitado ? 'auto' : 'none',
@@ -339,7 +339,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                     }}>
                     <div className="contenedor__cuerpo__division">
                         <div className="alineacion__etiquetas d-flex">
-                            <span className="span-2 mt-3" style={{ color: 'rgb(0, 146, 99)' }}>
+                            <span className={`mt-3 ${isActive ? 'span-2_' : 'span-2'}`} style={{ color: 'rgb(0, 146, 99)' }}>
                                 Indicación: {descripcion__contenido}</span>
                         </div>
                         <br />
@@ -355,7 +355,7 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                             {/* Eñ input que se envia */}
                             <input type="hidden" id="slug" name="slug" value={slug__} onChange={e => setSlug(e.target.value)} />
 
-                            <div className="d-flex flex-column justify-content-between align-items-center mt-3">
+                            <div className="d-flex flex-column justify-content-center align-items-center mt-3">
                                 <button type="submit" className="btn btn-success tam_listo"
                                     id="verificarBtn" ref={verificarRef} disabled={verificarBtnD} onClick={tiempo}>
                                     !Listo!
@@ -365,14 +365,14 @@ export function FormularioTres({ context, usuario, slugContenido }) {
                     </div>
                     <div className="contenedor__imagen">
                         <div className="conten__">
-                            <div className="imagen_tipo3 mt-2">
-                                <img src={url__contenido} alt="" />
+                            <div className={isActive ? 'imagen_tipo3_' : 'imagen_tipo3'}>
+                                <img src={url__contenido} alt="Imagen de actividad" />
                             </div>
-                            <div className="card__cuerpo mt-2 pl-2">
-                                <span className="referencia">
-                                    Actividad: Desarrollo de habilidades en niños, Ecuador
-                                </span>
-                            </div>
+                        </div>
+                        <div className="card__cuerpo mt-2 pl-2">
+                            <span className="referencia">
+                                Actividad: Desarrollo de habilidades en niños, Ecuador
+                            </span>
                         </div>
                     </div>
                 </div>
