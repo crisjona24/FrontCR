@@ -97,7 +97,7 @@ export function DominioPrincipalAll() {
                         )}
                     </>
                     {/* COMPONENTE DEL CUERPO */}
-                    <SeccionDominio activarSidebar={activarSidebar} tipoUsuario={tipoUsuario} />
+                    <SeccionDominio activarSidebar={activarSidebar} isActive={isActive} tipoUsuario={tipoUsuario} />
                 </div>
             </div>
             <PieRegister />
@@ -105,7 +105,7 @@ export function DominioPrincipalAll() {
     )
 }
 
-function SeccionDominio({ activarSidebar, tipoUsuario }) {
+function SeccionDominio({ activarSidebar, isActive, tipoUsuario }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -117,7 +117,7 @@ function SeccionDominio({ activarSidebar, tipoUsuario }) {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <DominioLista usuario={tipoUsuario} />
+                <DominioLista usuario={tipoUsuario} isActive={isActive} />
             </div>
         </section>
     )

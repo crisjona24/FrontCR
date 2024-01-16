@@ -17,7 +17,7 @@ import { IndividualListNombre } from "../../api/contenidoindividual.api";
 import { NivelListado } from "../../api/grado.api";
 //import { VerificarUsuario } from "../../api/usuario.api";
 
-export function IndividualLista({ usuario }) {
+export function IndividualLista({ usuario, isActive }) {
     // Capturar slug de contenido
     let { slug } = useParams();
     // Paginacion
@@ -258,7 +258,8 @@ export function IndividualLista({ usuario }) {
                                                     usuario.tipo !== 'paciente' &&
                                                     <div className="col-md-6 align-self-end">
                                                         <Link to={`/individual/detalle/${contenido.slug_contenido_individual}/${slug}/`}
-                                                            className="btn btn-success titulo_cuerpo_lista" title="Detalle de actividad">
+                                                            className={`btn btn-success ${isActive ? 'titulo_cuerpo_lista_' : 'titulo_cuerpo_lista'}`}
+                                                            title="Detalle de actividad">
                                                             Detalle
                                                         </Link>
                                                     </div>
@@ -270,7 +271,8 @@ export function IndividualLista({ usuario }) {
                                                             "col-md-6 align-self-end"
                                                     }>
                                                     <Link to={`/individual/${contenido.slug_contenido_individual}/${slug}/`}
-                                                        className="btn btn-success titulo_cuerpo_lista" title="Resolver actividad">
+                                                        className={`btn btn-success ${isActive ? 'titulo_cuerpo_lista_' : 'titulo_cuerpo_lista'}`}
+                                                        title="Resolver actividad">
                                                         Aprendamos
                                                     </Link>
                                                 </div>
@@ -287,12 +289,14 @@ export function IndividualLista({ usuario }) {
                         <div className="col-sm-9 col-xs-9 titulo_pie_lista">Información - Actividades</div>
                         <div className="pagination-controls col-sm-3 col-xs-3">
                             <Button onClick={anterior} disabled={page === 1}
-                                className="tam_lista separacion--boton" title="Atrás">
+                                c className={`separacion--boton ${isActive ? 'tam_lista_' : 'tam_lista'}`}
+                                title="Atrás">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Button>
-                            <span className="titulo_pie_pagina">Página {page} de {numeroPag}</span>
+                            <span className={isActive ? 'titulo_pie_pagina_' : 'titulo_pie_pagina'}>Página {page} de {numeroPag}</span>
                             <Button onClick={siguiente} disabled={page === numeroPag}
-                                className="tam_lista separacion--boton--derecha" title="Adelante">
+                                className={`separacion--boton--derecha ${isActive ? 'tam_lista_' : 'tam_lista'}`}
+                                title="Adelante">
                                 <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
                             </Button>
                         </div>

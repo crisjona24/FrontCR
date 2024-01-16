@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 import { ContenidoListEspecifico, BusquedaContenidos } from "../../api/contenido.api";
 //import { VerificarUsuario } from "../../api/usuario.api";
 
-export function ContenidoLista({ usuario }) {
+export function ContenidoLista({ usuario, isActive }) {
     // Capturar slug de dominio
     let { slug } = useParams();
     // Paginacion
@@ -215,12 +215,14 @@ export function ContenidoLista({ usuario }) {
                                             <h3></h3>
                                             <div className="orden_lista_contenido">
                                                 <div className="col-md-6 align-self-end">
-                                                    <Link to={`/contenido/detalle/${contenido.slug_contenido}/`} className="btn btn-success titulo_cuerpo_lista">
+                                                    <Link to={`/contenido/detalle/${contenido.slug_contenido}/`}
+                                                        className={`btn btn-success ${isActive ? 'titulo_cuerpo_lista_' : 'titulo_cuerpo_lista'}`}>
                                                         Detalle
                                                     </Link>
                                                 </div>
                                                 <div className="col-md-6 align-self-center">
-                                                    <Link to={`/contenido/individual/all/${contenido.slug_contenido}/`} className="btn btn-success titulo_cuerpo_lista">
+                                                    <Link to={`/contenido/individual/all/${contenido.slug_contenido}/`}
+                                                        className={`btn btn-success ${isActive ? 'titulo_cuerpo_lista_' : 'titulo_cuerpo_lista'}`}>
                                                         Aprendamos
                                                     </Link>
                                                 </div>
@@ -239,12 +241,14 @@ export function ContenidoLista({ usuario }) {
                         <div className="col-sm-9 col-xs-9 titulo_pie_lista">Información - Contenidos</div>
                         <div className="pagination-controls col-sm-3 col-xs-3">
                             <Button onClick={anterior} disabled={page === 1}
-                                className="tam_lista separacion--boton" title="Atrás">
+                                className={`separacion--boton ${isActive ? 'tam_lista_' : 'tam_lista'}`}
+                                title="Atrás">
                                 <FontAwesomeIcon icon={faBackward} />
                             </Button>
-                            <span className="titulo_pie_pagina">Página {page} de {numeroPag}</span>
+                            <span className={isActive ? 'titulo_pie_pagina_' : 'titulo_pie_pagina'}>Página {page} de {numeroPag}</span>
                             <Button onClick={siguiente} disabled={page === numeroPag}
-                                className="tam_lista separacion--boton--derecha" title="Adelante">
+                                className={`separacion--boton--derecha ${isActive ? 'tam_lista_' : 'tam_lista'}`}
+                                title="Adelante">
                                 <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
                             </Button>
                         </div>

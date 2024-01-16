@@ -100,7 +100,7 @@ export function IndividualPrincipalAll() {
                         )}
                     </>
                     {/* COMPONENTE CONTENIDO */}
-                    <SeccionContenidoIndividual activarSidebar={activarSidebar} tipoUsuario={tipoUsuario} />
+                    <SeccionContenidoIndividual activarSidebar={activarSidebar} isActive={isActive} tipoUsuario={tipoUsuario} />
                 </div>
             </div>
             <PieRegister />
@@ -108,7 +108,7 @@ export function IndividualPrincipalAll() {
     )
 }
 
-function SeccionContenidoIndividual({ activarSidebar, tipoUsuario }) {
+function SeccionContenidoIndividual({ activarSidebar, isActive, tipoUsuario }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -120,7 +120,7 @@ function SeccionContenidoIndividual({ activarSidebar, tipoUsuario }) {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <IndividualLista usuario={tipoUsuario} />
+                <IndividualLista usuario={tipoUsuario} isActive={isActive} />
             </div>
         </section>
     )

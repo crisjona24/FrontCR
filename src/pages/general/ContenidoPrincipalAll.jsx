@@ -99,7 +99,7 @@ export function ContenidoPrincipalAll() {
                         )}
                     </>
                     {/* COMPONENTE CONTENIDO */}
-                    <SeccionContenido activarSidebar={activarSidebar} tipoUsuario={tipoUsuario} />
+                    <SeccionContenido activarSidebar={activarSidebar} isActive={isActive} tipoUsuario={tipoUsuario} />
                 </div>
             </div>
             <PieRegister />
@@ -107,7 +107,7 @@ export function ContenidoPrincipalAll() {
     )
 }
 
-function SeccionContenido({ activarSidebar, tipoUsuario }) {
+function SeccionContenido({ activarSidebar, isActive, tipoUsuario }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -119,7 +119,7 @@ function SeccionContenido({ activarSidebar, tipoUsuario }) {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <ContenidoLista usuario={tipoUsuario} />
+                <ContenidoLista usuario={tipoUsuario} isActive={isActive} />
             </div>
         </section>
     )

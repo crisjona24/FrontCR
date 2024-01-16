@@ -312,12 +312,14 @@ select.form-select {
     font-size: 1rem;
 }
 
-.titulo_pie_pagina {
+.titulo_pie_pagina,
+.titulo_pie_pagina_ {
     font-size: 0.8rem;
     margin: auto;
 }
 
-.tam_lista {
+.tam_lista,
+.tam_lista_ {
     width: 40px;
     height: 40px;
 }
@@ -326,7 +328,25 @@ select.form-select {
     font-size: 1rem;
 }
 
+.titulo_cuerpo_lista_ {
+    font-size: 1.2rem;
+}
+
 /* AJUSTE SEGUN RESOLUCIÓN */
+@media screen and (max-width: 990px) {
+    .tam_lista {
+        margin-top: 10%;
+    }
+
+    .tam_lista_ {
+        margin-top: 2%;
+    }
+
+    .titulo_pie_lista {
+        margin: auto;
+    }
+}
+
 @media screen and (max-width: 940px) {
     .tam_lista {
         margin-top: 10%;
@@ -338,9 +358,6 @@ select.form-select {
 }
 
 @media screen and (max-width: 881px) {
-    .tam_lista {
-        margin-top: 10%;
-    }
 
     .titulo_pie_lista,
     .titulo_cuerpo_lista {
@@ -350,6 +367,10 @@ select.form-select {
     .titulo_pie_pagina {
         font-size: 0.7rem;
         margin: auto;
+    }
+
+    .titulo_cuerpo_lista_ {
+        font-size: 1rem;
     }
 }
 
@@ -361,10 +382,13 @@ select.form-select {
         overflow: hidden;
     }
 
-    .tam_lista {
-        margin-top: 10%;
+    .titulo_pie_pagina {
+        font-size: 0.6rem;
     }
 
+    .titulo_pie_pagina_ {
+        font-size: 0.6rem;
+    }
 }
 
 @media screen and (max-width: 780px) {
@@ -381,7 +405,10 @@ select.form-select {
 
     .titulo_pie_pagina {
         font-size: 0.6rem;
-        margin: auto;
+    }
+
+    .titulo_pie_pagina_ {
+        font-size: 0.5rem;
     }
 
     .separacion--boton {
@@ -393,15 +420,23 @@ select.form-select {
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
+
     .titulo_pie_lista,
-    .titulo_cuerpo_lista {
+    .titulo_cuerpo_lista_ {
         font-size: 0.8rem;
     }
 
+    .titulo_cuerpo_lista {
+        font-size: 0.9rem;
+    }
+
     .titulo_pie_pagina {
+        font-size: 0.7rem;
+    }
+
+    .titulo_pie_pagina_ {
         font-size: 0.5rem;
-        margin: auto;
     }
 
     .separacion--boton {
@@ -411,4 +446,13 @@ select.form-select {
     .separacion--boton--derecha {
         margin-left: 5px;
     }
+
+    .tam_lista_ {
+        margin-top: 10%;
+    }
+
+    .tam_lista {
+        margin-top: 5%;
+    }
+
 }
