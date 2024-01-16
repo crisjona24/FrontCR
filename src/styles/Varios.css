@@ -58,11 +58,6 @@
     padding-top: 15px;
 }
 
-.texto__descripcion {
-    text-align: center;
-    font-size: 0.9rem;
-}
-
 
 .borde__CE {
     border: 1px solid #333;
@@ -70,18 +65,6 @@
 
 .tamanio-text-area {
     height: 100px;
-}
-
-/* TARJETA DE APLICACION */
-.tamnio_descripcion {
-    font-size: 0.9rem;
-}
-
-.img__descripcion {
-    border-radius: 10px;
-    height: 20%;
-    margin-top: 50%;
-    margin-left: 10%;
 }
 
 /* TARJETA DE REPORTE */
@@ -105,7 +88,7 @@
 }
 
 
-.contenedor_perfil_p{
+.contenedor_perfil_p {
     height: 500px;
     margin-left: 8%;
     margin-right: 15%;

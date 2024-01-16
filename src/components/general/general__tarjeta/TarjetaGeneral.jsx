@@ -20,7 +20,7 @@ import { ReporteEliminar, ModificarEstadoResultado, CrearReporteNuevo } from "..
 import { CarruselIndividual } from './Carrusel';
 
 // Dominio
-export function Dominio({ datos }) {
+export function Dominio({ datos, isActive }) {
     const navigate = useNavigate();
     // Control de usuario
     const [tipoUsuario, setTipo] = useState([]);
@@ -60,7 +60,7 @@ export function Dominio({ datos }) {
                     <Row>
                         <Col md={4}>
                             <Image
-                                className="img-fluid img-ref-tarjeta"
+                                className={isActive ? "img-fluid img-ref-tarjeta_" : "img-fluid img-ref-tarjeta"}
                                 src="/img/tarjeta-datos.png"
                                 alt="Imagen de referencia de tarjeta"
                                 fluid
@@ -78,30 +78,30 @@ export function Dominio({ datos }) {
                                 <Card.Title className="titulo-peticion mb-3">Dominio</Card.Title>
                                 <Row className="mb-3" >
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Nombre</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombre</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'} >
                                             {datos.nombre}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Identificador</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.identificador_dominio}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Descripción</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datos.descripcion}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Imagen de portada</Card.Title>
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Imagen de portada</Card.Title>
                                     <Image
-                                        className="img-fluid img-tarjeta"
+                                        className={isActive ? "img-fluid img-tarjeta_" : "img-fluid img-tarjeta"}
                                         src={datos.portada_dominio}
                                         alt="Sample"
                                         fluid
@@ -163,7 +163,7 @@ export function Dominio({ datos }) {
 }
 
 // Contenido
-export function Contenido({ datos, slug }) {
+export function Contenido({ datos, slug, isActive }) {
     console.log(datos)
     const navigate = useNavigate();
     // Control de usuario
@@ -238,7 +238,7 @@ export function Contenido({ datos, slug }) {
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid img-ref-tarjeta"
+                                className={isActive ? "img-fluid img-ref-tarjeta_" : "img-fluid img-ref-tarjeta"}
                                 src="/img/tarjeta-datos.png"
                                 alt="Sample"
                                 fluid
@@ -256,30 +256,30 @@ export function Contenido({ datos, slug }) {
                                 <Card.Title className="titulo-peticion mb-4">Contenido</Card.Title>
                                 <Row className="mb-3">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Nombre</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombre</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.nombre}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="text-center titulo_tarjeta">Tipo de contenido</Card.Title>
-                                        <Card.Text className="text-center texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_ text-center' : 'titulo_tarjeta text-center'}>Tipo de contenido</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_ text-center' : 'texto-peticion text-center'}>
                                             {datos.dominio_tipo}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Identificador</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datos.identificador_contenido}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Imagen de portada</Card.Title>
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Imagen de portada</Card.Title>
                                     <Image
-                                        className="img-fluid img-tarjeta"
+                                        className={isActive ? "img-fluid img-tarjeta_" : "img-fluid img-tarjeta"}
                                         src={datos.portada}
                                         alt="Imagen referencial de tarjeta"
                                         fluid
@@ -341,7 +341,7 @@ export function Contenido({ datos, slug }) {
 
 
 // Individual
-export function Individual({ datos, slug }) {
+export function Individual({ datos, slug, isActive }) {
     // Slug de contenido
     let { slug2 } = useParams();
     const navigate = useNavigate();
@@ -459,7 +459,7 @@ export function Individual({ datos, slug }) {
                     <Row >
                         <Col md={3}>
                             <Image
-                                className="img-fluid img-ref-tarjeta"
+                                className={isActive ? "img-fluid img-ref-tarjeta_" : "img-fluid img-ref-tarjeta"}
                                 src="/img/tarjeta-datos.png"
                                 alt="Sample"
                                 fluid
@@ -476,22 +476,22 @@ export function Individual({ datos, slug }) {
                             <Card.Body>
                                 <Card.Title className="titulo-peticion mb-3">Actividad</Card.Title>
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Descripción</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datos.descripcion_individual}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Respuesta</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Respuesta</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.respuesta}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Nivel</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nivel</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.nivel}
                                         </Card.Text>
                                     </Col>
@@ -499,22 +499,22 @@ export function Individual({ datos, slug }) {
                                 <hr />
                                 <Row className="mb-3">
                                     <Col md={7}>
-                                        <Card.Title className="titulo_tarjeta">Tipo contenido</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Tipo contenido</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {tipoContenido}
                                         </Card.Text>
                                     </Col>
                                     <Col md={5}>
-                                        <Card.Title className="titulo_tarjeta">Identificador</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Identificador</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.identificador_individual}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-3">
-                                    <Card.Title className="titulo_tarjeta">Imagen de portada / actividad</Card.Title>
-                                    <CarruselIndividual imagenes={images} />
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Imagen de portada / actividad</Card.Title>
+                                    <CarruselIndividual imagenes={images} isActive={isActive} />
                                 </Row>
                                 <Card.Text>
                                     <small className="text-muted" style={{ fontFamily: 'Roboto' }}>Acciones</small>
@@ -577,7 +577,7 @@ export function Individual({ datos, slug }) {
 
 
 // Peticion
-export function Peticion({ datos }) {
+export function Peticion({ datos, isActive }) {
     const navigate = useNavigate();
     /* *** Control de usuario *** */
     const [tipoUsuario, setTipo] = useState([]);
@@ -636,12 +636,12 @@ export function Peticion({ datos }) {
                 </div>
             </div>
 
-            <div className="mt-5 align-items-center alm_tarjeta_general">
+            <div className="mt-3 align-items-center alm_tarjeta_general">
                 <Card className="mb-3 card_tarjeta_general" style={{ border: '1px solid #ccc' }}>
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid img-tamaño"
+                                className={isActive ? "img-fluid img-tamaño_" : "img-fluid img-tamaño"}
                                 src="/img/tarjeta-peticion.png"
                                 alt="Sample"
                                 fluid
@@ -652,36 +652,36 @@ export function Peticion({ datos }) {
                                 <Card.Title className="titulo-peticion mb-3">Petición</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title className="titulo_tarjeta">Motivo de petición</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Motivo de petición</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.motivo_peticion}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta text-center">Tipo</Card.Title>
-                                        <Card.Text className="texto-peticion-c">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_ text-center' : 'titulo_tarjeta text-center'}>Tipo</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_ text-center' : 'texto-peticion text-center'}>
                                             {datos.tipo_peticion}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title className="titulo_tarjeta">Descripción</Card.Title>
-                                    <Card.Text className="texto-peticion" >
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Descripción</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'} >
                                         {datos.peticion_cuerpo}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title className="titulo_tarjeta">Fecha de registro</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Fecha de registro</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datos.fecha_registro_peticion}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta text-center" >Estado</Card.Title>
-                                        <Card.Text className="texto-peticion text-center">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_ text-center' : 'titulo_tarjeta text-center'} >Estado</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_ text-center' : 'texto-peticion text-center'}>
                                             {
                                                 datos.estado_revision === false ? (
                                                     <span className="text-danger">Sin revisar</span>
@@ -697,15 +697,15 @@ export function Peticion({ datos }) {
                                     {
                                         tipoUsuario.tipo === "tecnico" ? (
                                             <>
-                                                <Card.Title className="titulo_tarjeta">Registrado por</Card.Title>
-                                                <Card.Text className="texto-peticion" >
+                                                <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Registrado por</Card.Title>
+                                                <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                                     {datos.nombre_usuario} {datos.apellido_usuario}
                                                 </Card.Text>
                                             </>
                                         ) : (
                                             <>
-                                                <Card.Title className="titulo_tarjeta">Revisador por</Card.Title>
-                                                <Card.Text className="texto-peticion" >
+                                                <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Revisador por</Card.Title>
+                                                <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'} >
                                                     {
                                                         revisorN === "" && revisorA === "" ? (
                                                             <span className="text-danger">Sin revisor</span>
@@ -783,7 +783,7 @@ export function Peticion({ datos }) {
 
 
 // Paciente 
-export function Paciente({ datosPaciente, fecha }) {
+export function Paciente({ datosPaciente, fecha, isActive }) {
     const [slugCurso, setSlugCurso] = useState("");
 
     const navigate = useNavigate();
@@ -834,7 +834,7 @@ export function Paciente({ datosPaciente, fecha }) {
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid img_perfil"
+                                className={isActive ? "img-fluid img_perfil_" : "img-fluid img_perfil"}
                                 src="/img/tarjeta-paciente.png"
                                 alt="Imagen referencial de tarjeta"
                                 fluid
@@ -852,44 +852,44 @@ export function Paciente({ datosPaciente, fecha }) {
                                 <Card.Title className="titulo-peticion">Datos del estudiante</Card.Title>
                                 <Row className="mb-2">
                                     <Col md={8}>
-                                        <Card.Title className="titulo_tarjeta">Nombre y Apellido</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombre y Apellido</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosPaciente.nombre_usuario} {datosPaciente.apellido_usuario}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta text-center" >Edad</Card.Title>
-                                        <Card.Text className="texto-peticion text-center">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_ text-center' : 'titulo_tarjeta text-center'} >Edad</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_ text-center' : 'texto-peticion text-center'}>
                                             {datosPaciente.edad} años
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-2">
-                                    <Card.Title className="titulo_tarjeta">Correo Electrónico</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Correo Electrónico</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datosPaciente.email_usuario}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-2" >
                                     <Col md={5}>
-                                        <Card.Title className="titulo_tarjeta">Celular</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Celular</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosPaciente.celular}
                                         </Card.Text>
                                     </Col>
                                     <Col md={7}>
-                                        <Card.Title className="titulo_tarjeta">Número de Emergencia</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Número de Emergencia</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosPaciente.contacto_emergencia}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-2">
-                                    <Card.Title className="titulo_tarjeta">Dirección</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Dirección</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datosPaciente.direccion}
                                     </Card.Text>
                                 </Row>
@@ -912,7 +912,7 @@ export function Paciente({ datosPaciente, fecha }) {
 }
 
 // Aplicacion
-export function Aplicacion() {
+export function Aplicacion({ isActive }) {
     return (
         <div>
             <div className="cabeza__Nivel">
@@ -932,7 +932,7 @@ export function Aplicacion() {
                     <Row >
                         <Col md={4}>
                             <Image
-                                className="img-fluid img_perfil"
+                                className={isActive ? "img-fluid img_perfil_" : "img-fluid img_perfil"}
                                 src="/img/tarjeta-paciente.png"
                                 alt="Imagen referencial de tarjeta"
                                 fluid
@@ -942,11 +942,9 @@ export function Aplicacion() {
                             <Card.Body>
                                 <Card.Title className="titulo-conocenos">Conoce acerca de WAPIPTDAH</Card.Title>
                                 <Row className="mb-2">
-                                    <Card.Title className="titulo_tarjeta">Nombres :</Card.Title>
-                                    <Card.Text className="texto-peticion">
-                                        <p>
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, soluta expedita inventore aut aperiam tenetur odit nam exercitationem esse saepe optio, ut consequuntur eaque sunt culpa sit dolor? Voluptatem, eius.
-                                        </p>
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombres :</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda, soluta expedita inventore aut aperiam tenetur odit nam exercitationem esse saepe optio, ut consequuntur eaque sunt culpa sit dolor? Voluptatem, eius.
                                     </Card.Text>
                                 </Row>
                                 <hr />
@@ -969,7 +967,7 @@ export function Aplicacion() {
 }
 
 // Reporte 
-export function Reporte({ datosReporte }) {
+export function Reporte({ datosReporte, isActive }) {
     const navigate = useNavigate();
     /* *** Control de tipo de usuario *** */
     const [tipoUsuario, setTipo] = useState([]);
@@ -1062,39 +1060,39 @@ export function Reporte({ datosReporte }) {
 
                     </div>
                     <div className="d-flex flex-column fecha-reportes">
-                        <div className="mt-3" style={{ fontSize: '0.8rem' }}>
+                        <div className={isActive ? 'fechas_reporte_ mt-3' : 'fechas_reporte mt-3'}>
                             Fecha de realización de reporte
                         </div>
                         <div className="d-flex flex-row">
                             <div class="p-2 d-flex flex-column">
                                 <span>
-                                    <strong style={{ fontSize: '0.8rem' }}>Fecha de inicio:</strong>
+                                    <strong className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>Fecha de inicio:</strong>
                                 </span>
-                                <span style={{ fontSize: '0.8rem' }}>
+                                <span className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>
                                     {datosReporte.fecha_registro_reporte}
                                 </span>
                             </div>
                             <div class="p-2 d-flex flex-column">
                                 <span>
-                                    <strong style={{ fontSize: '0.8rem' }}>Fecha de finalización</strong>
+                                    <strong className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>Fecha de finalización</strong>
                                 </span>
-                                <span style={{ fontSize: '0.8rem' }}>
+                                <span className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>
                                     {datosReporte.fecha_edicion_reporte}
                                 </span>
                             </div>
                             <div class="p-2 d-flex flex-column">
                                 <span>
-                                    <strong style={{ fontSize: '0.8rem' }}>Fecha de resultado</strong>
+                                    <strong className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>Fecha de resultado</strong>
                                 </span>
-                                <span style={{ fontSize: '0.8rem' }}>
+                                <span className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>
                                     {datosReporte.fecha_registro_resultado_}
                                 </span>
                             </div>
                             <div class="p-2 d-flex flex-column">
                                 <span>
-                                    <strong style={{ fontSize: '0.8rem' }}>Actividad</strong>
+                                    <strong className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>Actividad</strong>
                                 </span>
-                                <span style={{ fontSize: '0.8rem' }}>
+                                <span className={isActive ? 'fechas_reporte_' : 'fechas_reporte'}>
                                     {datosReporte.identificador_contenido}
                                 </span>
                             </div>
@@ -1104,7 +1102,7 @@ export function Reporte({ datosReporte }) {
                         <Col md={3}>
                             <div className="d-flex flex-column">
                                 <Image
-                                    className="img-fluid img__descripcion"
+                                    className={isActive ? 'img-fluid img__descripcion_' : 'img-fluid img__descripcion'}
                                     src={
                                         ctrTiempo > (40 * 60) ? "/img/alerta - rojo.jpg" :
                                             (ctrTiempo > 0 ? "/img/checklist.png" : "")
@@ -1113,10 +1111,11 @@ export function Reporte({ datosReporte }) {
                                     fluid
                                 />
                                 <div className="d-flex flex-column mt-2 w-100">
-                                    <span className="texto__descripcion">
+                                    <span className={isActive ? 'texto__descripcion_' : 'texto__descripcion'}
+                                    >
                                         Descripción de estado
                                     </span>
-                                    <Card.Text className="texto-peticion tamnio_descripcion mt-2">
+                                    <Card.Text className={isActive ? 'tamnio_descripcion_ mt-2' : 'tamnio_descripcion mt-2'}>
                                         {datosReporte.descripcion_reporte}
                                     </Card.Text>
                                     {
@@ -1136,20 +1135,20 @@ export function Reporte({ datosReporte }) {
                                 <Card.Title className="titulo-peticion">Informe de estado</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={5}>
-                                        <Card.Title className="titulo_tarjeta">Nombres:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombres:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.nombre_paciente} {datosReporte.apellido_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={3}>
-                                        <Card.Title className="titulo_tarjeta">Edad:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Edad:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.edad_paciente} años
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta">Contacto:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Contacto:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.celular_paciente}
                                         </Card.Text>
                                     </Col>
@@ -1157,14 +1156,14 @@ export function Reporte({ datosReporte }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={8}>
-                                        <Card.Title className="titulo_tarjeta">Correo electrónico:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Correo electrónico:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.correo_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta">Dirección:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Dirección:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.direccion_paciente}
                                         </Card.Text>
                                     </Col>
@@ -1172,44 +1171,44 @@ export function Reporte({ datosReporte }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={7}>
-                                        <Card.Title className="titulo_tarjeta">Descripción de actividad:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Descripción de actividad:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.descripcion_individual}
                                         </Card.Text>
                                     </Col>
                                     <Col md={5}>
-                                        <Card.Title className="titulo_tarjeta">Tipo de contenido:</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Tipo de contenido:</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {contenido_tipo}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title className="titulo_tarjeta">Observación de actividad realizada:</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Observación de actividad realizada:</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datosReporte.observacion_}
                                     </Card.Text>
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Respuesta esperada :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Respuesta esperada :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.respuesta_r}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Respuesta proporcionada :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Respuesta proporcionada :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosReporte.respuesta}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row>
-                                    <Card.Title className="titulo_tarjeta">Tiempo de actividad realizada:</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Tiempo de actividad realizada:</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         {datosReporte.tiempo_m_} minutos con {datosReporte.tiempo_s_} segundos
                                     </Card.Text>
                                 </Row>
@@ -1262,7 +1261,7 @@ export function Reporte({ datosReporte }) {
 }
 
 // Resultado
-export function Resultado({ datosResultado }) {
+export function Resultado({ datosResultado, isActive }) {
     const navigate = useNavigate();
     /* *** Control de tipo de usuario *** */
     const [tipoUsuario, setTipo] = useState([]);
@@ -1331,27 +1330,27 @@ export function Resultado({ datosResultado }) {
             <div className="align-items-center contenedor_resultado">
                 <Card className="tarjeta__reporte">
                     <Row >
-                        <Col md={4}>
+                        <Col md={3}>
                             <Image
-                                className="img-fluid img_result"
+                                className={isActive ? 'img-fluid img_result_' : 'img-fluid img_result'}
                                 src="/img/tarjeta-resultado.png"
                                 alt="Sample"
                                 fluid
                             />
                         </Col>
-                        <Col md={8}>
+                        <Col md={9}>
                             <Card.Body>
                                 <Card.Title className="titulo-peticion">Información del estudiante</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Nombres :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Nombres :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.nombre_paciente} {datosResultado.apellido_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Edad :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Edad :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.edad_paciente} años
                                         </Card.Text>
                                     </Col>
@@ -1359,14 +1358,14 @@ export function Resultado({ datosResultado }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Correo Electrónico :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Correo Electrónico :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.correo_paciente}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Celular :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Celular :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.celular_paciente}
                                         </Card.Text>
                                     </Col>
@@ -1374,15 +1373,15 @@ export function Resultado({ datosResultado }) {
                                 <hr />
                                 <Card.Title className="titulo-peticion">Información de la actividad</Card.Title>
                                 <Row className="mb-1" >
-                                    <Col md={4}>
-                                        <Card.Title className="titulo_tarjeta">Contenido :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                    <Col md={5}>
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Contenido :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {tipoContenido}
                                         </Card.Text>
                                     </Col>
-                                    <Col md={8}>
-                                        <Card.Title className="titulo_tarjeta">Descripción :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                    <Col md={7}>
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Descripción :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.descripcion_individual}
                                         </Card.Text>
                                     </Col>
@@ -1390,14 +1389,14 @@ export function Resultado({ datosResultado }) {
                                 <hr />
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Respuesta esperada :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Respuesta esperada :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.respuesta}
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Respuesta proporcionada :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Respuesta proporcionada :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.respuesta_contenido}
                                         </Card.Text>
                                     </Col>
@@ -1406,26 +1405,26 @@ export function Resultado({ datosResultado }) {
                                 <Card.Title className="titulo-peticion">Información de resultado</Card.Title>
                                 <Row className="mb-1">
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Tiempo :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Tiempo :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.tiempo_m} minutos con {datosResultado.tiempo_s} segundos
                                         </Card.Text>
                                     </Col>
                                     <Col md={6}>
-                                        <Card.Title className="titulo_tarjeta">Fecha :</Card.Title>
-                                        <Card.Text className="texto-peticion">
+                                        <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Fecha :</Card.Title>
+                                        <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                             {datosResultado.fecha_registro_resultado}
                                         </Card.Text>
                                     </Col>
                                 </Row>
                                 <hr />
                                 <Row className="mb-1">
-                                    <Card.Title className="titulo_tarjeta">Observación :</Card.Title>
-                                    <Card.Text className="texto-peticion">
+                                    <Card.Title className={isActive ? 'titulo_tarjeta_' : 'titulo_tarjeta'}>Observación :</Card.Title>
+                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                         <>
                                             {
                                                 datosResultado.observacion === null ? (
-                                                    <Card.Text className="texto-peticion">
+                                                    <Card.Text className={isActive ? 'texto-peticion_' : 'texto-peticion'}>
                                                         No se proporcionó observación
                                                     </Card.Text>
                                                 ) : (

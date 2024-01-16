@@ -189,6 +189,12 @@
   margin-top: 50%;
 }
 
+.img-tamaño_ {
+  border-radius: 10px;
+  height: 60%;
+  margin-top: 40%;
+}
+
 .titulo-peticion {
   font-size: 1.1rem;
   color: #fff;
@@ -221,7 +227,8 @@
   height: 115px;
 }
 
-.texto-peticion {
+.texto-peticion,
+.texto-peticion_ {
   color: #333;
   font-family: 'Roboto';
   text-align: justify;
@@ -257,6 +264,12 @@
   margin-top: 50%;
 }
 
+.img_perfil_ {
+  border-radius: 10px;
+  height: 60%;
+  margin-top: 50%;
+}
+
 .titulo_union {
   font-size: 0.8rem;
 }
@@ -267,11 +280,13 @@
   font-size: 0.8rem;
 }
 
-.titulo_tarjeta {
+.titulo_tarjeta,
+.titulo_tarjeta_ {
   font-size: 1rem;
 }
 
-.descrip_tarjeta {
+.descrip_tarjeta,
+.descrip_tarjeta_ {
   color: #333;
   font-family: 'Roboto';
 }
@@ -289,10 +304,24 @@
   margin-top: 5%;
 }
 
+.img-tarjeta_ {
+  width: 300px;
+  height: 225px;
+  border-radius: 50px;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
 .img_result {
   border-radius: 10px;
   height: 40%;
   margin-top: 90%;
+}
+
+.img_result_ {
+  border-radius: 10px;
+  height: 40%;
+  margin-top: 200px;
 }
 
 /* TARJETA DE DOMINIO */
@@ -312,6 +341,13 @@
   margin-top: 25%;
 }
 
+.img-ref-tarjeta_ {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  margin-top: 25%;
+}
+
 .opc_tarjeta {
   font-family: 'Roboto';
   font-size: 1rem;
@@ -321,6 +357,42 @@
   border: 0.5px solid #868686;
   margin-bottom: 2%;
   width: 100%;
+}
+
+.fechas_reporte,
+.fecha-reporte_ {
+  font-size: 0.8rem;
+}
+
+/* TARJETA DE APLICACION */
+.texto__descripcion,
+.texto__descripcion_ {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.tamnio_descripcion,
+.tamnio_descripcion_ {
+  color: #333;
+  font-family: 'Roboto';
+  text-align: justify;
+  padding-right: 5px;
+  font-size: 0.9rem;
+}
+
+.img__descripcion,
+.img__descripcion_ {
+  border-radius: 10px;
+  height: 20%;
+  margin-top: 50%;
+  margin-left: 10%;
+}
+
+.texto-reporte {
+  font-family: cursive;
+  text-align: justify;
+  font-size: 0.8rem;
+  color: #615f5f;
 }
 
 /* Modificación por resolución */
@@ -338,9 +410,6 @@
   .img-tarjeta {
     width: 250px;
     height: 200px;
-    border-radius: 50px;
-    margin-left: 10%;
-    margin-top: 5%;
   }
 
   .tam_icon {
@@ -349,14 +418,55 @@
   }
 
   .img-tamaño {
-    border-radius: 10px;
     height: 50%;
     margin-top: 100%;
   }
 
+  .img_perfil {
+    height: 40%;
+    margin-top: 125px;
+  }
+
+  .titulo_tarjeta {
+    font-size: 0.9rem;
+  }
+
+  .descrip_tarjeta {
+    font-size: 1rem;
+  }
+
+  .texto-peticion {
+    font-size: 1.1rem;
+  }
+
+  .img_result {
+    height: 30%;
+    margin-top: 250px;
+  }
+
+  .img_result_ {
+    height: 40%;
+    margin-top: 250px;
+  }
 }
 
 @media (max-width: 940px) {
+  .fechas_reporte {
+    font-size: 0.7rem;
+  }
+
+  .texto__descripcion {
+    font-size: 0.8rem;
+  }
+
+  .fechas_reporte_ {
+    font-size: 0.8rem;
+  }
+
+  .tamnio_descripcion {
+    font-size: 0.8rem;
+  }
+
   .img_perfil {
     border-radius: 10px;
     height: 40%;
@@ -380,14 +490,32 @@
     font-size: 0.9rem;
   }
 
+  .texto-peticion {
+    font-size: 1rem;
+  }
+
   .img_result {
     border-radius: 10px;
     height: 30%;
     margin-top: 120%;
   }
+
+  .img-tamaño_ {
+    margin-top: 45%;
+  }
+
+  .img__descripcion {
+    height: 70px;
+    width: 70px;
+    margin-left: 15%;
+  }
 }
 
 @media (max-width: 881px) {
+  .texto-reporte {
+    font-size: 0.7rem;
+  }
+
   .tarjeta_perfil {
     border: 1.5px solid #868686;
     margin-bottom: 2%;
@@ -401,25 +529,18 @@
   .img-tarjeta {
     width: 200px;
     height: 175px;
-    border-radius: 50px;
-    margin-left: 10%;
-    margin-top: 5%;
   }
 
-  .img-ref-tarjeta {
+  .img-ref-tarjeta,
+  .img-ref-tarjeta_ {
     width: 200px;
     height: 200PX;
-    border-radius: 10px;
     margin-top: 25%;
   }
 
   .titulo_union,
   .descrip_union {
     font-size: 0.8rem;
-  }
-
-  .titulo_tarjeta {
-    font-size: 0.9rem;
   }
 
   .opc_tarjeta {
@@ -437,24 +558,32 @@
     padding-top: 5px;
   }
 
+  .img_perfil {
+    height: 40%;
+    margin-top: 125px;
+  }
+
   .img_result {
-    border-radius: 10px;
     height: 30%;
-    margin-top: 140%;
+    margin-top: 300px;
   }
 
 }
 
 @media (max-width: 820px) {
-  .img_perfil {
-    border-radius: 10px;
-    height: 35%;
-    margin-top: 110%;
+  .fechas_reporte {
+    font-size: 0.6rem;
+  }
+
+  .img__descripcion_ {
+    height: 80px;
+    width: 90px;
+    margin-left: 20%;
   }
 
   .img-tamaño {
     border-radius: 10px;
-    height: 40%;
+    height: 35%;
     margin-top: 150%;
   }
 
@@ -469,22 +598,31 @@
     width: 100%;
   }
 
-  .img_result {
-    border-radius: 10px;
-    height: 30%;
-    margin-top: 170%;
+  .img-tarjeta_ {
+    width: 225px;
+    height: 225px;
+    margin-left: 18%;
+  }
+
+  .img-tamaño_ {
+    margin-top: 75%;
+    height: 45%;
   }
 }
 
 @media (max-width: 780px) {
   .img_perfil {
-    border-radius: 10px;
     height: 30%;
-    margin-top: 120%;
+    margin-top: 150px;
+  }
+
+  .img_perfil_ {
+    height: 50%;
+    margin-top: 50%;
   }
 
   .titulo-peticion {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     padding-top: 5px;
   }
 
@@ -492,7 +630,8 @@
     font-size: 0.8rem;
   }
 
-  .descrip_tarjeta {
+  .descrip_tarjeta,
+  .texto-peticion {
     font-size: 0.9rem;
   }
 
@@ -531,13 +670,68 @@
     font-size: 0.7rem;
     padding-top: 6px;
   }
+
+  .img-tarjeta {
+    margin-left: 8%;
+  }
+
+  .img-tarjeta_ {
+    width: 250px;
+    height: 225px;
+    margin-left: 15%;
+  }
+
+  .img_result_ {
+    height: 25%;
+    margin-top: 250px;
+  }
 }
 
 @media (max-width: 768px) {
+  .fechas_reporte {
+    font-size: 0.8rem;
+  }
+
+  .fechas_reporte_ {
+    font-size: 0.6rem;
+  }
+
+  .texto__descripcion_ {
+    font-size: 0.6rem;
+  }
+
+  .tamnio_descripcion_ {
+    font-size: 0.7rem;
+  }
+
+  .texto__descripcion {
+    font-size: 0.8rem;
+  }
+
+  .tamnio_descripcion {
+    font-size: 0.8rem;
+  }
+
+  .img__descripcion_ {
+    height: 55px;
+    width: 55px;
+    margin-left: 20%;
+  }
+
+  .img__descripcion {
+    height: 80px;
+    width: 80px;
+    margin-left: 20%;
+  }
+
   .img_perfil {
-    border-radius: 10px;
-    height: 25%;
-    margin-top: 130%;
+    height: 50%;
+    margin-top: 50%;
+  }
+
+  .img_perfil_ {
+    height: 30%;
+    margin-top: 150px;
   }
 
   .titulo-peticion {
@@ -545,12 +739,21 @@
     padding-top: 5px;
   }
 
-  .titulo_tarjeta {
+  .titulo_tarjeta_ {
     font-size: 0.7rem;
   }
 
-  .descrip_tarjeta {
+  .descrip_tarjeta_,
+  .texto-peticion_ {
     font-size: 0.8rem;
+  }
+
+  .texto-peticion {
+    font-size: 1.1rem;
+  }
+
+  .titulo_tarjeta {
+    font-size: 1rem;
   }
 
   .tam_icon {
@@ -559,9 +762,43 @@
   }
 
   /* TARJETAS GENERALES */
-  .texto-peticion,
   .texto-peticion-c {
     font-size: small;
+  }
+
+  .img-tarjeta_ {
+    width: 175px;
+    height: 175px;
+    margin-left: 10%;
+  }
+
+  .img-tarjeta {
+    width: 250px;
+    height: 225px;
+    margin-left: 15%;
+  }
+
+  .img-ref-tarjeta_ {
+    width: 150px;
+    height: 150PX;
+  }
+
+  .img-ref-tarjeta {
+    width: 150px;
+    height: 150PX;
+    margin-top: 35%;
+  }
+
+  .img-tamaño_ {
+    border-radius: 10px;
+    height: 35%;
+    margin-top: 150%;
+  }
+
+  .img-tamaño {
+    border-radius: 10px;
+    height: 40%;
+    margin-top: 80%;
   }
 }
 
@@ -648,11 +885,4 @@
     padding: 4px 8px;
     font-size: 10px;
   }
-}
-
-.texto-reporte {
-  font-family: cursive;
-  text-align: justify;
-  font-size: 0.8rem;
-  color: #615f5f;
 }

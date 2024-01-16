@@ -18,7 +18,7 @@ import { ResultadoIndividual } from "../../api/resultado.api";
 
 
 // Tarjeta de dominio
-export function TarjetaDominio() {
+export function TarjetaDominio({ isActive }) {
     /* *** Control de datos *** */
     let { slug } = useParams();
     const [error, setError] = useState("");
@@ -79,7 +79,7 @@ export function TarjetaDominio() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Dominio datos={datos} />
+                <Dominio datos={datos} isActive={isActive} />
             </>
         </div>
     )
@@ -87,7 +87,7 @@ export function TarjetaDominio() {
 }
 
 // Tarjeta de contenido
-export function TarjetaDatosContenido() {
+export function TarjetaDatosContenido({ isActive }) {
     /* *** Control de datos *** */
     let { slug } = useParams();
     const [error, setError] = useState("");
@@ -150,14 +150,14 @@ export function TarjetaDatosContenido() {
                     </div>
                 }
             </>
-            <Contenido datos={datos} slug={slug} />
+            <Contenido datos={datos} slug={slug} isActive={isActive} />
         </div>
     )
 
 }
 
 // Tarjeta de contenido individual
-export function TarjetaDatosIndividual() {
+export function TarjetaDatosIndividual({ isActive }) {
     /* *** Control de datos *** */
     let { slug } = useParams();
     const [error, setError] = useState("");
@@ -217,7 +217,7 @@ export function TarjetaDatosIndividual() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Individual datos={datos} slug={slug} />
+                <Individual datos={datos} slug={slug} isActive={isActive} />
             </>
         </div>
     )
@@ -225,7 +225,7 @@ export function TarjetaDatosIndividual() {
 }
 
 // Tarjeta de peticion
-export function TarjetaPeticion() {
+export function TarjetaPeticion({ isActive }) {
     // Obtener el parametro de la URL
     let { id } = useParams();
     /* *** Form **** */
@@ -274,7 +274,7 @@ export function TarjetaPeticion() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Peticion datos={datos} />
+                <Peticion datos={datos} isActive={isActive} />
             </>
         </div>
     )
@@ -282,7 +282,7 @@ export function TarjetaPeticion() {
 }
 
 // Tarjeta paciente
-export function TarjetaPaciente() {
+export function TarjetaPaciente({ isActive }) {
     // Obtener el parametro de la URL
     let { id } = useParams();
     /* *** Form **** */
@@ -340,14 +340,14 @@ export function TarjetaPaciente() {
         }
     }, [id]);
 
-        // Use effect
-        useEffect(() => {
-            if (!token) {
-                navigate('/login');
-            } else {
-                obtenerFecha();
-            }
-        }, [id]);
+    // Use effect
+    useEffect(() => {
+        if (!token) {
+            navigate('/login');
+        } else {
+            obtenerFecha();
+        }
+    }, [id]);
 
     // Funcion para mostrar errores
     const mostrarError = (message) => {
@@ -367,24 +367,24 @@ export function TarjetaPaciente() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Paciente datosPaciente={datosPaciente} fecha={fechaIns}/>
+                <Paciente datosPaciente={datosPaciente} fecha={fechaIns} isActive={isActive} />
             </>
         </div>
     )
 }
 
 // Tarjeta de aplicacion
-export function TarjetaAplicacion() {
+export function TarjetaAplicacion({ isActive }) {
     return (
         <div>
-            <Aplicacion />
+            <Aplicacion isActive={isActive} />
         </div>
     )
 }
 
 
 // Tarjeta de reporte
-export function TarjetaReporte() {
+export function TarjetaReporte({ isActive }) {
     // Obtener el parametro de la URL
     let { id } = useParams(); // ID del reporte
     /* *** Form **** */
@@ -435,14 +435,14 @@ export function TarjetaReporte() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Reporte datosReporte={datosReporte} />
+                <Reporte datosReporte={datosReporte} isActive={isActive} />
             </>
         </div>
     )
 }
 
 // Tarjeta de resultado
-export function TarjetaResultado() {
+export function TarjetaResultado({ isActive }) {
     // Obtener el parametro de la URL
     let { id } = useParams(); // ID del reporte
     /* *** Form **** */
@@ -493,7 +493,7 @@ export function TarjetaResultado() {
                         <span className="mb-0">{error}</span>
                     </div>
                 }
-                <Resultado datosResultado={datosResultado} />
+                <Resultado datosResultado={datosResultado} isActive={isActive} />
             </>
         </div>
     )

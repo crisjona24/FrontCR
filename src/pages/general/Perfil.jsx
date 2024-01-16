@@ -100,7 +100,7 @@ export function Perfil_User() {
                         )}
                     </>
                     {/* COMPONENTE SECTION */}
-                    <SeccionPerfil activarSidebar={activarSidebar} tipoUsuario={tipoUsuario} />
+                    <SeccionPerfil activarSidebar={activarSidebar} isActive={isActive} tipoUsuario={tipoUsuario} />
                 </div>
             </div>
             <PieRegister />
@@ -108,7 +108,7 @@ export function Perfil_User() {
     )
 }
 
-function SeccionPerfil({ activarSidebar, tipoUsuario }) {
+function SeccionPerfil({ activarSidebar, isActive, tipoUsuario }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general section_almacenador_perfil" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -120,7 +120,7 @@ function SeccionPerfil({ activarSidebar, tipoUsuario }) {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <Tarjeta usuario={tipoUsuario} />
+                <Tarjeta usuario={tipoUsuario} isActive={isActive} />
             </div>
         </section>
     )

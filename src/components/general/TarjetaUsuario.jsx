@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { DatosUser } from "../../api/usuario.api";
 import { Tecnico, Paciente, Comun } from './general_perfil/TarjetaPerfil'
 
-export function Tarjeta() {
+export function Tarjeta({ isActive }) {
     /* *** Control de usuario *** */
     const [error, setError] = useState("");
     const [datos, setDatos] = useState([]);
@@ -17,7 +17,7 @@ export function Tarjeta() {
 
     // Obtener datos de usuario
     const obtener = async () => {
-        
+
         // Flujo normal
         try {
             let cont = await DatosUser();
@@ -50,13 +50,13 @@ export function Tarjeta() {
     if (datos) {
         switch (datos.tipo) {
             case 'tecnico':
-                tipoUser = <Tecnico datos={datos} />;
+                tipoUser = <Tecnico datos={datos} isActive={isActive} />;
                 break;
             case 'paciente':
-                tipoUser = <Paciente datos={datos} />;
+                tipoUser = <Paciente datos={datos} isActive={isActive} />;
                 break;
             case 'comun':
-                tipoUser = <Comun datos={datos} />;
+                tipoUser = <Comun datos={datos} isActive={isActive} />;
                 break;
             default:
                 tipoUser = <div>No hay datos</div>;

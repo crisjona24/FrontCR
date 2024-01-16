@@ -109,7 +109,7 @@ export function InformacionDominio() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaDominio />
+                            <TarjetaDominio isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -212,7 +212,7 @@ export function InformacionContenido() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaDatosContenido />
+                            <TarjetaDatosContenido isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -314,7 +314,7 @@ export function InformacionIndividual() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaDatosIndividual />
+                            <TarjetaDatosIndividual isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -416,7 +416,7 @@ export function InformacionPaciente() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaPaciente />
+                            <TarjetaPaciente isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -518,7 +518,7 @@ export function InformacionAPP() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaAplicacion />
+                            <TarjetaAplicacion isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -620,7 +620,7 @@ export function InformacionReporte() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaReporte />
+                            <TarjetaReporte isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -722,7 +722,7 @@ export function InformacionResultado() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaResultado />
+                            <TarjetaResultado isActive={isActive} />
                         </div>
                     </section>
                 </div>

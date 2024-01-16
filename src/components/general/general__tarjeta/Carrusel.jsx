@@ -2,9 +2,9 @@
 import "../../../styles/Carrusel.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export function CarruselIndividual({ imagenes }) {
+export function CarruselIndividual({ imagenes, isActive }) {
     return (
-        <section className="section__carrusel">
+        <section className={isActive ? 'section__carrusel_' : 'section__carrusel'}>
             {/* Mapeamos las imagenes en img*/}
             {imagenes.map((imagen, index) => (
                 index == 0 ?

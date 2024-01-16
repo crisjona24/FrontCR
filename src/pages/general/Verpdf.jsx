@@ -205,7 +205,7 @@ export function VerPeticion() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <TarjetaPeticion />
+                            <TarjetaPeticion isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -272,7 +272,7 @@ export function Juego() {
         }
     }
     onPageLoad();
-    
+
     // Obtener datos
     useEffect(() => {
         verificacion();
