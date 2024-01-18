@@ -844,7 +844,7 @@ export function FormularioSala() {
                     placeholder="Ingrese el código/s de contenido. Ejm: 12145, 45578" />
             </div>
             <div className="form-group">
-                <label className='label' htmlFor="paciente">Nombre de paciente:</label>
+                <label className='label' htmlFor="paciente">Nombre de estudiante:</label>
                 <input className='form-control w-100' type="text"
                     placeholder="Ingrese el nombre ejm: Luis Luis Chavez Chavez**" id="paciente"
                     name="paciente" value={nombre_paciente} onChange={cambioEntrada} />
