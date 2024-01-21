@@ -197,12 +197,12 @@ export function NivelLista({ usuario }) {
                             <div className="contenedor__nivel">
                                 <div className="contenedor-datos__nivel">
                                     <div className="orden_879">
-                                        
-                                            <div className="alin-nivel">
-                                                <Image src="/img/abeja_ivbapx.jpg"
-                                                    className="imagen__nivel" />
-                                            </div>
-                                    
+
+                                        <div className="alin-nivel">
+                                            <Image src="/img/abeja_ivbapx.jpg"
+                                                className="imagen__nivel" />
+                                        </div>
+
                                     </div>
                                     <div className="orden_880">
                                         <div className="card__nivel">
@@ -262,7 +262,7 @@ export function NivelLista({ usuario }) {
 
 
 // Lista de pacientes asociadas a un curso
-export function PacienteListado() {
+export function PacienteListado({ isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -492,7 +492,7 @@ export function PacienteListado() {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda
                             ${escogido ? 'w-25' : escogido2 ? 'w-25' : 'w-50'
                                 }`}
                             value={busquedaPaci}
@@ -576,7 +576,7 @@ export function PacienteListado() {
                 </div>
             </div>
             {/* Table */}
-            <ListadodePacientes pacientes={pacientes} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodePacientes pacientes={pacientes} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
@@ -584,7 +584,7 @@ export function PacienteListado() {
 
 
 // Lista de resultados
-export function ResultadoLista({ usuario }) {
+export function ResultadoLista({ usuario, isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -974,7 +974,7 @@ export function ResultadoLista({ usuario }) {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda
                             ${escogido ? 'w-25' : escogido2 ? 'w-25' : escogido3 ? 'w-25' : 'w-50'
                                 }`}
                             value={busqueda}
@@ -1099,7 +1099,7 @@ export function ResultadoLista({ usuario }) {
                                 </div>
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
-                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select tam_op_busqueda"
                                         disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
@@ -1125,7 +1125,7 @@ export function ResultadoLista({ usuario }) {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeResultado resultados={resultados} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeResultado resultados={resultados} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
@@ -1133,7 +1133,7 @@ export function ResultadoLista({ usuario }) {
 
 
 // Lista de cursos
-export function CursoLista() {
+export function CursoLista({ isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -1413,7 +1413,7 @@ export function CursoLista() {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeCursos cursos={cursos} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeCursos cursos={cursos} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
@@ -1422,7 +1422,7 @@ export function CursoLista() {
 
 
 // Lista de salas creadas
-export function SalaLista({ usuario }) {
+export function SalaLista({ usuario, isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -1696,7 +1696,7 @@ export function SalaLista({ usuario }) {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeSala salas={salas} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeSala salas={salas} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 }
@@ -1704,7 +1704,7 @@ export function SalaLista({ usuario }) {
 
 
 // Lista de salas de paciente
-export function SalaPacienteLista() {
+export function SalaPacienteLista({ isActive }) {
     // Busqueda sala
     const [codigosala, setCodigo] = useState("");
     const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
@@ -1872,7 +1872,7 @@ export function SalaPacienteLista() {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeSalaPaciente salas={salas} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeSalaPaciente salas={salas} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 }
@@ -1880,7 +1880,7 @@ export function SalaPacienteLista() {
 
 
 // Lista de salas creadas
-export function SalaListaAtendidas({ usuario }) {
+export function SalaListaAtendidas({ usuario, isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -2128,7 +2128,7 @@ export function SalaListaAtendidas({ usuario }) {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeSala salas={salas} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeSala salas={salas} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 }
@@ -2136,7 +2136,7 @@ export function SalaListaAtendidas({ usuario }) {
 
 
 // Lista de reportes
-export function ReporteLista({ usuario }) {
+export function ReporteLista({ usuario, isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -2515,7 +2515,7 @@ export function ReporteLista({ usuario }) {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda
                             ${escogido ? 'w-25' : escogido2 ? 'w-25' :
                                     escogido3 ? 'w-25' : 'w-50'
                                 }`}
@@ -2644,7 +2644,7 @@ export function ReporteLista({ usuario }) {
                                 </div>
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
-                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select tam_op_busqueda"
                                         disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
@@ -2670,16 +2670,9 @@ export function ReporteLista({ usuario }) {
                 </div>
             </div>
             {/* Table */}
-            <ListadodeReportes reportes={reportes} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListadodeReportes reportes={reportes} usuario={usuario} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
 }
 
-
-
-/* 
-<div className="bg-white w-75 mt-4 container d-flex" style={{ height: '50px', borderRadius: '10px' }}>
-<div className="d-flex flex-row justify-content-between w-75" style={{ alignItems: 'center', marginLeft: '10%' }}>
-<a className="m-2" style={{ fontFamily: 'Pacifico' }}>Buscar</a>
-*/

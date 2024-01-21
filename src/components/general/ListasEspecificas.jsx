@@ -15,7 +15,7 @@ import { ResultadoEliminar } from "../../api/resultado.api"
 
 
 // Sala generales
-export function ListadodeSala({ salas, usuario, page, setPage, numeroPag }) {
+export function ListadodeSala({ salas, usuario, page, setPage, numeroPag, isActive }) {
     const navigate = useNavigate();
     // Paginacion siguente
     const anterior = () => {
@@ -95,7 +95,7 @@ export function ListadodeSala({ salas, usuario, page, setPage, numeroPag }) {
                                                                     sala.sala_atendida == false && usuario.tipo === 'comun' ? 'd-flex justify-content-center'
                                                                         : ""}`}>
                                                             <Button title="Eliminar sala" variant="danger"
-                                                                className="separacion--boton h"
+                                                                className={`separacion--boton ${isActive ? 'h_' : 'h'}`}
                                                                 onClick={() => {
                                                                     Swal.fire({
                                                                         title: '¿Está seguro que desea eliminar la sala?',
@@ -114,13 +114,14 @@ export function ListadodeSala({ salas, usuario, page, setPage, numeroPag }) {
                                                                     })
                                                                 }}
                                                             >
-                                                                <FontAwesomeIcon icon={faTrash} />
+                                                                <FontAwesomeIcon icon={faTrash} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Button>
                                                             {
                                                                 usuario.tipo === "comun" && sala.sala_atendida === false &&
                                                                 <Link to={`/sala/editar/${sala.id}/`} title="Editar sala"
-                                                                    className="btn btn-primary separacion--boton h">
-                                                                    <FontAwesomeIcon icon={faPencil} />
+                                                                    className={`btn btn-primary separacion--boton ${isActive ? 'h_' : 'h'}`}
+                                                                >
+                                                                    <FontAwesomeIcon icon={faPencil} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                                 </Link>
                                                             }
                                                         </ul>
@@ -145,20 +146,25 @@ export function ListadodeSala({ salas, usuario, page, setPage, numeroPag }) {
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-1 col-xs-1">
-                                    <Link to={'/nivel/all'} className="btn btn-primary" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to={'/nivel/all'}
+                                        className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`}
+                                        title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-7 col-xs-7">Información - Salas Creadas</div>
+                                <div className={`col-sm-7 col-xs-7 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Salas Creadas</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`}
+                                        title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`}
+                                        title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }}
+                                            className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>
@@ -173,7 +179,7 @@ export function ListadodeSala({ salas, usuario, page, setPage, numeroPag }) {
 
 
 // Sala de paciente
-export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag }) {
+export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag, isActive }) {
     // Paginacion siguente
     const anterior = () => {
         setPage(prevPage => (prevPage > 1 ? prevPage - 1 : prevPage));
@@ -215,7 +221,8 @@ export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag }) {
                                                     <td className="text-center">{sala.fecha_registro_sala}</td>
                                                     <td>
                                                         <ul className="action-list d-flex justify-content-center" >
-                                                            <Button title="Atender sala" variant="success" className="separacion--boton h"
+                                                            <Button title="Atender sala" variant="success"
+                                                                className={`separacion--boton ${isActive ? 'h_' : 'h'}`}
                                                                 onClick={() => {
                                                                     Swal.fire({
                                                                         title: '¿La sala ha sido atendida?',
@@ -246,7 +253,7 @@ export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag }) {
                                                                     })
                                                                 }}
                                                             >
-                                                                <FontAwesomeIcon icon={faCheckDouble} />
+                                                                <FontAwesomeIcon icon={faCheckDouble} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Button>
                                                         </ul>
                                                     </td>
@@ -270,20 +277,24 @@ export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag }) {
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-1 col-xs-1">
-                                    <Link to={'/nivel/all'} className="btn btn-primary" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to={'/nivel/all'}
+                                        className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`}
+                                        title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-7 col-xs-7">Información - Salas</div>
+                                <div className={`col-sm-7 col-xs-7 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Salas</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`}
+                                        title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }}
+                                            className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>
@@ -298,7 +309,7 @@ export function ListadodeSalaPaciente({ salas, page, setPage, numeroPag }) {
 
 
 // Lista de resultados
-export function ListadodeResultado({ resultados, usuario, page, setPage, numeroPag }) {
+export function ListadodeResultado({ resultados, usuario, page, setPage, numeroPag, isActive }) {
     const navigate = useNavigate();
     // Paginacion siguente
     const anterior = () => {
@@ -565,7 +576,8 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
                                                                 {
                                                                     resultado.estado_reporte === false && usuario.tipo === "comun" &&
                                                                     <Button title="Generar Reporte" variant="success"
-                                                                        className="separacion--boton h" disabled={resultado.observacion === null || resultado.observacion === "No resuelto"}
+                                                                        className={`separacion--boton ${isActive ? 'h_' : 'h'}`}
+                                                                        disabled={resultado.observacion === null || resultado.observacion === "No resuelto"}
                                                                         onClick={() => {
                                                                             Swal.fire({
                                                                                 title: '¿Está seguro que desea generar el reporte?',
@@ -593,11 +605,12 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
                                                                             })
                                                                         }}
                                                                     >
-                                                                        <FontAwesomeIcon icon={faCheckDouble} />
+                                                                        <FontAwesomeIcon icon={faCheckDouble} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                                     </Button>
                                                                 }
                                                             </>
-                                                            <Button title="Eliminar resultado" variant="danger" className="separacion--boton h"
+                                                            <Button title="Eliminar resultado" variant="danger"
+                                                                className={`separacion--boton ${isActive ? 'h_' : 'h'}`}
                                                                 onClick={() => {
                                                                     Swal.fire({
                                                                         title: '¿Está seguro que desea eliminar el resultado?',
@@ -617,20 +630,20 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
                                                                     })
                                                                 }}
                                                             >
-                                                                <FontAwesomeIcon icon={faTrash} />
+                                                                <FontAwesomeIcon icon={faTrash} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Button>
                                                             {
                                                                 usuario.tipo === "comun" &&
                                                                 <Link to={`/resultado/editar/${resultado.id}`} title="Agregar observación"
-                                                                    className="btn btn-primary separacion--boton h">
-                                                                    <FontAwesomeIcon icon={faPencil} />
+                                                                    className={`btn btn-primary separacion--boton ${isActive ? 'h_' : 'h'}`}>
+                                                                    <FontAwesomeIcon icon={faPencil} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                                 </Link>
                                                             }
                                                             {
                                                                 usuario.tipo === "comun" &&
                                                                 <Link to={`/ver/resultados/${resultado.id}`} title="Ver descripción"
-                                                                    className="btn btn-success separacion--boton h">
-                                                                    <FontAwesomeIcon icon={faEye} />
+                                                                    className={`btn btn-success separacion--boton ${isActive ? 'h_' : 'h'}`}>
+                                                                    <FontAwesomeIcon icon={faEye} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                                 </Link>
                                                             }
                                                         </ul>
@@ -655,20 +668,20 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-1 col-xs-1">
-                                    <Link to={'/nivel/all'} className="btn btn-primary" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to={'/nivel/all'} className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-7 col-xs-7">Información - Resultados</div>
+                                <div className={`col-sm-7 col-xs-7 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Resultados</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>
@@ -683,7 +696,7 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
 
 
 // Listado de reportes
-export function ListadodeReportes({ reportes, usuario, page, setPage, numeroPag }) {
+export function ListadodeReportes({ reportes, usuario, page, setPage, numeroPag, isActive }) {
     const navigate = useNavigate();
     // Paginacion siguente
     const anterior = () => {
@@ -726,7 +739,7 @@ export function ListadodeReportes({ reportes, usuario, page, setPage, numeroPag 
                                                     <td className="text-center">{reporte.fecha_registro_reporte}</td>
                                                     <td>
                                                         <ul className="action-list d-flex justify-content-center">
-                                                            <Button title="Eliminar reporte" variant="danger" className="separacion--boton h"
+                                                            <Button title="Eliminar reporte" variant="danger" className={`separacion--boton ${isActive ? 'h_' : 'h'}`}
                                                                 onClick={() => {
                                                                     Swal.fire({
                                                                         title: '¿Está seguro que desea eliminar el reporte?',
@@ -755,11 +768,11 @@ export function ListadodeReportes({ reportes, usuario, page, setPage, numeroPag 
                                                                     })
                                                                 }}
                                                             >
-                                                                <FontAwesomeIcon icon={faTrash} />
+                                                                <FontAwesomeIcon icon={faTrash} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Button>
                                                             <Link to={`/ver/reporte/${reporte.id}/`} title="Ver reporte"
-                                                                className="btn btn-primary separacion--boton h">
-                                                                <FontAwesomeIcon icon={faEye} />
+                                                                className={`btn btn-primary separacion--boton ${isActive ? 'h_' : 'h'}`}>
+                                                                <FontAwesomeIcon icon={faEye} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Link>
                                                         </ul>
                                                     </td>
@@ -783,20 +796,20 @@ export function ListadodeReportes({ reportes, usuario, page, setPage, numeroPag 
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-1 col-xs-1">
-                                    <Link to={'/nivel/all'} className="btn btn-primary" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to={'/nivel/all'} className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-7 col-xs-7">Información - Reportes Creados</div>
+                                <div className={`col-sm-7 col-xs-7 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Reportes Creados</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>

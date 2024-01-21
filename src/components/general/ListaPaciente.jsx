@@ -12,7 +12,7 @@ import { useState } from "react";
 import React from 'react';
 // Metodos
 
-export function ListadodePacientes({ pacientes, page, setPage, numeroPag }) {
+export function ListadodePacientes({ pacientes, page, setPage, numeroPag, isActive }) {
     // Paginacion siguente
     const anterior = () => {
         setPage(prevPage => (prevPage > 1 ? prevPage - 1 : prevPage));
@@ -56,8 +56,9 @@ export function ListadodePacientes({ pacientes, page, setPage, numeroPag }) {
                                                     <td className="text-center">{paciente.edad}</td>
                                                     <td>
                                                         <ul className="action-list d-flex justify-content-center">
-                                                            <Link to={`/ver/paciente/${paciente.id}/`} className="btn btn-success separacion--boton h" title="Ver Pasciente">
-                                                                <FontAwesomeIcon icon={faEye} />
+                                                            <Link to={`/ver/paciente/${paciente.id}/`} className={`btn btn-success separacion--boton ${isActive ? 'h_' : 'h'}`}
+                                                                title="Ver Pasciente">
+                                                                <FontAwesomeIcon icon={faEye} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                                             </Link>
                                                         </ul>
                                                     </td>
@@ -82,20 +83,20 @@ export function ListadodePacientes({ pacientes, page, setPage, numeroPag }) {
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-2 col-xs-2">
-                                    <Link to="/cursos/all" className="btn btn-primary" title="Regresar">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to="/cursos/all" className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Regresar">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-6 col-xs-6">Información - Pacientes Inscritos</div>
+                                <div className={`col-sm-6 col-xs-6 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Pacientes Inscritos</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>

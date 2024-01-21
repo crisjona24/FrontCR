@@ -39,7 +39,7 @@ export function Peticionall() {
 
     // Verificar usuario
     const verificacion = async () => {
-        
+
         // Flujo normal
         try {
             const cont = await VerificarUsuario();
@@ -111,7 +111,7 @@ export function Peticionall() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <PeticionLista />
+                            <PeticionLista isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -213,7 +213,7 @@ export function PeticionAllAtendida() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <PeticionListaAtendi />
+                            <PeticionListaAtendi isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -315,7 +315,7 @@ export function PeticionUC() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <PeticionListaUsuario />
+                            <PeticionListaUsuario isActive={isActive} />
                         </div>
                     </section>
                 </div>

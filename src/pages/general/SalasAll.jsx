@@ -109,7 +109,7 @@ export function SalasALL() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <SalaLista usuario={tipoUsuario} />
+                            <SalaLista usuario={tipoUsuario} isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -210,7 +210,7 @@ export function SalasAtendidasALL() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <SalaListaAtendidas usuario={tipoUsuario} />
+                            <SalaListaAtendidas usuario={tipoUsuario} isActive={isActive} />
                         </div>
                     </section>
                 </div>
@@ -303,7 +303,7 @@ export function SalasPaciente() {
                             </>
                         )}
                     </>
-                    <SeccionSalaPaciente activarSidebar={activarSidebar} />
+                    <SeccionSalaPaciente activarSidebar={activarSidebar} isActive={isActive} />
                 </div>
             </div>
             <PieRegister />
@@ -311,7 +311,7 @@ export function SalasPaciente() {
     )
 }
 
-function SeccionSalaPaciente({ activarSidebar }) {
+function SeccionSalaPaciente({ activarSidebar, isActive }) {
     const colorGuardado = localStorage.getItem('color');
     return (
         <section className="section col-9 border-general" id="mysection" style={{ backgroundColor: colorGuardado }}>
@@ -323,7 +323,7 @@ function SeccionSalaPaciente({ activarSidebar }) {
                     <FontAwesomeIcon icon={faBars} />
                 </button>
                 {/* COMPONENTE DEL CUERPO */}
-                <SalaPacienteLista />
+                <SalaPacienteLista isActive={isActive} />
             </div>
         </section>
     )

@@ -11,18 +11,18 @@ import { CursoEliminar } from "../../api/curso.api"
 import { InscripcionCurso } from "../../api/usuario.api"
 
 /* Opciones de Usuario comun */
-export function OpcionesComun({ curso }) {
+export function OpcionesComun({ curso, isActive }) {
     return (
         <ul className="action-list d-flex justify-content-center">
-            <Link to={`/pacientes/all/${curso.slug_curso}/`} className="btn btn-success separacion--boton"
-                title="Ver pacientes inscritos" style={{ width: '40px', height: '35px' }}>
-                <FontAwesomeIcon icon={faEye} />
+            <Link to={`/pacientes/all/${curso.slug_curso}/`} className={`btn btn-success separacion--boton ${isActive ? 'h_' : 'h'}`}
+                title="Ver pacientes inscritos" >
+                <FontAwesomeIcon icon={faEye} className={isActive ? 'tam_fa_' : 'tam_fa'} />
             </Link>
-            <Link to={`/curso/editar/${curso.slug_curso}/`} className="btn btn-primary separacion--boton"
-                title="Editar Curso" style={{ width: '40px', height: '35px' }}>
-                <FontAwesomeIcon icon={faPencilAlt} />
+            <Link to={`/curso/editar/${curso.slug_curso}/`} className={`btn btn-primary separacion--boton ${isActive ? 'h_' : 'h'}`}
+                title="Editar Curso" >
+                <FontAwesomeIcon icon={faPencilAlt} className={isActive ? 'tam_fa_' : 'tam_fa'} />
             </Link>
-            <Button title="Eliminar curso" className="btn btn-danger" style={{ width: '40px', height: '35px' }}
+            <Button title="Eliminar curso" className={`btn btn-danger ${isActive ? 'h_' : 'h'}`}
                 onClick={() => {
                     Swal.fire({
                         title: '¿Está seguro que desea eliminar el curso?',
@@ -41,17 +41,17 @@ export function OpcionesComun({ curso }) {
                     })
                 }}
             >
-                <FontAwesomeIcon icon={faTrash} />
+                <FontAwesomeIcon icon={faTrash} className={isActive ? 'tam_fa_' : 'tam_fa'} />
             </Button>
         </ul>
     );
 }
 
 /* Opciones de Tecnico */
-export function OpcionesTecnico({ curso }) {
+export function OpcionesTecnico({ curso, isActive }) {
     return (
         <ul className="action-list d-flex justify-content-center">
-            <Button title="Eliminar curso" className="btn btn-danger"
+            <Button title="Eliminar curso" className={`btn btn-danger ${isActive ? 'h_' : 'h'}`}
                 onClick={() => {
                     Swal.fire({
                         title: '¿Está seguro que desea eliminar el curso?',
@@ -77,10 +77,10 @@ export function OpcionesTecnico({ curso }) {
 }
 
 /* Opciones de paciente */
-export function OpcionesPaciente({ curso }) {
+export function OpcionesPaciente({ curso, isActive }) {
     return (
         <ul className="action-list d-flex justify-content-center">
-            <Button className="btn btn-success separacion--boton" title="Inscribirse al curso"
+            <Button className={`btn btn-success separacion--boton ${isActive ? 'h_' : 'h'}`} title="Inscribirse al curso"
                 onClick={() => {
                     Swal.fire({
                         title: '¿Está seguro de inscribirse al curso?',

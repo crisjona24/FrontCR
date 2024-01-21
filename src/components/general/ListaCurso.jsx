@@ -13,7 +13,7 @@ import { Button } from 'react-bootstrap';
 import { OpcionesComun, OpcionesPaciente, OpcionesTecnico } from "./OpcionesCurso";
 import { VerificarUsuario } from "../../api/usuario.api";
 
-export function ListadodeCursos({ cursos, page, setPage, numeroPag }) {
+export function ListadodeCursos({ cursos, page, setPage, numeroPag, isActive }) {
     const [usuario, setUsuario] = useState([]);
     const navigate = useNavigate();
 
@@ -90,15 +90,15 @@ export function ListadodeCursos({ cursos, page, setPage, numeroPag }) {
                                                         <>
                                                             {
                                                                 usuario.tipo === "comun" &&
-                                                                <OpcionesComun curso={curso} />
+                                                                <OpcionesComun curso={curso} isActive={isActive} />
                                                             }
                                                             {
                                                                 usuario.tipo === "tecnico" &&
-                                                                <OpcionesTecnico curso={curso} />
+                                                                <OpcionesTecnico curso={curso} isActive={isActive} />
                                                             }
                                                             {
                                                                 usuario.tipo === "paciente" &&
-                                                                <OpcionesPaciente curso={curso} />
+                                                                <OpcionesPaciente curso={curso} isActive={isActive} />
                                                             }
                                                         </>
                                                     </td>
@@ -122,20 +122,20 @@ export function ListadodeCursos({ cursos, page, setPage, numeroPag }) {
                         <div className="panel-footer">
                             <div className="row">
                                 <div className="col-sm-1 col-xs-1">
-                                    <Link to={'/nivel/all'} className="btn btn-primary" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                    <Link to={'/nivel/all'} className={`btn btn-primary ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Link>
                                 </div>
-                                <div className="col-sm-7 col-xs-7">Información - Cursos</div>
+                                <div className={`col-sm-7 col-xs-7 ${isActive ? 'titulo_tabla_' : 'titulo_tabla'}`}>Información - Cursos</div>
                                 <div className="pagination-controls col-sm-4 col-xs-4">
                                     <Button onClick={anterior} disabled={page === 1}
-                                        className="separacion--boton" title="Atrás">
-                                        <FontAwesomeIcon icon={faBackward} />
+                                        className={`separacion--boton ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Atrás">
+                                        <FontAwesomeIcon icon={faBackward} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
-                                    <span style={{ fontSize: '0.8rem' }}>Página {page} de {numeroPag}</span>
+                                    <span className={isActive ? 'titulo_paginacion_' : 'titulo_paginacion'}>Página {page} de {numeroPag}</span>
                                     <Button onClick={siguiente} disabled={page === numeroPag}
-                                        className="separacion--boton--derecha" title="Adelante">
-                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} />
+                                        className={`separacion--boton--derecha ${isActive ? 'btn_paginacion_' : 'btn_paginacion'}`} title="Adelante">
+                                        <FontAwesomeIcon icon={faBackward} style={{ transform: 'rotate(180deg)' }} className={isActive ? 'tam_fa_' : 'tam_fa'} />
                                     </Button>
                                 </div>
                             </div>

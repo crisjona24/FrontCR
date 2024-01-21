@@ -106,7 +106,7 @@ export function PacientesALL() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <PacienteListado />
+                            <PacienteListado isActive={isActive} />
                         </div>
                     </section>
                 </div>

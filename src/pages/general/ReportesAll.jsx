@@ -106,7 +106,7 @@ export function ReportesALL() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <ReporteLista usuario={tipoUsuario} />
+                            <ReporteLista usuario={tipoUsuario} isActive={isActive} />
                         </div>
                     </section>
                 </div>

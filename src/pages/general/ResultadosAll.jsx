@@ -110,7 +110,7 @@ export function Resultadoall() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <ResultadoLista usuario={tipoUsuario} />
+                            <ResultadoLista usuario={tipoUsuario} isActive={isActive} />
                         </div>
                     </section>
                 </div>

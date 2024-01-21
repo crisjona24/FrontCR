@@ -107,7 +107,7 @@ export function CursosALL() {
                                 <FontAwesomeIcon icon={faBars} />
                             </button>
                             {/* COMPONENTE DEL CUERPO */}
-                            <CursoLista />
+                            <CursoLista isActive={isActive} />
                         </div>
                     </section>
                 </div>

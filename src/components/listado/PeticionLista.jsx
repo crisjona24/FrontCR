@@ -15,7 +15,7 @@ import {
 } from "../../api/peticion.api"
 
 // Peticiones pendientes
-export function PeticionLista() {
+export function PeticionLista({ isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -260,7 +260,7 @@ export function PeticionLista() {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda 
                             ${escogido1 ? 'w-25' : escogido2 ? 'w-25' : 'w-75'
                                 }`}
                             value={tipoBusqueda}
@@ -352,7 +352,8 @@ export function PeticionLista() {
                                 </div>
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
-                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        value={limite} onChange={(e) => setLimite(e.target.value)}
+                                        className="form-select tam_op_busqueda"
                                         disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
@@ -377,7 +378,7 @@ export function PeticionLista() {
                 </div>
             </div>
             {/* Table */}
-            <ListaPeticion peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListaPeticion peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
@@ -385,7 +386,7 @@ export function PeticionLista() {
 
 
 // Peticiones atendidas
-export function PeticionListaAtendi() {
+export function PeticionListaAtendi({ isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -631,7 +632,7 @@ export function PeticionListaAtendi() {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda
                             ${escogido1 ? 'w-25' : escogido2 ? 'w-25' : 'w-75'
                                 }`}
                             value={tipoBusqueda}
@@ -723,7 +724,8 @@ export function PeticionListaAtendi() {
                                 </div>
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
-                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        value={limite} onChange={(e) => setLimite(e.target.value)}
+                                        className="form-select tam_op_busqueda"
                                         disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
@@ -748,7 +750,7 @@ export function PeticionListaAtendi() {
                 </div>
             </div>
             {/* Table */}
-            <ListaPeticionAtendida peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListaPeticionAtendida peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 
@@ -756,7 +758,7 @@ export function PeticionListaAtendi() {
 
 
 // Peticiones de usuarios
-export function PeticionListaUsuario() {
+export function PeticionListaUsuario({ isActive }) {
     // Paginacion
     const [page, setPage] = useState(1);
     // Fin paginacion
@@ -1026,7 +1028,7 @@ export function PeticionListaUsuario() {
                 <div className="alineacion-lista-busqueda">
                     <div className="col-md-12 d-flex flex-row">
                         <select
-                            className={`form-select h-75 separacion-busqueda 
+                            className={`form-select h-75 separacion-busqueda tam_op_busqueda
                             ${escogido1 ? 'w-25' : escogido2 ? 'w-25' : 'w-75'
                                 }`}
                             value={tipoBusqueda}
@@ -1084,7 +1086,8 @@ export function PeticionListaUsuario() {
                                         </div>
                                         <div className="col-10 d-flex flex-row">
                                             <select name="tipo" id="tipo"
-                                                value={tipo} onChange={(e) => setTipo(e.target.value)} className="form-select w-100"
+                                                value={tipo} onChange={(e) => setTipo(e.target.value)}
+                                                className="form-select w-100 tam_op_busqueda"
                                                 disabled={isTamanio}
                                             >
                                                 <option value="0">Ninguno</option>
@@ -1118,7 +1121,8 @@ export function PeticionListaUsuario() {
                                 </div>
                                 <div className="col-9 d-flex flex-row">
                                     <select name="fecha" id="fecha"
-                                        value={limite} onChange={(e) => setLimite(e.target.value)} className="form-select"
+                                        value={limite} onChange={(e) => setLimite(e.target.value)} 
+                                        className="form-select tam_op_busqueda"
                                         disabled={isTamanio}
                                     >
                                         <option value="0">Ninguno</option>
@@ -1144,7 +1148,7 @@ export function PeticionListaUsuario() {
                 </div>
             </div>
             {/* Table */}
-            <ListaPeticionesUsuario peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} />
+            <ListaPeticionesUsuario peticiones={peticiones} page={page} setPage={setPage} numeroPag={numeroPag} isActive={isActive} />
         </div>
     )
 }
