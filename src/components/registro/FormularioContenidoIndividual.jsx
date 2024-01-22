@@ -181,7 +181,7 @@ export function FormularioContenidoIndividual({ slug }) {
                     <option value="pintar_imagen">Tipo 5 - Colorear</option>
                     <option value="seleccionar_imagen">Tipo 6 - Selección de Imágenes</option>
                     <option value="cuento">Tipo 7 - Lectura Comprensiva</option>
-                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con imagen</option>
+                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con imágenes</option>
                     <option value="pictograma">Tipo 9 - Pictograma</option>
                 </select>
             </div>
@@ -232,7 +232,32 @@ export function FormularioContenidoIndividual({ slug }) {
             </div>
             <>
                 {
-                    tipo_contenido === "selecion_multiple_img" || tipo_contenido === "pictograma" &&
+                    tipo_contenido === "pictograma" &&
+                    <>
+                        <div className='form-row row'>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img1">Contenido de opción 2:</label>
+                                <input className='form-control w-100' type="file" id="img1"
+                                    onChange={(e) => { setImg1(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img1' accept="image/*" />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img2">Contenido de opción 3:</label>
+                                <input className='form-control w-100' type="file" id="img2"
+                                    onChange={(e) => { setImg2(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img2' accept="image/*" />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className='label' htmlFor="img3">Contenido de opción 4:</label>
+                            <input className='form-control w-100' type="file" id="img3"
+                                onChange={(e) => { setImg3(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                name='img3' accept="image/*" />
+                        </div>
+                    </>
+                }
+                {
+                    tipo_contenido === "selecion_multiple_img" &&
                     <>
                         <div className='form-row row'>
                             <div className="form-group col-md-6">
