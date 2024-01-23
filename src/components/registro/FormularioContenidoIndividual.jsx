@@ -367,7 +367,6 @@ export function FormularioContenidoIndividual({ slug }) {
                     </select>
                 </div>
             </div>
-
             <Button type="submit" variant="success" disabled={habilitado}>
                 {habilitado ? 'Guardando...' : 'Guardar'}
             </Button>
