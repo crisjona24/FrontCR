@@ -181,7 +181,7 @@ export function FormularioContenidoIndividual({ slug }) {
                     <option value="pintar_imagen">Tipo 5 - Colorear</option>
                     <option value="seleccionar_imagen">Tipo 6 - Selección de Imágenes</option>
                     <option value="cuento">Tipo 7 - Lectura Comprensiva</option>
-                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con imágenes</option>
+                    <option value="selecion_multiple_img">Tipo 8 - Selección Individual con Imágenes</option>
                     <option value="pictograma">Tipo 9 - Pictograma</option>
                 </select>
             </div>
