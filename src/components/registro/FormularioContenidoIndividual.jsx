@@ -237,7 +237,7 @@ export function FormularioContenidoIndividual({ slug }) {
             </div>
             <>
                 {
-                    tipo_contenido === "pictograma" &&
+                    tipo_contenido === "selecion_multiple_img" &&
                     <>
                         <div className='form-row row'>
                             <div className="form-group col-md-6">
@@ -262,7 +262,7 @@ export function FormularioContenidoIndividual({ slug }) {
                     </>
                 }
                 {
-                    tipo_contenido === "selecion_multiple_img" &&
+                    tipo_contenido === "pictograma" &&
                     <>
                         <div className='form-row row'>
                             <div className="form-group col-md-6">
@@ -285,7 +285,6 @@ export function FormularioContenidoIndividual({ slug }) {
                                 name='img3' accept="image/*" />
                         </div>
                     </>
-
                 }
                 {
                     tipo_contenido === "seleccionar_imagen" &&
