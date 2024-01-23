@@ -256,7 +256,31 @@ export function FormularioContenidoIndividual({ slug }) {
                         </div>
                     </>
                 }
-                
+                {
+                    tipo_contenido === "pictograma" &&
+                    <>
+                        <div className='form-row row'>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img1">Contenido de opción 2:</label>
+                                <input className='form-control w-100' type="file" id="img1"
+                                    onChange={(e) => { setImg1(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img1' accept="image/*" />
+                            </div>
+                            <div className="form-group col-md-6">
+                                <label className='label' htmlFor="img2">Contenido de opción 3:</label>
+                                <input className='form-control w-100' type="file" id="img2"
+                                    onChange={(e) => { setImg2(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                    name='img2' accept="image/*" />
+                            </div>
+                        </div>
+                        <div className="form-group">
+                            <label className='label' htmlFor="img3">Contenido de opción 4:</label>
+                            <input className='form-control w-100' type="file" id="img3"
+                                onChange={(e) => { setImg3(e.target.files[0]); validarTamanoImagen(e.target) }}
+                                name='img3' accept="image/*" />
+                        </div>
+                    </>
+                }
                 {
                     tipo_contenido === "seleccionar_imagen" &&
                     <>
