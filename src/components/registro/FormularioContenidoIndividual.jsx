@@ -45,11 +45,6 @@ export function FormularioContenidoIndividual({ slug }) {
         //Flujo normal
         setHabilitado(true);
         try {
-            // Obtenemos los combinados de respuestas y color si color no es vacio
-            if (color.trim() !== "") {
-                const respuesta_ = combinarRespuestas();
-                setRespuesta(respuesta_);
-            }
             const formData = new FormData(); // Crear un objeto FormData
             // Obtenemos los combinados de preguntas y descripcion_individual si es que preguntas 
             // esta lleno y no es vacio
@@ -60,7 +55,13 @@ export function FormularioContenidoIndividual({ slug }) {
                 formData.append('descripcion_individual', descripcion_individual);
             }
             formData.append('tipo_contenido', tipo_contenido);
-            formData.append('respuesta', respuesta);
+            // Obtenemos los combinados de respuestas y color si color no es vacio
+            if (color.trim() !== "") {
+                const respuesta_ = combinarRespuestas();
+                formData.append('respuesta', respuesta_);
+            } else {
+                formData.append('respuesta', respuesta);
+            }
             formData.append('nombre_nivel', nombre_nivel);
             formData.append('contenido_individual', contenido_individual);
             formData.append('img1', img1);
