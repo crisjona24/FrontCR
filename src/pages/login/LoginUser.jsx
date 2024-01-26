@@ -32,6 +32,7 @@ export function IniciarSesion() {
             };
             // Realiza la petición POST al servidor
             const response = await LoginUsuario(info__form);
+            console.log(response)
             if (response.success) {
                 // Almacena el token en el almacenamiento local
                 cerrarSesion(response.token);
@@ -55,7 +56,7 @@ export function IniciarSesion() {
                 }
             }
         } catch (error) {
-            mostrarError('Error al iniciar sesión');
+            mostrarError('Error al iniciar sesión. Usuario o clave incorrectos.');
         }
     };
 
@@ -128,7 +129,7 @@ export function IniciarSesion() {
                                         </Link>
                                     </li>
                                     <div className='login-footer'>
-                                        <li style={{ listStyle: 'none', marginTop: '1%' }} >
+                                        <li style={{ listStyle: 'none' }} >
                                             <Link style={{ textDecoration: 'none' }} to="/registro">
                                                 <span className="text">
                                                     ¿No tienes una cuenta?. CLIC AQUÍ..
@@ -136,7 +137,6 @@ export function IniciarSesion() {
                                             </Link>
                                         </li>
                                     </div>
-
                                     <div className="login-footer">
                                         <span className="text">
                                             Registrate con
@@ -161,11 +161,13 @@ export function IniciarSesion() {
                                     </div>
                                 </form>
                             </div>
+                            <div >
+                                <img style={{ width: '20%', marginTop: '5%' }} src="/img/ComputaciónUNL.jpg" alt="Logo de Computación" />
+                            </div>
                         </div>
                     </div>
                 </main>
             </div>
-
         </div>
     )
 }

@@ -13,9 +13,8 @@ export function PieRegister() {
     return (
         <footer className="footer">
             <div className='alineacion'>
-                &copy; 2023 WAPIPTDAH, Todos los Derechos Reservados
-                <img className='imagen_pie' src={imageUrl1} alt="" />
-                <img className='imagen_pie' src={imageUrl2} alt="" />
+                <span className='mt-2'>&copy; 2023 WAPIPTDAH, Todos los Derechos Reservados</span>
+                <img className='imagen_pie' src="/img/ComputaciónUNL.jpg" alt="Logo de Computación" />
             </div>
         </footer>
     )
