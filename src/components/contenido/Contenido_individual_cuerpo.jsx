@@ -293,7 +293,7 @@ export function ModalContenidoTipo1() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -343,7 +343,7 @@ export function ModalContenidoTipo2() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -392,7 +392,7 @@ export function ModalContenidoTipo3() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -440,7 +440,7 @@ export function ModalContenidoTipo4() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -488,7 +488,7 @@ export function ModalContenidoTipo5() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -536,7 +536,7 @@ export function ModalContenidoTipo6() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -585,7 +585,7 @@ export function ModalContenidoTipo7() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
@@ -633,7 +633,7 @@ export function ModalContenidoTipo8() {
                 </div>
                 <Modal.Footer>
                     <Button variant="success" onClick={cerrarModal}>
-                        Entenidido
+                        Entendido
                     </Button>
                 </Modal.Footer>
             </Modal>
