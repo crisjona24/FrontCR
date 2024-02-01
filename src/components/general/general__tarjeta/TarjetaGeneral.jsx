@@ -432,6 +432,9 @@ export function Individual({ datos, slug, isActive }) {
         case "seleccionar_imagen":
             tipoContenido = "Seleccionar imagen";
             break;
+        case "selecion_multiple_img":
+            tipoContenido = "Selección con imagen";
+            break;
         case "pictograma":
             tipoContenido = "Pictograma";
             break;
