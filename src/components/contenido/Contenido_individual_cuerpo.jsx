@@ -203,8 +203,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
                     </div>
                 </div>
                 <div className="almacen__niveles row col-md-12">
-                    <div className="contenedor__niveles mt-4 mb-4">
-                    </div>
+                    
                 </div>
                 {/* Mostramos el error el error */}
                 {
