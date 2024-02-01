@@ -308,7 +308,7 @@ export const AccederSala = async (codigo) => {
         throw new Error("NOT_AUTHENTICATED");
     }
     try {
-        return await baseurl.get(`wapiptdah/codigo/contenido/${codigo}/`,
+        return await baseurl.get(`wapiptdah/estudio/codigo/contenido/${codigo}/`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`

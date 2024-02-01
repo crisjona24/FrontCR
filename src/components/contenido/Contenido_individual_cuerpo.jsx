@@ -117,7 +117,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
     const cargarContenidosI = async () => {
         try {
             // Verificar tipo de paciente
-            if (tipoUsuarioP.tipo === "paciente") {
+            if (tipoUsuarioP.tipo === "comun") {
                 const cont = await ContenidoIndividualTodo(slug2);
                 setContenidos(cont.data);
                 console.log(cont.data);
@@ -220,7 +220,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
                 <div className="row col-md-12 mt-4 mb-2">
                     <>
                         {
-                            tipoUsuario.tipo === "paciente" &&
+                            tipoUsuario.tipo === "comun" &&
                             <div className="bajo__cuerpo">
                                 <div className="mt-1 mb-2">
                                     {
