@@ -202,7 +202,7 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
                         </h4>
                     </div>
                 </div>
-                <div className="almacen__niveles row col-md-12">
+                <div className="almacen__niveles row col-md-12 mt-2">
                     
                 </div>
                 {/* Mostramos el error el error */}

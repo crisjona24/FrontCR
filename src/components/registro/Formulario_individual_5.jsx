@@ -326,6 +326,10 @@ export function FormularioCinco({ context, isActive, usuario, slugContenido }) {
                                                     onDragStart={(e) => {
                                                         e.dataTransfer.setData('color', 'Azul');
                                                     }}></div>
+                                                <div className="color-box" style={{ backgroundColor: '#5c330a' }} draggable={true}
+                                                    onDragStart={(e) => {
+                                                        e.dataTransfer.setData('color', 'Cafe');
+                                                    }}></div>
                                                 <div className="color-box" style={{ backgroundColor: 'green' }} draggable={true}
                                                     onDragStart={(e) => {
                                                         e.dataTransfer.setData('color', 'Verde');
