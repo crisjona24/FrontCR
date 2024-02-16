@@ -146,7 +146,7 @@ export function IniciarSesion() {
                                         </span>
                                         <ul className="social-icons">
                                             <li>
-                                                <a className="facebook" href="/login">
+                                                <a className="facebook" href="/login" title="Facebook">
                                                     <FontAwesomeIcon icon={faFacebook} />
                                                 </a>
                                                 {/*<Link className="facebook" to="/login">
@@ -154,7 +154,7 @@ export function IniciarSesion() {
                 </Link>*/}
                                             </li>
                                             <li>
-                                                <a className="facebook" href="/login">
+                                                <a className="facebook" href="/login" title="Twitter">
                                                     <FontAwesomeIcon icon={faTwitter} />
                                                 </a>
                                                 {/*<Link className="facebook" to="/login">
@@ -162,7 +162,7 @@ export function IniciarSesion() {
             </Link>*/}
                                             </li>
                                             <li>
-                                                <a className="facebook" href="/login">
+                                                <a className="facebook" href="/login" title="Linkedin">
                                                     <FontAwesomeIcon icon={faLinkedin} />
                                                 </a>
                                                 {/*<Link className="facebook" to="/login">
