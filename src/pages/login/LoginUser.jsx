@@ -81,7 +81,8 @@ export function IniciarSesion() {
             <div className='login-page'>
                 <main>
                     <div className="login-block">
-                        <Image className='imagen-login' src='/img/Fondo1.jpg' fluid />
+                        {/*<Image className='imagen-login' src='/img/Fondo1.jpg' fluid alt="Imagen de inicio de sesión" />*/}
+                        <img src="/img/Fondo1.jpg" alt="Imagen de inicio de sesión" className="imagen-login" />
                         <h1>Iniciar sesión</h1>
                         {error &&
                             <div id="alert" className="alert alert-success" role="alert">
@@ -111,12 +112,14 @@ export function IniciarSesion() {
                                                     <input className='form-control' type={verClave ? "text" : "password"} placeholder="Contraseña" value={password} onChange={e => setPassword(e.target.value)} />
                                                 </div>
                                                 <div className="form-group col-md-1 mt-3 d-flex justify-content-center">
-                                                    <Button variant="success" onClick={observarClave}>
+                                                    {/*<Button variant="success" onClick={observarClave}>
                                                         <FontAwesomeIcon icon={faEye} />
-                                                    </Button>
+                    </Button                        >*/}
+                                                    <button type="button" className="btn btn-success" title="Observar Clave" onClick={observarClave}>
+                                                        <FontAwesomeIcon icon={faEye} />
+                                                    </button>
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <button type="submit" className='my-success-button'>Iniciar sesión</button>
