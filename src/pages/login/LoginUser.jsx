@@ -146,19 +146,28 @@ export function IniciarSesion() {
                                         </span>
                                         <ul className="social-icons">
                                             <li>
-                                                <Link className="facebook" to="/login">
+                                                <a className="facebook" href="/login">
                                                     <FontAwesomeIcon icon={faFacebook} />
-                                                </Link>
+                                                </a>
+                                                {/*<Link className="facebook" to="/login">
+                                                    <FontAwesomeIcon icon={faFacebook} />
+                </Link>*/}
                                             </li>
                                             <li>
-                                                <Link className="facebook" to="/login">
+                                                <a className="facebook" href="/login">
                                                     <FontAwesomeIcon icon={faTwitter} />
-                                                </Link>
+                                                </a>
+                                                {/*<Link className="facebook" to="/login">
+                                                    <FontAwesomeIcon icon={faTwitter} />
+            </Link>*/}
                                             </li>
                                             <li>
-                                                <Link className="facebook" to="/login">
+                                                <a className="facebook" href="/login">
                                                     <FontAwesomeIcon icon={faLinkedin} />
-                                                </Link>
+                                                </a>
+                                                {/*<Link className="facebook" to="/login">
+                                                    <FontAwesomeIcon icon={faLinkedin} />
+        </Link>*/}
                                             </li>
                                         </ul>
                                     </div>
