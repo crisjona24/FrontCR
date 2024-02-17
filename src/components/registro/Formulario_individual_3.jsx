@@ -54,7 +54,6 @@ export function FormularioTres({ context, isActive, usuario, slugContenido }) {
                 // Añadir los elementos de la variable contenedor a la lista
                 const listaFinalCompleta = [...listaFinal, ...contenedor];
                 setDatos(listaFinalCompleta);
-                console.log(listaFinalCompleta);
             }
         } catch (error) {
             console.error('Error al obtener datos:', error);
@@ -223,7 +222,6 @@ export function FormularioTres({ context, isActive, usuario, slugContenido }) {
                 tiempoTranscurrido__segundos
             };
             setVerificarBtnD(true);
-            console.log(datos__post);
             // Realizar la petición POST al servidor
             const response = await CrearResultadoNew(datos__post);
             if (response.data.success) {

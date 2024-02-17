@@ -165,7 +165,6 @@ export function FormularioNueve({ context, isActive, usuario, slugContenido }) {
                 tiempoTranscurrido__minutos,
                 tiempoTranscurrido__segundos
             };
-            console.log(datos__post);
             setVerificarBtnD(true);
             // Realizar la petición POST al servidor
             const response = await CrearResultadoNew(datos__post);

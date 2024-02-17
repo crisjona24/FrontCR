@@ -46,7 +46,6 @@ export function Perfil_User() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {

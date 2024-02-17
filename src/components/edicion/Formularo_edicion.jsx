@@ -54,7 +54,6 @@ export function FormularioEdicionNivel() {
                     Swal.fire(cont.data.error, "", "warning");
                     navigate('/nivel/all')
                 } else if (cont.data.errorSalida) {
-                    console.log(cont.data.errorSalida)
                     navigate('/login')
                 }
             }

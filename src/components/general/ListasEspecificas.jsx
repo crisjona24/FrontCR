@@ -591,7 +591,6 @@ export function ListadodeResultado({ resultados, usuario, page, setPage, numeroP
                                                                                 if (result.isConfirmed) {
                                                                                     const response = await CrearReporteNuevo(resultado.id);
                                                                                     if (response.data.success) {
-                                                                                        console.log(response.data);
                                                                                         Swal.fire("Reporte generado de forma exitosa", "", "success");
                                                                                         navigate('/reporte/all');
                                                                                     } else {

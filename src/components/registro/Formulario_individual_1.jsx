@@ -51,7 +51,6 @@ export function FormularioUno({ context, isActive, usuario, slugContenido }) {
                 // Añadir la variable contenedor a la lista
                 const listaFinal = [...figurasSeleccionadas, contenedor];
                 setDatos(listaFinal);
-                console.log(listaFinal);
             }
         } catch (error) {
             console.error('Error al obtener datos:', error);
@@ -206,7 +205,6 @@ export function FormularioUno({ context, isActive, usuario, slugContenido }) {
                 tiempoTranscurrido__minutos,
                 tiempoTranscurrido__segundos
             };
-            console.log(datos__post);
             setVerificarBtnD(true);
             // Realizar la petición POST al servidor
             const response = await CrearResultadoNew(datos__post);

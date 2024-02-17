@@ -39,7 +39,6 @@ export function TarjetaDominio({ isActive }) {
                 // Obtener los datos del dominio
                 const domi = await DominioIndividual(cont.data.identificador);
                 setDatos(domi.data);
-                console.log(domi.data)
             } else {
                 if (cont.data.error) {
                     mostrarError(cont.data.error);
@@ -104,12 +103,10 @@ export function TarjetaDatosContenido({ isActive }) {
         // Flujo normal
         try {
             const cont = await VerificarContenido(slug);
-            console.log(cont.data)
             if (cont.data.identificador) {
                 // Obtener los datos del dominio
                 const domi = await ContenidoIndividual(cont.data.identificador);
                 setDatos(domi.data);
-                console.log(domi.data)
             } else {
                 if (cont.data.error) {
                     mostrarError(cont.data.error);
@@ -174,7 +171,6 @@ export function TarjetaDatosIndividual({ isActive }) {
         // Flujo normal
         try {
             const cont = await VerificarContenidoIndividual(slug);
-            console.log(cont.data)
             if (cont.data.identificador) {
                 // Obtener los datos del dominio
                 const domi = await ContenidoDatosIndividual(cont.data.identificador);

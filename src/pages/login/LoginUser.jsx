@@ -32,7 +32,6 @@ export function IniciarSesion() {
             };
             // Realiza la petición POST al servidor
             const response = await LoginUsuario(info__form);
-            console.log(response)
             if (response.success) {
                 // Almacena el token en el almacenamiento local
                 cerrarSesion(response.token);

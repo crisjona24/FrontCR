@@ -198,7 +198,6 @@ export function FormularioUsuario() {
                 setPassword("---");
                 setCelular(datos__user.data.celular);
                 setFecha(datos__user.data.fecha_nacimiento);
-                console.log(datos__user.data);
             } else {
                 if (cont.data.error) {
                     Swal.fire(cont.data.error, '', 'error');
@@ -491,7 +490,6 @@ export function FormularioComun() {
                 area_estudio,
                 cedula
             };
-            console.log(datos__post)
             if (!compararClave(password_usuario, password_usuario_2)) {
                 Swal.fire("Las claves no coinciden", "", "warning");
                 setHabilitado(false);

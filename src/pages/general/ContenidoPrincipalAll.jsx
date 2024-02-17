@@ -45,7 +45,6 @@ export function ContenidoPrincipalAll() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {

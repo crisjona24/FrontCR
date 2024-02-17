@@ -45,8 +45,7 @@ export function NivelLista({ usuario }) {
             //setLocalNiveles(niveles);
         } catch (err) {
             if (err.message === "NOT_AUTHENTICATED") {
-                //navigate('/');
-                mostrarError('Error al cargar los niveles');
+                navigate('/');
             } else {
                 mostrarError('Error al cargar los niveles');
             }
@@ -76,7 +75,6 @@ export function NivelLista({ usuario }) {
         try {
             let datos_obtenidos = await AccederSala(codigosala);
             if (datos_obtenidos.data.success) {
-                console.log(datos_obtenidos.data);
                 setMostrarBusqueda(true);
                 navigate(`/individual/nuevo/${datos_obtenidos.data.slug}`);
             } else {
@@ -1782,7 +1780,6 @@ export function SalaPacienteLista({ isActive }) {
         try {
             let datos_obtenidos = await AccederSala(codigosala);
             if (datos_obtenidos.data.success) {
-                console.log(datos_obtenidos.data);
                 setMostrarBusqueda(true);
                 navigate(`/individual/nuevo/${datos_obtenidos.data.slug}`);
             } else {
@@ -2320,14 +2317,12 @@ export function ReporteLista({ usuario, isActive }) {
         // Verificar fecha
         try {
             if (limite !== "") {
-                console.log(limite);
                 // Verificar usuario
                 const usuarioC = await VerificarUsuario();
                 if (usuarioC.data.success) {
                     // Verificar tipo de usuario
                     if (usuarioC.data.tipo === "tecnico") {
                         const reporTecnicoRango = await ReporteporRangoTecnico(limite, page);
-                        console.log(reporTecnicoRango.data.results);
                         if (reporTecnicoRango.data.results.length === 0) {
                             Swal.fire("No existen reportes de ese rango de días. Escoja otro", "", "warning");
                             resetearBusqueda();

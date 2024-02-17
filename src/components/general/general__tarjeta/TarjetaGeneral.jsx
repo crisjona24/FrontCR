@@ -164,7 +164,6 @@ export function Dominio({ datos, isActive }) {
 
 // Contenido
 export function Contenido({ datos, slug, isActive }) {
-    console.log(datos)
     const navigate = useNavigate();
     // Control de usuario
     const [tipoUsuario, setTipo] = useState([]);
@@ -1470,7 +1469,6 @@ export function Resultado({ datosResultado, isActive }) {
                                                             if (result.isConfirmed) {
                                                                 const response = await CrearReporteNuevo(datosResultado.id);
                                                                 if (response.data.success) {
-                                                                    console.log(response.data);
                                                                     Swal.fire("Reporte generado de forma exitosa", "", "success");
                                                                     navigate('/reporte/all');
                                                                 } else {

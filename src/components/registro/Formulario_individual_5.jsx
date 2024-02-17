@@ -123,7 +123,6 @@ export function FormularioCinco({ context, isActive, usuario, slugContenido }) {
 
     // Capturar los valores de los input
     const handleInputChange = (index, e) => {
-        console.log(`Index: ${index}`, `Value: ${e.target.value}`);
         setRespuestas(prev => {
             const newRespuestas = [...prev];
             newRespuestas[index] = e.target.value;
@@ -182,8 +181,6 @@ export function FormularioCinco({ context, isActive, usuario, slugContenido }) {
                 tiempoTranscurrido__minutos,
                 tiempoTranscurrido__segundos
             };
-            console.log("Datos a enviar");
-            console.log(datos__post);
             setVerificarBtnD(true);
             // Realizar la petición POST al servidor
             const response = await CrearResultadoNew(datos__post);

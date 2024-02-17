@@ -23,7 +23,6 @@ export function Tarjeta({ isActive }) {
             let cont = await DatosUser();
             if (cont.data.success) {
                 setDatos(cont.data);
-                console.log(cont.data)
             } else if (cont.data.success === false) {
                 navigate('/login');
             }

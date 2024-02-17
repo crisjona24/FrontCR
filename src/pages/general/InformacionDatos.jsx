@@ -47,7 +47,6 @@ export function InformacionDominio() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -150,7 +149,6 @@ export function InformacionContenido() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -252,7 +250,6 @@ export function InformacionIndividual() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -351,7 +348,6 @@ export function InformacionPaciente() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -456,7 +452,6 @@ export function InformacionAPP() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -558,7 +553,6 @@ export function InformacionReporte() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {
@@ -660,7 +654,6 @@ export function InformacionResultado() {
                 navigate('/login');
             } else {
                 setTipo(cont.data);
-                console.log(cont.data);
                 setLoading(false);
             }
         } catch (error) {

@@ -30,7 +30,6 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
     const {
         nombre__contenido,
     } = context;
-    console.log(context)
     // Verificacion de usuario
     const [tipoUsuario, setTipo] = useState([]);
     const navigate = useNavigate();
@@ -120,7 +119,6 @@ export function ContenidoCuerpo({ context, isActive, slugContenido, tipoUsuarioP
             if (tipoUsuarioP.tipo === "comun") {
                 const cont = await ContenidoIndividualTodo(slug2);
                 setContenidos(cont.data);
-                console.log(cont.data);
             }
         } catch (error) {
             if (error.message === "NOT_AUTHENTICATED") {

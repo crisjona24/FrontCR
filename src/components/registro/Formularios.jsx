@@ -358,7 +358,6 @@ export function FormularioNivel() {
                 numero_categorias,
                 grado_dificultad
             };
-            console.log(datos__post);
             // Realizar la petición POST al servidor
             await guardar(datos__post);
         } catch (error) {
