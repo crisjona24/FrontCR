@@ -45,7 +45,8 @@ export function NivelLista({ usuario }) {
             //setLocalNiveles(niveles);
         } catch (err) {
             if (err.message === "NOT_AUTHENTICATED") {
-                navigate('/');
+                //navigate('/');
+                mostrarError('Error al cargar los niveles');
             } else {
                 mostrarError('Error al cargar los niveles');
             }

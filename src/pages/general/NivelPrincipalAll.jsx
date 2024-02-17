@@ -37,13 +37,15 @@ export function NivelPrincipalAll() {
     // Verificar usuario
     const verificacion = async () => {
         if (!token) {
-            navigate('/login');
+            //navigate('/login');
+            console.log("Error")
         }
         // Flujo normal
         try {
             const cont = await VerificarUsuario();
             if (cont.data.error) {
-                navigate('/login');
+                //navigate('/login');
+                console.log("Error")
             } else {
                 setTipo(cont.data);
                 console.log(cont.data);
@@ -51,7 +53,8 @@ export function NivelPrincipalAll() {
             }
         } catch (error) {
             if (error.message === "NOT_AUTHENTICATED") {
-                navigate('/login');
+                //navigate('/login');
+                console.log("Error")
             }
         }
     }
